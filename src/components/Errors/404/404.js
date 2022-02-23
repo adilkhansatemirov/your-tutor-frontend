@@ -25,39 +25,10 @@ const useStyle = makeStyles((theme) => ({
 
 export default function NotFound() {
   const classes = useStyle();
-  const history = useHistory();
-
-  const handlePreviousPage = () => {
-    history.goBack();
-  };
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center" className={classes.root}>
-      <Box className={classes.card}>
-        <StyledTypography type="h5" fontFamily="Rubik" color="bluishBlack" fontWeight="bold">
-          Not Found
-        </StyledTypography>
-        <StyledTypography type="h1" fontFamily="Rubik" color="bluishBlack" fontWeight="bold" fontSize={80}>
-          404
-        </StyledTypography>
-        <StyledTypography type="text" fontFamily="Rubik" fontWeight="normal" fontSize={16}>
-          Sorry, we can’t find the page you were looking for.
-          <br />
-          You can go back to{' '}
-          <StyledTypography
-            component="span"
-            className={classes.button}
-            color="skyBlue"
-            fontSize={16}
-            fontFamily="Rubik"
-            fontWeight="bold"
-            onClick={handlePreviousPage}
-          >
-            previous page
-          </StyledTypography>
-          .
-        </StyledTypography>
-      </Box>
+      404
     </Box>
   );
 }

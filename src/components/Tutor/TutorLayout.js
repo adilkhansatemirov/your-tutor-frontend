@@ -4,22 +4,16 @@ const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
   },
-  content: {
-    flex: 1,
-    paddingLeft: '30px',
-    paddingRight: '60px',
-    position: 'relative',
-  },
 }));
 
-function AdminLayout() {
+function TutorLayout() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      Admin Layout
+      Tutor Layout
     </div>
   );
 }
 
-export default AdminLayout;
+export default TutorLayout;

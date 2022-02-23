@@ -4,22 +4,16 @@ const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
   },
-  content: {
-    flex: 1,
-    paddingLeft: '30px',
-    paddingRight: '60px',
-    position: 'relative',
-  },
 }));
 
-function AdminLayout() {
+function ClientLayout() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      Admin Layout
+      Student Layout
     </div>
   );
 }
 
-export default AdminLayout;
+export default ClientLayout;
