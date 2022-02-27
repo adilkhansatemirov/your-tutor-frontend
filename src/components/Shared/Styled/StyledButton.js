@@ -4,87 +4,25 @@ import theme from 'theme';
 
 const getVariant = (variant) => {
   switch (variant) {
-    case 'yellow':
+    case 'light':
       return {
-        backgroundColor: theme.palette.lightYellow.main,
+        backgroundColor: theme.palette.light.main,
         border: 'none',
-        hoverBackground: theme.palette.lightYellow.dark,
+        hoverBackground: theme.palette.light.dark,
         color: theme.palette.black,
       };
-    case 'outlined-dark-blue':
+    case 'dark':
       return {
-        backgroundColor: 'transparent',
-        border: `2px solid ${theme.palette.bluishBlack}`,
-        hoverBackground: 'rgba(0, 0, 0, 0.1)',
-        color: theme.palette.bluishBlack,
-      };
-    case 'outlined-light-blue':
-      return {
-        backgroundColor: 'transparent',
-        border: `2px solid ${theme.palette.bluishBlack}`,
-        hoverBackground: 'rgba(0, 0, 0, 0.1)',
-        color: theme.palette.bluishBlack,
-      };
-    case 'outlined-white':
-      return {
-        backgroundColor: 'transparent',
-        border: `2px solid ${theme.palette.white}`,
-        hoverBackground: 'rgba(0, 0, 0, 0.1)',
+        backgroundColor: theme.palette.dark.main,
+        border: 'none',
+        hoverBackground: theme.palette.dark.dark,
         color: theme.palette.white,
-      };
-    case 'inactive':
-      return {
-        backgroundColor: theme.palette.inactive,
-        border: 'none',
-        hoverBackground: theme.palette.inactive,
-        color: theme.palette.black,
-      };
-    case 'blue':
-      return {
-        backgroundColor: theme.palette.colbatBlue.main,
-        border: 'none',
-        hoverBackground: theme.palette.colbatBlue.dark,
-        color: theme.palette.white,
-      };
-    case 'light-blue':
-      return {
-        backgroundColor: theme.palette.skyBlue.main,
-        border: 'none',
-        hoverBackground: theme.palette.skyBlue.dark,
-        color: theme.palette.white,
-      };
-    case 'dashed-light-blue':
-      return {
-        backgroundColor: theme.palette.coldWhite,
-        border: `1px dashed ${theme.palette.skyBlue.main}`,
-        height: '50px',
-        color: theme.palette.skyBlue.main,
-      };
-    case 'red':
-      return {
-        backgroundColor: theme.palette.tomatoRed.main,
-        border: 'none',
-        hoverBackground: theme.palette.tomatoRed.dark,
-        color: theme.palette.white,
-      };
-    case 'green':
-      return {
-        backgroundColor: theme.palette.green.main,
-        border: 'none',
-        hoverBackground: theme.palette.green.dark,
-        color: theme.palette.white,
-      };
-    case 'text':
-      return {
-        backgroundColor: theme.palette.common.transparent,
-        border: 'none',
-        color: theme.palette.black,
       };
     default:
       return {
-        backgroundColor: theme.palette.lightYellow.main,
+        backgroundColor: theme.palette.light.main,
         border: 'none',
-        hoverBackground: theme.palette.lightYellow.dark,
+        hoverBackground: theme.palette.light.dark,
         color: theme.palette.black,
       };
   }

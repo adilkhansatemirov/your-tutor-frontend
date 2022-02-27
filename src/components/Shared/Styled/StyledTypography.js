@@ -4,14 +4,6 @@ const getColor = (color, theme) => {
   switch (color) {
     case 'skyBlue':
       return theme.palette.skyBlue.main;
-    case 'tomatoRed':
-      return theme.palette.tomatoRed.main;
-    case 'bluishBlack':
-      return theme.palette.bluishBlack;
-    case 'green':
-      return theme.palette.green.main;
-    case 'orange':
-      return theme.palette.orange;
     case 'white':
       return theme.palette.white;
     case 'black':

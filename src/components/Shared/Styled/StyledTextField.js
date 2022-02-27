@@ -10,11 +10,11 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiOutlinedInput-root': {
       fontFamily: ({ fontFamily }) => (fontFamily ? fontFamily : 'Roboto'),
       '& fieldset': {
-        border: `1px solid ${theme.palette.silverGray.main}`,
+        border: `1px solid ${theme.palette.dark.main}`,
         borderRadius: '3px',
       },
       '&:hover fieldset': {
-        border: `1px solid ${theme.palette.silverGray.main}`,
+        border: `1px solid ${theme.palette.dark.main}`,
       },
       '&.Mui-focused fieldset': {
         boxShadow: `0px 4px 4px ${theme.palette.skyBlue.pale}`,

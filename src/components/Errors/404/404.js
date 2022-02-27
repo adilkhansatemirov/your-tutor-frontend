@@ -1,7 +1,5 @@
 import React from 'react';
 import { Box, makeStyles } from '@material-ui/core';
-import StyledTypography from 'components/Shared/Styled/StyledTypography';
-import { useHistory } from 'react-router-dom';
 
 const useStyle = makeStyles((theme) => ({
   root: {
