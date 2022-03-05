@@ -4,6 +4,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 const skyBlue = '#1891DA';
 const skyBlueDark = '#1478B5';
 const skyBluePale = '#389CD9';
+const spaceBlue = '#0E3665';
 
 // red
 const tomatoRed = '#FF3838';
@@ -34,6 +35,7 @@ const theme = createMuiTheme({
       dark: skyBlueDark,
       pale: skyBluePale,
     },
+    spaceBlue,
     tomatoRed: {
       main: tomatoRed,
       dark: tomatoRedDark,
