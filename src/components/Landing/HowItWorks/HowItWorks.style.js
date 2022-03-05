@@ -54,6 +54,7 @@ export default makeStyles((theme) => ({
   },
   listItem: {
     marginBottom: '47px',
+    flexDirection: 'column',
     [theme.breakpoints.down('xs')]: {
       alignItems: 'flex-start',
     },

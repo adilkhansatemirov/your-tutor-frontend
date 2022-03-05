@@ -12,7 +12,7 @@ import useStyles from './Header.style';
 import theme from 'theme';
 import { modalTemplates } from 'constants/constants';
 
-import logoWhite from 'assets/images/logo-white.png';
+import logoWhite from 'assets/icons/logo.svg';
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -23,7 +23,7 @@ function ElevationScroll(props) {
 
   return cloneElement(children, {
     elevation: trigger ? 4 : 0,
-    style: trigger ? { backgroundColor: theme.palette.spaceBlue } : {},
+    style: trigger ? { backgroundColor: theme.palette.white } : {},
   });
 }
 
@@ -164,10 +164,10 @@ function Header({ openModal, setModalTemplate, isAuthenticated, redirectTo, load
       <Box className={classes.main}>
         <Container>
           <StyledTypography fontSize={33} fontFamily="Poppins" type="h1" className={classes.title} fontWeight="bold">
-            Hire Top U.S. Based Accountants
+            YourTutor
           </StyledTypography>
           <StyledTypography fontSize={14} fontFamily="Poppins" className={classes.projectDuration}>
-            Scale your team with exceptional professionals from our vetted community
+            Connect. Study. Succeed.
           </StyledTypography>
           <Box className={classes.buttonGroup}>
             <StyledButton

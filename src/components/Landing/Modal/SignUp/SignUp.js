@@ -7,16 +7,16 @@ import StyledButton from 'components/Shared/Styled/StyledButton';
 import StyledTextField from 'components/Shared/Styled/StyledTextField';
 import StyledTypography from 'components/Shared/Styled/StyledTypography';
 import signUpValidationSchema from './SignUp.validate';
-import { SnackbarContext } from 'context/snackbarContext';
+// import { SnackbarContext } from 'context/snackbarContext';
 import useStyles from '../Modal.style';
 import { AuthContext } from 'context/authContext';
-import { signUpWithEmailAndPassword } from 'services/auth';
+// import { signUpWithEmailAndPassword } from 'services 'services/auth';
 import { modalTemplates } from 'constants/constants';
 
 function SignUp({ setModalTemplate }) {
   const classes = useStyles();
   const [loading, setLoading] = useState(false);
-  const { showSnackbar } = useContext(SnackbarContext);
+  // const { // showSnackbar } = useContext(SnackbarContext);
   const { setUserCredentials } = useContext(AuthContext);
   const { handleSubmit, errors, control } = useForm({
     resolver: yupResolver(signUpValidationSchema),
@@ -30,21 +30,21 @@ function SignUp({ setModalTemplate }) {
 
   const onSubmit = (values) => {
     setLoading(true);
-    signUpWithEmailAndPassword(values)
-      .then(() => {
-        setLoading(false);
-        showSnackbar('You are successfully registered', 'success');
-        setUserCredentials({ email: values.email, password: values.password });
-        setModalTemplate(modalTemplates.enterCode);
-      })
-      .catch((error) => {
-        setLoading(false);
-        if (error.response.status === 422) {
-          showSnackbar('User already exists', 'error');
-        } else {
-          showSnackbar('Somewthing went wrong', 'error');
-        }
-      });
+    // signUpWithEmailAndPassword(values)
+    //   .then(() => {
+    //     setLoading(false);
+    //     // showSnackbar('You are successfully registered', 'success');
+    //     setUserCredentials({ email: values.email, password: values.password });
+    //     setModalTemplate(modalTemplates.enterCode);
+    //   })
+    //   .catch((error) => {
+    //     setLoading(false);
+    //     if (error.response.status === 422) {
+    //       // showSnackbar('User already exists', 'error');
+    //     } else {
+    //       // showSnackbar('Somewthing went wrong', 'error');
+    //     }
+    //   });
   };
 
   return (

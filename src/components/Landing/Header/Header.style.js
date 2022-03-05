@@ -17,7 +17,7 @@ export default makeStyles((theme) => ({
   bar: {
     paddingTop: '10px',
     paddingBottom: '10px',
-    background: 'transparent',
+    background: theme.palette.white,
     display: 'flex',
     justifyContent: 'center',
   },
@@ -63,7 +63,7 @@ export default makeStyles((theme) => ({
     overflow: 'hidden',
   },
   link: {
-    color: '#fff',
+    color: theme.palette.spaceBlue,
     marginRight: '28px',
     cursor: 'pointer',
     '&:hover': {

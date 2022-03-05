@@ -60,7 +60,7 @@ function App() {
           <Route path="/tutor-application" component={TutorApplicationLayout} />
           <Route path="/student-application" component={StudentApplicationLayout} />
 
-          <Redirect from="*" to="/404" />
+          {/* <Redirect from="*" to="/404" /> */}
         </Switch>
       </Router>
     </BrowserRouter>

@@ -5,16 +5,16 @@ import { CircularProgress } from '@material-ui/core';
 import StyledButton from 'components/Shared/Styled/StyledButton';
 import StyledTextField from 'components/Shared/Styled/StyledTextField';
 import contactSupportValidationSchema from './ContactSupport.validate';
-import { SnackbarContext } from 'context/snackbarContext';
+// import { SnackbarContext } from 'context/snackbarContext';
 import useStyles from '../Modal.style';
 import { AuthContext } from 'context/authContext';
-import { sendEmailToAdmin } from 'services/support';
+// import { sendEmailToAdmin } from 'services 'services/support';
 
 function ContactSupport({ closeModal }) {
   const classes = useStyles();
   const [submitting, setSubmitting] = useState(false);
   const { user } = useContext(AuthContext);
-  const { showSnackbar } = useContext(SnackbarContext);
+  // const { // showSnackbar } = useContext(SnackbarContext);
   const { handleSubmit, errors, control } = useForm({
     resolver: yupResolver(contactSupportValidationSchema(user)),
     defaultValues: {
@@ -26,23 +26,23 @@ function ContactSupport({ closeModal }) {
 
   const onSubmit = (values) => {
     setSubmitting(true);
-    sendEmailToAdmin({
-      data: {
-        email: user ? user.user.email : values.email,
-        subject: values.subject,
-        message: values.message,
-      },
-    })
-      .then(() => {
-        showSnackbar('Support request delivered', 'success');
-        setSubmitting(false);
-        closeModal();
-      })
-      .catch(() => {
-        showSnackbar('Something went wrong', 'error');
-        setSubmitting(false);
-        closeModal();
-      });
+    // sendEmailToAdmin({
+    //   data: {
+    //     email: user ? user.user.email : values.email,
+    //     subject: values.subject,
+    //     message: values.message,
+    //   },
+    // })
+    //   .then(() => {
+    //     // showSnackbar('Support request delivered', 'success');
+    //     setSubmitting(false);
+    //     closeModal();
+    //   })
+    //   .catch(() => {
+    //     // showSnackbar('Something went wrong', 'error');
+    //     setSubmitting(false);
+    //     closeModal();
+    //   });
   };
 
   return (

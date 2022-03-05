@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { SnackbarContext } from 'context/snackbarContext';
+// import { SnackbarContext } from 'context/snackbarContext';
 import { calendlyEvents } from 'constants/constants';
 import { Box, CircularProgress, makeStyles } from '@material-ui/core';
 
@@ -38,7 +38,7 @@ const calendly = `<div
 
 function RequestDemo({ closeModal }) {
   const classes = useStyles();
-  const { showSnackbar } = useContext(SnackbarContext);
+  // const { // showSnackbar } = useContext(SnackbarContext);
   const [loading, setLoading] = useState(true);
 
   setTimeout(() => {
@@ -50,7 +50,7 @@ function RequestDemo({ closeModal }) {
     window.addEventListener('message', (e) => {
       if (isCalendlyEvent(e)) {
         if (e.data.event === calendlyEvents.event_scheduled) {
-          showSnackbar('You have scheduled an event, check your email', 'success');
+          // showSnackbar('You have scheduled an event, check your email', 'success');
           closeModal();
         }
       }
