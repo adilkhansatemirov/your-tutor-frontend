@@ -3,7 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useHistory } from 'react-router-dom';
 import { CircularProgress } from '@material-ui/core';
-// import { SnackbarContext } from 'context/snackbarContext';
+import { SnackbarContext } from 'context/snackbarContext';
 import { AuthContext } from 'context/authContext';
 
 import StyledButton from 'components/Shared/Styled/StyledButton';
@@ -18,7 +18,7 @@ function EnterCode({ closeModal }) {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
   const { userCredentials, setUser } = useContext(AuthContext);
-  // const { // showSnackbar } = useContext(SnackbarContext);
+  const { showSnackbar } = useContext(SnackbarContext);
   const { handleSubmit, errors, control } = useForm({
     resolver: yupResolver(
       Yup.object().shape({
@@ -37,25 +37,25 @@ function EnterCode({ closeModal }) {
         signInWithEmailAndPassword(userCredentials)
           .then(({ data }) => {
             setUser(data);
-            const freelancerDetail = data.freelancer_detail;
+            const tutorDetail = data.tutor_detail;
             setLoading(false);
             closeModal();
-            if (freelancerDetail.qualified) {
-              history.push('/freelancer/dashboard');
-            } else if (freelancerDetail.interview_scheduled) {
-              history.push('/freelancer-application/done');
+            if (tutorDetail.qualified) {
+              history.push('/tutor/dashboard');
+            } else if (tutorDetail.interview_scheduled) {
+              history.push('/tutor-application/done');
             } else {
-              history.push('/freelancer-application/resume');
+              history.push('/tutor-application/resume');
             }
-            // showSnackbar('You have successfully logged in', 'success');
+            showSnackbar('You have successfully logged in', 'success');
           })
           .catch(() => {
             setLoading(false);
-            // showSnackbar('Something went wrong', 'error');
+            showSnackbar('Something went wrong', 'error');
           });
       })
       .catch((error) => {
-        // showSnackbar(error.response.data.error, 'error');
+        showSnackbar(error.response.data.error, 'error');
       });
   };
 

@@ -16,7 +16,7 @@ function Modal({ template, open, closeModal, setModalTemplate }) {
   const renderHeaderText = (template) => {
     switch (template) {
       case modalTemplates.signUp:
-        return 'Join the InHome Accountants';
+        return 'Join the YourTutor';
       case modalTemplates.enterCode:
         return 'Enter Code';
       case modalTemplates.requestDemo:

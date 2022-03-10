@@ -12,6 +12,11 @@ import TutorLayout from 'components/Tutor/TutorLayout';
 
 import TutorApplicationLayout from 'components/TutorApplication/TutorApplicationLayout';
 import StudentApplicationLayout from 'components/StudentApplication/StudentApplicationLayout';
+import CheckEmail from 'components/Auth/CheckEmail/CheckEmail';
+import EnterCode from 'components/Auth/EnterCode/EnterCode';
+import ForgotPassword from 'components/Auth/ForgotPassword/ForgotPassword';
+import ResetPassword from 'components/Auth/ResetPassword/ResetPassword';
+import SignIn from 'components/Auth/SignIn/SignIn';
 
 const useStyles = makeStyles(() => ({
   '@global': {
@@ -52,6 +57,12 @@ function App() {
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/404" component={NotFound} />
+
+          <Route path="/check-email" component={CheckEmail} />
+          <Route path="/enter-code" component={EnterCode} />
+          <Route path="/forgot-password" component={ForgotPassword} />
+          <Route path="/reset-password" component={ResetPassword} />
+          <Route path="/sign-in" component={SignIn} />
 
           <Route path="/admin" component={AdminLayout} />
           <Route path="/student" component={StudentLayout} />

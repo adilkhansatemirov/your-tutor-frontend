@@ -2,20 +2,20 @@ import React, { useContext } from 'react';
 import { Drawer, List, ListItem, Box } from '@material-ui/core';
 import clsx from 'clsx';
 import useStyle from './Sidebar.style';
-// import { logout } from 'services 'services/auth';
+import { logout } from 'services/auth';
 import { useLocation, useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import logoWhite from 'assets/icons/logo.png';
 import logoutIcon from 'assets/icons/logout.png';
 import StyledTypography from 'components/Shared/Styled/StyledTypography';
-// import { AuthContext } from 'context/authContext';
+import { AuthContext } from 'context/authContext';
 
 function Sidebar({ sidebarItems }) {
   const classes = useStyle();
   const { pathname } = useLocation();
   const history = useHistory();
-  // const { setUser } = useContext(AuthContext);
+  const { setUser } = useContext(AuthContext);
 
   const isActive = (path) => pathname.includes(path);
 
@@ -55,8 +55,8 @@ function Sidebar({ sidebarItems }) {
           button
           className={classes.listItem}
           onClick={() => {
-            // logout();
-            // setUser(null);
+            logout();
+            setUser(null);
             history.push('/');
           }}
         >
