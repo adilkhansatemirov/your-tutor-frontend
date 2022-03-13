@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core';
+import ornament1Img from 'assets/images/ornament1.png';
 
 export default makeStyles((theme) => ({
   grow: {
@@ -12,7 +13,9 @@ export default makeStyles((theme) => ({
     overflow: 'hidden',
     paddingTop: '120px',
     paddingBottom: '45px',
-    maxWidth: '1200px',
+    maxWidth: '1600px',
+    backgroundColor: '#fff',
+    backgroundImage: ` url(${ornament1Img})` ,
     [theme.breakpoints.down('xs')]: {
       paddingTop: '48px',
       paddingBottom: 0,
@@ -20,19 +23,7 @@ export default makeStyles((theme) => ({
   },
   title: {
     textAlign: 'center',
-  },
-  stick: {
-    backgroundColor: theme.palette.skyBlue.main,
-    width: '52px',
-    height: '3px',
-    marginTop: '14px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-  project_duration: {
-    marginTop: '17px',
-    textAlign: 'center',
-    marginBottom: '57px',
+    color: '#0F2C4C',
   },
   number: {
     backgroundColor: theme.palette.spaceBlue,

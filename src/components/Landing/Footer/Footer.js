@@ -19,20 +19,19 @@ function Header() {
           <Box className={classes.grow} />
           <Box className={classes.contactsItem}>
             <Box className={classes.iconContainer}>
-              <img className={classes.contactsIcon} src={mailIcon} alt="mail" />
+            <img className={classes.contactsIcon} src={phoneIcon} alt="phone" />
             </Box>
-            <StyledTypography fontFamily="Poppins" className={classes.text}>
-              <a target="_blank" rel="noreferrer" href="mailto:hello@inhomeaccountants.com">
-                hello@yourtutor.com
-              </a>
+            <StyledTypography fontFamily="Roboto" className={classes.text}>
+            <a href="tel:+77075894543">+77075894543</a>
             </StyledTypography>
           </Box>
+
           <Box className={classes.contactsItem}>
             <Box className={classes.iconContainer}>
               <img className={classes.contactsIcon} src={phoneIcon} alt="phone" />
             </Box>
-            <StyledTypography fontFamily="Poppins" className={classes.text}>
-              <a href="tel:(814) 853-3535">(814) 853-3535</a>
+            <StyledTypography fontFamily="Roboto" className={classes.text}>
+              <a href="tel:+77075894443">+77075894443</a>
             </StyledTypography>
           </Box>
           <Box className={classes.contactsItem}>

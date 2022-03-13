@@ -51,7 +51,7 @@ function Header({ openModal, setModalTemplate, isAuthenticated, redirectTo, load
                 openModal();
               }}
             >
-              Hire Accountants
+              Apply as a Student
             </StyledTypography>
             <Divider className={classes.divider} />
             <StyledTypography
@@ -63,7 +63,7 @@ function Header({ openModal, setModalTemplate, isAuthenticated, redirectTo, load
                 openModal();
               }}
             >
-              Apply As An Accountant
+              Apply as a Tutor
             </StyledTypography>
             <Divider className={classes.divider} />
             {/* <StyledTypography
@@ -131,7 +131,7 @@ function Header({ openModal, setModalTemplate, isAuthenticated, redirectTo, load
                   openModal();
                 }}
               >
-                Hire Accountants
+                Apply as a Student
               </StyledTypography>
               <StyledTypography
                 className={classes.link}
@@ -142,7 +142,7 @@ function Header({ openModal, setModalTemplate, isAuthenticated, redirectTo, load
                   openModal();
                 }}
               >
-                Apply As An Accountant
+                Apply as a Tutor
               </StyledTypography>
               {/* <StyledTypography
                 className={classes.link}
@@ -163,11 +163,14 @@ function Header({ openModal, setModalTemplate, isAuthenticated, redirectTo, load
       </ElevationScroll>
       <Box className={classes.main}>
         <Container>
-          <StyledTypography fontSize={33} fontFamily="Poppins" type="h1" className={classes.title} fontWeight="bold">
-            YourTutor
+          <StyledTypography fontSize={12} fontFamily="Poppins" className={classes.title1} fontWeight="Regular">
+           The Kazakhstani educational platform
           </StyledTypography>
-          <StyledTypography fontSize={14} fontFamily="Poppins" className={classes.projectDuration}>
-            Connect. Study. Succeed.
+          <StyledTypography fontSize={33} fontFamily="Poppins" type="h1" className={classes.title} fontWeight="SemiBold">
+            YourTutor is a platform <br/>to connect and succeed
+          </StyledTypography>
+          <StyledTypography fontSize={13} fontFamily="Poppins" className={classes.projectDuration}>
+           Connect and study via our website to succeed
           </StyledTypography>
           <Box className={classes.buttonGroup}>
             <StyledButton
@@ -179,7 +182,7 @@ function Header({ openModal, setModalTemplate, isAuthenticated, redirectTo, load
                 openModal();
               }}
             >
-              Hire Accountants
+              Hire a tutor
             </StyledButton>
             <StyledButton
               className={clsx(classes.oulined, classes.button)}
@@ -190,7 +193,7 @@ function Header({ openModal, setModalTemplate, isAuthenticated, redirectTo, load
                 openModal();
               }}
             >
-              Apply as an Accountant
+              Apply as a tutor
             </StyledButton>
           </Box>
         </Container>

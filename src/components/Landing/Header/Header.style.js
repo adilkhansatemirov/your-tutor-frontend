@@ -58,9 +58,10 @@ export default makeStyles((theme) => ({
     opacity: 0.2,
   },
   wrapper: {
-    backgroundImage: `linear-gradient(180deg, #002B5C 0%, rgba(0, 43, 92, 0.89) 100%), url(${backgroundImg})`,
-    paddingBottom: '133px',
-    overflow: 'hidden',
+    backgroundImage: ` url(${backgroundImg})`,
+    paddingBottom: '250px',
+    paddingLeft: '100px',
+    //overflow: 'hidden',
   },
   link: {
     color: theme.palette.spaceBlue,
@@ -75,6 +76,8 @@ export default makeStyles((theme) => ({
   },
   loginButton: {
     minWidth: '69px',
+    borderRadius:'17px',
+    color:'#2F3D40',
     [theme.breakpoints.down('xs')]: {
       minWidth: '65px',
       height: '34px',
@@ -84,20 +87,23 @@ export default makeStyles((theme) => ({
     overflow: 'hidden',
     paddingTop: '160px',
   },
+  title1: {
+    textAlign: 'left',
+    color: '#C4C4C4',
+  },
   title: {
-    textAlign: 'center',
-    color: '#fff',
+    textAlign: 'left',
+    color: '#0F2C4C',
   },
   projectDuration: {
-    marginTop: '5px',
-    textAlign: 'center',
-    color: '#fff',
-    textTransform: 'uppercase',
+    marginTop: '7px',
+    textAlign: 'left',
+    color: '#2F3D40',
   },
   buttonGroup: {
     marginTop: '43px',
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'left',
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
       alignItems: 'center',
@@ -108,6 +114,8 @@ export default makeStyles((theme) => ({
     '& span': {
       fontSize: '14px',
     },
+    borderRadius:'17px',
+    color: '#2F3D40',
   },
   oulined: {
     marginLeft: '15px',

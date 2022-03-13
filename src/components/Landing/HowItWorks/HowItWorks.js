@@ -26,23 +26,22 @@ function HowItWorks() {
   return (
     <Box className={classes.main}>
       <Container className={classes.container}>
-        <StyledTypography fontFamily="Poppins" className={classes.title} fontWeight="bold" fontSize={33} type="h1">
-          How It Works
+        <StyledTypography fontFamily="Roboto" className={classes.title} fontWeight="medium" fontSize={33} type="h1">
+          How it works?
         </StyledTypography>
-        <Box className={classes.stick} />
         <List style={{ display: 'flex' }}>
           {list1.map((item) => (
             <ListItem className={classes.listItem} key={item.id} disableGutters>
-              <StyledTypography fontFamily="Poppins" className={classes.number}>
+              <StyledTypography fontFamily="Roboto" className={classes.number}>
                 {item.number}
               </StyledTypography>
               <Box className={classes.itemInfo}>
                 <StyledTypography
-                  fontFamily="Poppins"
-                  fontSize={30}
+                  fontFamily="Roboto"
+                  fontSize={20}
                   className={classes.itemTitle}
                   type="h2"
-                  fontWeight="bold"
+                  fontWeight="Regular"
                 >
                   {item.title}
                 </StyledTypography>

@@ -16,7 +16,7 @@ export default makeStyles((theme) => ({
       paddingBottom: '15px',
       display: 'flex',
       justifyContent: 'center',
-      backgroundColor: theme.palette.spaceBlue,
+      backgroundColor: '#2F3D40',
     },
     text: {
       color: '#fff',
