@@ -8,22 +8,46 @@ const getVariant = (variant) => {
       return {
         backgroundColor: theme.palette.light.main,
         border: 'none',
-        hoverBackground: theme.palette.light.dark,
+        hoverBackground: 'white',
         color: theme.palette.black,
       };
+
+      case 'primary':
+        return{
+          borderRadius: '15px',
+          boxShadow: '0px 10px 13px rgba(15, 44, 76, 0.13)', 
+
+
+        };
+
+        case 'yellow':
+          return {
+            backgroundColor: '#FFC739',
+            border: 'none',
+            boxShadow: '0px 10px 13px rgba(15, 44, 76, 0.13)',
+            color: 'black',
+          };
+
     case 'dark':
       return {
-        backgroundColor: theme.palette.dark.main,
+        backgroundColor: 'theme.palette.dark.main',
         border: 'none',
         hoverBackground: theme.palette.dark.dark,
         color: theme.palette.white,
+        
       };
+    
+
     default:
       return {
-        backgroundColor: theme.palette.light.main,
-        border: 'none',
-        hoverBackground: theme.palette.light.dark,
-        color: theme.palette.black,
+        backgroundColor: '#FFC739',
+        borderRadius: '20px',
+        hoverBackground: 'rgba(196, 196, 196, 0.24)',
+        color: '#2F3D40',
+        fontFamily: 'Roboto',
+        fontSize: '18',
+
+
       };
   }
 };

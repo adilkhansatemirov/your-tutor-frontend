@@ -1,9 +1,9 @@
 import { Checkbox, withStyles } from '@material-ui/core';
 export default withStyles((theme) => ({
   root: {
-    color: theme.palette.bluishBlack,
+    color: 'pink',
     '&$checked': {
-      color: theme.palette.bluishBlack,
+      color: 'pink',
     },
   },
   checked: {},

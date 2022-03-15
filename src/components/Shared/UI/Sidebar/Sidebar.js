@@ -29,10 +29,10 @@ function Sidebar({ sidebarItems }) {
       }}
     >
       <Box
-        style={{ width: '100%', background: 'white', display: 'flex', alignItems: 'center' }}
+        style={{ width: '100%', background: '#E8EDF7', display: 'flex', alignItems: 'center' }}
       >
         <img src={logoWhite} className={classes.logo} alt="inhome-logo" />
-        <StyledTypography fontSize={'20px'} fontWeight="black">You Tutor</StyledTypography>
+        <StyledTypography fontSize={'0'} fontWeight="black"></StyledTypography>
       </Box>
       <List disablePadding className={classes.list}>
         {sidebarItems.map((item, index) => (

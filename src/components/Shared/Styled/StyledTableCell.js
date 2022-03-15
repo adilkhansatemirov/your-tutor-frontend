@@ -12,8 +12,8 @@ export default withStyles((theme) => ({
     },
   },
   head: {
-    backgroundColor: `${theme.palette.black}`,
-    color: theme.palette.white,
+    backgroundColor: `#2F3D40`,
+    color: 'white',
     fontWeight: 'bold',
   },
   body: {

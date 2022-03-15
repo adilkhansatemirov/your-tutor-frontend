@@ -94,11 +94,11 @@ function ClientList() {
     <>
       <PageHeader>
         <Box display="flex" justifyContent="space-between">
-          <StyledTypography fontFamily="Rubik" fontWeight="bold" fontSize={20}>
-            Clients
+          <StyledTypography fontFamily="Roboto" fontWeight="bold" fontSize={18}>
+            TUTORS
           </StyledTypography>
           <StyledButton size="small" textTransform="uppercase" variant="light-blue" onClick={handleOpenNewClientModal}>
-            Add client
+            Add resume
           </StyledButton>
         </Box>
       </PageHeader>
@@ -121,7 +121,7 @@ function ClientList() {
                 </InputAdornment>
               ),
             }}
-            fontFamily="Poppins"
+            fontFamily="Roboto"
           />
           <FormControl variant="outlined">
             <StyledSelect

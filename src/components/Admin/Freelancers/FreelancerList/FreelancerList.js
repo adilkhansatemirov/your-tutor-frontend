@@ -83,8 +83,8 @@ function FreelancerList() {
     <>
       <PageHeader>
         <Box display="flex" justifyContent="space-between">
-          <StyledTypography fontFamily="Rubik" fontWeight="bold" fontSize={20}>
-            Freelancers
+          <StyledTypography fontFamily="Roboto" fontWeight="bold" fontSize={20}>
+            Akerke
           </StyledTypography>
         </Box>
       </PageHeader>

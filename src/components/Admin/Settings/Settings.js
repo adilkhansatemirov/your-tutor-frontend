@@ -50,8 +50,8 @@ function Settings() {
     <>
       <PageHeader>
         <Box display="flex" justifyContent="space-between">
-          <StyledTypography fontFamily="Rubik" fontWeight="bold" fontSize={20}>
-            Settings
+          <StyledTypography fontFamily="Roboto" fontWeight="bold" fontSize={20}>
+            SETTINGS
           </StyledTypography>
           <StyledButton
             onClick={handleSubmit(onSubmit)}

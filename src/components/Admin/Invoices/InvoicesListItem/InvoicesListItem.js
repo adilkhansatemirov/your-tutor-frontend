@@ -48,7 +48,7 @@ function InvoiceListItem({ invoice }) {
     <StyledTableRow>
       <StyledTableCell>
         <Link to={`/admin/invoices/${invoice.id}`} style={{ textDecoration: 'none' }}>
-          <StyledTypography color="skyBlue" fontSize={12} fontWeight="bold">
+          <StyledTypography color="tomatoRed" fontSize={12} fontWeight="bold">
             {moment(invoice.invoice_date).format('MMMM DD, YYYY')}
           </StyledTypography>
         </Link>

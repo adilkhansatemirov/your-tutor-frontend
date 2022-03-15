@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '5px',
     marginBottom: '10px',
     '&:nth-child(even)': {
-      backgroundColor: ({ red }) => (red ? theme.palette.tomatoRed.pale : theme.palette.coldWhite),
+      backgroundColor: '#E8EDF7',
     },
   },
 }));

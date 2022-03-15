@@ -24,12 +24,12 @@ import AuthLoader from 'components/Shared/Utils/AuthLoader';
 // import { AuthContext } from 'context/authContext';
 import PaymentsList from './Payments/PaymentsList';
 
-import projectsIcon from 'assets/icons/calendar.png';
-import invoicesIcon from 'assets/icons/calendar.png';
-import paymentIcon from 'assets/icons/calendar.png';
-import timesheetsIcon from 'assets/icons/calendar.png';
-import clientsIcon from 'assets/icons/calendar.png';
-import freelancersIcon from 'assets/icons/calendar.png';
+import projectsIcon from 'assets/icons/Lessons.png';
+import invoicesIcon from 'assets/icons/Invoices.png';
+import paymentIcon from 'assets/icons/Timesheets.png';
+import timesheetsIcon from 'assets/icons/Students.png';
+import clientsIcon from 'assets/icons/Tutors.png';
+import freelancersIcon from 'assets/icons/Settings.png';
 import settingsIcon from 'assets/icons/calendar.png';
 
 const useStyles = makeStyles(() => ({
@@ -39,7 +39,7 @@ const useStyles = makeStyles(() => ({
   content: {
     flex: 1,
     paddingLeft: '30px',
-    paddingRight: '60px',
+    paddingRight: '20px',
     position: 'relative',
   },
 }));
@@ -54,8 +54,8 @@ function AdminLayout() {
 
   const sidebarItems = [
     {
-      name: 'Projects',
-      to: '/admin/projects',
+      name: 'Lessons',
+      to: '/admin/lessons',
       icon: projectsIcon,
     },
     {
@@ -64,30 +64,30 @@ function AdminLayout() {
       icon: invoicesIcon,
     },
     {
-      name: 'Payments',
-      to: '/admin/payments',
-      icon: paymentIcon,
-    },
-    {
       name: 'Timesheets',
       to: '/admin/timesheets',
-      icon: timesheetsIcon,
+      icon: paymentIcon,
     },
     {
       name: 'Students',
       to: '/admin/students',
-      icon: clientsIcon,
+      icon: timesheetsIcon,
     },
     {
       name: 'Tutors',
       to: '/admin/tutors',
-      icon: freelancersIcon,
+      icon: clientsIcon,
     },
     {
       name: 'Settings',
       to: '/admin/settings',
-      icon: settingsIcon,
+      icon: freelancersIcon,
     },
+    // {
+    //   name: 'Settings',
+    //   to: '/admin/settings',
+    //   icon: settingsIcon,
+    // },
   ];
 
   useEffect(() => {
@@ -126,7 +126,7 @@ function AdminLayout() {
           <Sidebar sidebarItems={sidebarItems} />
           <main className={classes.content}>
             <Switch>
-              <Route exact path="/admin/projects" component={ProjectsList} />
+              <Route exact path="/admin/lessons" component={ProjectsList} />
               {/* <Route exact path="/admin/projects/new" component={NewProject} /> */}
               {/* <Route exact path="/admin/projects/:projectId" component={ProjectPage} /> */}
               {/* <Route exact path="/admin/projects/:projectId/edit" component={EditProjectWrapper} /> */}
@@ -135,14 +135,14 @@ function AdminLayout() {
               <Route exact path="/admin/invoices" component={InvoicesList} />
               {/* <Route exact path="/admin/invoices/:invoiceId" component={InvoicePageWrapper} /> */}
 
-              <Route exact path="/admin/payments" component={PaymentsList} />
+              <Route exact path="/admin/timesheets" component={PaymentsList} />
 
-              <Route exact path="/admin/timesheets" component={TimesheetsList} />
+              <Route exact path="/admin/students" component={TimesheetsList} />
               {/* <Route exact path="/admin/timesheets/:timesheetId" component={TimesheetPage} /> */}
 
-              <Route exact path="/admin/students" component={ClientList} />
+              <Route exact path="/admin/tutors" component={ClientList} />
 
-              <Route exact path="/admin/tutors" component={FreelancerList} />
+              <Route exact path="/admin/settings " component={FreelancerList} />
               {/* <Route exact path="/admin/freelancers/:freelancerId" component={FreelancerPage} />
               <Route exact path="/admin/freelancers/:freelancerId/edit" component={EditFreelancer} /> */}
 

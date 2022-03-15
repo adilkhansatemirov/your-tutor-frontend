@@ -83,12 +83,12 @@ function TimesheetsList() {
     <>
       <PageHeader>
         <Box display="flex" justifyContent="space-between">
-          <StyledTypography fontFamily="Rubik" fontWeight="bold" fontSize={20}>
-            Timesheets
+          <StyledTypography fontFamily="Roboto" fontWeight="bold" fontSize={20}>
+            STUDENTS
           </StyledTypography>
           <StyledTextField
             small
-            placeholder="Search timesheets..."
+            placeholder="Search student..."
             // onChange={handleSearch}
             InputProps={{
               startAdornment: (

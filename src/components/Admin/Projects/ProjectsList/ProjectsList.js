@@ -91,12 +91,12 @@ function ProjectsList() {
     <>
       <PageHeader>
         <Box display="flex" justifyContent="space-between">
-          <StyledTypography fontFamily="Rubik" fontWeight="bold" fontSize={20}>
-            Projects
+          <StyledTypography fontFamily="Roboto" fontWeight="bold" fontSize={20}>
+            LESSONS
           </StyledTypography>
-          <StyledButton size="small" textTransform="uppercase" variant="light-blue" onClick={handleCreateProject}>
+          <StyledButton style={{borderRadius: 20, boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)' }} textTransform="uppercase" variant="yellow" onClick={handleCreateProject}>
             <StyledTypography fontSize={10} fontWeight="bold">
-              New Project
+              Create a lesson
             </StyledTypography>
           </StyledButton>
         </Box>

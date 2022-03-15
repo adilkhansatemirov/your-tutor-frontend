@@ -7,13 +7,14 @@ export default makeStyles((theme) => ({
     width: DRAWER_WIDTH,
   },
   drawerPaper: {
-    backgroundColor: '#043465',
+    backgroundColor: '#E8EDF7',
     width: DRAWER_WIDTH,
   },
   logo: {
-    height: '70px',
+    height: '100px',
     marginTop: '22px',
-    marginLeft: '20px',
+    marginLeft: '60px',
+     backgroundColor: '#E8EDF7',
   },
   list: {
     marginTop: '40px',
@@ -37,17 +38,20 @@ export default makeStyles((theme) => ({
   listItem: {
     position: 'relative',
     borderRight: '4px solid transparent',
-    color: '#fff',
+    color: '#0F2C4C',
+    font: 'roboto',
+    weight: '400px',
+    size: "24px"
   },
   listItemActive: {
-    backgroundColor: 'rgba(0,0,0,1)',
+    backgroundColor: 'rgba(196, 196, 196, 0.24)',
     fontWeight: 700,
-    borderRight: `5px solid rgba(24,145,218,1)`,
+    borderRight: `3.87px solid #0F2C4C`,
     '&:hover': {
-      backgroundColor: 'rgba(0,0,0,1)',
+      backgroundColor: 'rgba(196, 196, 196, 0.24)',
     },
     '& $iconContainer': {
-      backgroundColor: 'rgba(1,44,93,1)',
+      backgroundColor: '#E8EDF7',
     },
   },
   badge: {
@@ -56,8 +60,8 @@ export default makeStyles((theme) => ({
     top: '50%',
     transform: 'translateY(-50%)',
     backgroundColor: '#1891DA',
-    color: '#fff',
-    fontFamily: 'Poppins',
+    color: '#fff'   ,
+    fontFamily: 'R',
     width: '20px',
     height: '20px',
     textAlign: 'center',

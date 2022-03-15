@@ -80,12 +80,12 @@ function PaymentsList() {
     <>
       <PageHeader>
         <Box display="flex" justifyContent="space-between">
-          <StyledTypography fontFamily="Rubik" fontWeight="bold" fontSize={20}>
-            Payments
+          <StyledTypography fontFamily="Roboto" fontWeight="bold" fontSize={20}>
+            TIMESHEETS
           </StyledTypography>
           <StyledTextField
             small
-            placeholder="Search payments..."
+            placeholder="Search timesheets..."
             // onChange={handleSearch}
             InputProps={{
               startAdornment: (

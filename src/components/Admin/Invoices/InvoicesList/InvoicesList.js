@@ -83,8 +83,8 @@ function InvoicesList() {
     <>
       <PageHeader>
         <Box display="flex" justifyContent="space-between">
-          <StyledTypography fontFamily="Rubik" fontWeight="bold" fontSize={20}>
-            Invoices
+          <StyledTypography fontFamily="Roboto" fontWeight="bold" fontSize={20}>
+            INVOICES
           </StyledTypography>
           <StyledTextField
             small
@@ -97,7 +97,7 @@ function InvoicesList() {
                 </InputAdornment>
               ),
             }}
-            fontFamily="Poppins"
+            fontFamily="Roboto"
           />
         </Box>
       </PageHeader>
