@@ -11,8 +11,8 @@ export default makeStyles((theme) => ({
   },
   container: {
     overflow: 'hidden',
-    paddingTop: '68px',
-    paddingBottom: '45px',
+    paddingTop: '66.82px',
+    paddingBottom: '80px',
     maxWidth: '1600px',
     backgroundColor: '#fff',
     backgroundImage: ` url(${ornament1Img})` ,
@@ -26,35 +26,29 @@ export default makeStyles((theme) => ({
     textAlign: 'center',
     color: '#0F2C4C',
   },
-  number: {
-    backgroundColor: theme.palette.spaceBlue,
-    color: theme.palette.silverGray.main,
-    minWidth: '76px',
-    height: '76px',
-    borderRadius: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '40px',
-    fontWeight: 'bold',
-    [theme.breakpoints.down('xs')]: {
-      marginTop: '10px',
-      minWidth: '34px',
-      height: '34px',
-      fontSize: '20px',
-    },
-  },
   listItem: {
-    marginBottom: '47px',
+    marginBottom: '0px',
     flexDirection: 'column',
     [theme.breakpoints.down('xs')]: {
       alignItems: 'flex-start',
     },
   },
+  iconContainer:{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  itemIcon: {
+    marginTop:'32px',
+    width: '170px',
+    [theme.breakpoints.down('xs')]: {
+      width: '30px',
+    },
+  },
   itemInfo: {
-    marginLeft: '21px',
+    margin: '0',
   },
   itemTitle: {
-    marginBottom: '5px',
+    marginTop:'24px',
   },
 }));

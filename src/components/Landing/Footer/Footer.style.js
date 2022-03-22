@@ -1,94 +1,99 @@
 import { makeStyles } from '@material-ui/core';
 
 export default makeStyles((theme) => ({
-    grow: {
-      flexGrow: 1,
+  main: {
+    backgroundColor: theme.palette.white,
+  },
+  container:{
+    //paddingTop: '0',
+    //paddingBottom: '0',
+   // display: 'flex',
+    //flexWrap: 'wrap',
+    //justifyContent: 'center',
+  },
+  contacts: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginTop:'20px',
+    marginButtom:'11px',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
     },
-    logo: {
-      width: '139px',
-      height: '68px',
-      [theme.breakpoints.down('sm')]: {
-        marginBottom: '10px',
-      },
+  },
+  logo: {
+    width: '316px',
+    height: '300px',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '10px',
     },
-    main: {
-      paddingTop: '20px',
-      paddingBottom: '15px',
-      display: 'flex',
-      justifyContent: 'center',
-      backgroundColor: '#2F3D40',
+  },
+  contactsMain:{
+    marginTop:'85px',
+  },
+  contactsText:{
+    color:'#0F2C4C',
+  },
+  text: {
+    textUnderlineOffset:'4px',
+    color: '#000000',
+    '& a': {
+      color: '#000000',
+      textDecoration: 'none',
     },
-    text: {
-      color: '#fff',
-      '& a': {
-        color: '#fff',
-        textDecoration: 'none',
-      },
-      '& a:hover': {
-        textDecoration: 'underline',
-      },
+    '& a:hover': {
+      textDecoration: 'underline',
     },
-    contacts: {
-      display: 'flex',
-      paddingBottom: '15px',
-      [theme.breakpoints.down('sm')]: {
-        flexDirection: 'column',
-      },
+  },
+  contactsInfo:{
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop:'32px',
+  },
+  contactsItem: {
+    display: 'grid',
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: 0,
+      marginTop: '15px',
     },
-    contactsItem: {
-      display: 'flex',
-      alignItems: 'center',
-      marginLeft: '24px',
-      [theme.breakpoints.down('sm')]: {
-        marginLeft: 0,
-        marginTop: '15px',
-      },
+  },
+  iconContainer: {
+    display: 'flex',
+    marginRight: '4px',
+    marginTop:'8px',
+  },
+  contactsIcon: {
+    height: '24px',
+    width:'24.1px',
+  },
+
+
+  socialMediaContact: {
+    display: 'flex',
+    alignItems: 'center',
+    marginTop: '12px',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: 0,
+      marginTop: '15px',
     },
-    iconContainer: {
-      width: '20px',
-      marginRight: '8px',
-    },
-    contactsIcon: {
-      height: '17px',
-    },
-    divider: {
-      backgroundColor: '#fff',
-      opacity: '0.2',
-    },
-    links: {
-      display: 'flex',
-      alignItems: 'center',
-      flexWrap: 'wrap',
-      [theme.breakpoints.down('sm')]: {
-        marginBottom: '20px',
-      },
-    },
-    bottom: {
-      display: 'flex',
-      alignItems: 'center',
-      paddingTop: '15px',
-      [theme.breakpoints.down('sm')]: {
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        paddingTop: '30px',
-      },
-    },
-    linkItem: {
-      marginRight: '20px',
-      color: '#fff',
-      [theme.breakpoints.down('sm')]: {
-        marginBottom: '5px',
-      },
-    },
-    rights: {
-      color: '#fff',
-    },
-    sponsorLogo: {
-      width: '211px',
-      height: '29px',
-      marginRight: '20px',
-      [theme.breakpoints.down('sm')]: {
-        marginBottom: '10px',
-      },
-    },
+  },
+  socialsIconContainer: {
+    marginRight: '30px',
+  },
+  socialMediaIcon: {
+    width: '32px',
+    height: '32px',
+  },
+  
+  bottom: {
+    paddingTop: '30px',
+    paddingBottom: '37px',
+    margin:'0',
+    backgroundColor:'#2F3D40',
+  }, 
+
+  rights: {
+    textAlign: 'center',
+    color: '#FFFFFF',
+  },
   }));

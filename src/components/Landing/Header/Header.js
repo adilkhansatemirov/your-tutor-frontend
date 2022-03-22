@@ -163,20 +163,20 @@ function Header({ openModal, setModalTemplate, isAuthenticated, redirectTo, load
       </ElevationScroll>
       <Box className={classes.main}>
         <Container>
-          <StyledTypography fontSize={12} fontFamily="Poppins" className={classes.title1} fontWeight="Regular">
+          <StyledTypography fontSize={18} fontFamily="Roboto" className={classes.headline} fontWeight="Regular">
            The Kazakhstani educational platform
           </StyledTypography>
-          <StyledTypography fontSize={33} fontFamily="Poppins" type="h1" className={classes.title} fontWeight="SemiBold">
+          <StyledTypography fontSize={48} fontFamily="Roboto" type="h1" className={classes.title} fontWeight="SemiBold">
             YourTutor is a platform <br/>to connect and succeed
           </StyledTypography>
-          <StyledTypography fontSize={13} fontFamily="Poppins" className={classes.projectDuration}>
+          <StyledTypography fontSize={24} fontFamily="Roboto" className={classes.projectDuration}>
            Connect and study via our website to succeed
           </StyledTypography>
           <Box className={classes.buttonGroup}>
             <StyledButton
               className={classes.button}
               variant="yellow"
-              fontFamily="Poppins"
+              fontFamily="Roboto"
               onClick={() => {
                 setModalTemplate(modalTemplates.requestDemo);
                 openModal();
@@ -187,7 +187,7 @@ function Header({ openModal, setModalTemplate, isAuthenticated, redirectTo, load
             <StyledButton
               className={clsx(classes.oulined, classes.button)}
               variant="outlined-white"
-              fontFamily="Poppins"
+              fontFamily="Roboto"
               onClick={() => {
                 setModalTemplate(modalTemplates.signUp);
                 openModal();

@@ -88,7 +88,7 @@ export default makeStyles((theme) => ({
     overflow: 'hidden',
     paddingTop: '160px',
   },
-  title1: {
+  headline: {
     textAlign: 'left',
     color: '#C4C4C4',
   },

@@ -2,21 +2,24 @@ import { Box, List, ListItem, Container } from '@material-ui/core';
 import StyledTypography from 'components/Shared/Styled/StyledTypography';
 
 import useStyles from './HowItWorks.style';
+import signUp from 'assets/images/signUp.png';
+import findMatch from 'assets/images/findMatch.png';
+import book from 'assets/images/book.png';
 
 const list1 = [
   {
     id: 1,
-    number: 1, 
+    icon: signUp, 
     title: 'Sign Up',
   },
   {
     id: 2,
-    number: 2,
+    icon: findMatch,
     title: 'Find your match',
   },
   {
     id: 3,
-    number: 3,
+    icon: book,
     title: 'Learn/Teach',
   },
 ];
@@ -32,9 +35,9 @@ function HowItWorks() {
         <List style={{ display: 'flex' }}>
           {list1.map((item) => (
             <ListItem className={classes.listItem} key={item.id} disableGutters>
-              <StyledTypography fontFamily="Roboto" className={classes.number}>
-                {item.number}
-              </StyledTypography>
+              <Box className={classes.iconContainer}>
+              <img className={classes.itemIcon} src={item.icon} alt="item icon" />
+              </Box>
               <Box className={classes.itemInfo}>
                 <StyledTypography
                   fontFamily="Roboto"
