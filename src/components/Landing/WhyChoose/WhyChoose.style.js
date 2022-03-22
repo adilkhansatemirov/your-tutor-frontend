@@ -6,49 +6,34 @@ export default makeStyles((theme) => ({
   },
   main: {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
   },
   container: {
     overflow: 'hidden',
     paddingTop: '20px',
-    paddingBottom: '40px',
+    paddingBottom: '0px',
     maxWidth: '1600px',
     paddingLeft:'0px',
     backgroundColor: '#E8EDF7',
   },
   title: {
     textAlign: 'center',
+    marginBottom:'35px',
   },
   number: {
-   // backgroundColor: theme.palette.white,
-   // color: theme.palette.black.main,
-    minWidth: '70px',
-    height: '7px',
-    borderRadius: '50%',
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
     fontSize: '50px',
     fontWeight: 'Regular',
-    [theme.breakpoints.down('xs')]: {
-      marginTop: '10px',
-      minWidth: '34px',
-      height: '34px',
-      fontSize: '20px',
-    },
   },
   listItem: {
-    marginBottom: '47px',
-    paddingLeft:'225px',
-    [theme.breakpoints.down('xs')]: {
-      alignItems: 'flex-start',
-    },
+    marginBottom: '24px',
+    paddingLeft:'255px',
   },
   itemInfo: {
-    marginLeft: '25px',
+    marginLeft: '23px',
   },
   itemTitle: {
-    marginBottom: '3px',
+    marginBottom: '0px',
   },
 
 }));

@@ -22,7 +22,7 @@ function Header() {
             <img className={classes.contactsIcon} src={phoneIcon} alt="phone" />
             </Box>
             <StyledTypography fontFamily="Roboto" className={classes.text}>
-            <a href="tel:+77075894543">+77075894543</a>
+            <a href="tel:+77075894543">+77075894543</a> <br/>
             </StyledTypography>
           </Box>
 
@@ -34,6 +34,8 @@ function Header() {
               <a href="tel:+77075894443">+77075894443</a>
             </StyledTypography>
           </Box>
+
+
           <Box className={classes.contactsItem}>
             <Box className={classes.iconContainer}>
               <img className={classes.contactsIcon} src={locationIcon} alt="location" />

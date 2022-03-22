@@ -8,7 +8,7 @@ export default makeStyles((theme) => ({
   },
   container: {
     overflow: 'hidden',
-    paddingTop: '121px',
+    paddingTop: '80px',
     paddingBottom: '133px',
     [theme.breakpoints.down('xs')]: {
       paddingTop: '50px',

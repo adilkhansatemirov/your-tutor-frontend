@@ -11,11 +11,12 @@ export default makeStyles((theme) => ({
   },
   container: {
     overflow: 'hidden',
-    paddingTop: '120px',
+    paddingTop: '68px',
     paddingBottom: '45px',
     maxWidth: '1600px',
     backgroundColor: '#fff',
     backgroundImage: ` url(${ornament1Img})` ,
+    backgroundSize:'cover',
     [theme.breakpoints.down('xs')]: {
       paddingTop: '48px',
       paddingBottom: 0,

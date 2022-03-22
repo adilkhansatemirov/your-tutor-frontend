@@ -9,34 +9,34 @@ import useStyles from './WhyChoose.style';
 const list1 = [
   {
     id: 1,
-    number: 1,
+    number: '01',
     title: 'Verification required',
   },
   {
     id: 2,
-    number: 2,
+    number: '02',
     title: 'Safe money transitions',
   },
   {
     id: 3,
-    number: 3,
+    number: '03',
     title: '9/10 of our clients are satisfied',
   },
 ];
 const list2 = [
   {
     id: 4,
-    number: 4,
+    number: '04',
     title: 'The best studying materials ',
   },
   {
     id: 5,
-    number: 5,
+    number: '05',
     title: 'Experts of its own subjects',
   },
   {
     id: 6,
-    number: 6,
+    number: '06',
     title: 'Lawfully verified deals',
     },
 ];

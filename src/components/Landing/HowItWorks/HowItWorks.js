@@ -6,7 +6,7 @@ import useStyles from './HowItWorks.style';
 const list1 = [
   {
     id: 1,
-    number: 1,
+    number: 1, 
     title: 'Sign Up',
   },
   {
@@ -38,7 +38,7 @@ function HowItWorks() {
               <Box className={classes.itemInfo}>
                 <StyledTypography
                   fontFamily="Roboto"
-                  fontSize={20}
+                  fontSize={22}
                   className={classes.itemTitle}
                   type="h2"
                   fontWeight="Regular"

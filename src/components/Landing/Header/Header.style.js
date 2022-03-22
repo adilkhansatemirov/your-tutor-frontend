@@ -58,9 +58,10 @@ export default makeStyles((theme) => ({
     opacity: 0.2,
   },
   wrapper: {
-    backgroundImage: ` url(${backgroundImg})`,
+    backgroundImage: `url(${backgroundImg})`,
     paddingBottom: '250px',
     paddingLeft: '100px',
+    backgroundSize:'cover',
     //overflow: 'hidden',
   },
   link: {
