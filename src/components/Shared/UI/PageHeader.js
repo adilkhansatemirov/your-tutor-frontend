@@ -2,8 +2,8 @@ import { Box, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   root: {
-    marginTop: '32px',
-    marginBottom: '30px',
+    marginTop: '30px',
+    marginBottom: '122px',
   },
 }));
 

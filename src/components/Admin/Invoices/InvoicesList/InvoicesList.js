@@ -7,7 +7,7 @@ import StyledTableRow from 'components/Shared/Styled/StyledTableRow';
 // import { SnackbarContext } from 'context/snackbarContext';
 import PageHeader from 'components/Shared/UI/PageHeader';
 import StyledTextField from 'components/Shared/Styled/StyledTextField';
-// import FastIcon from 'components/Shared/Utils/FastIcon';
+import FastIcon from 'components/Shared/Utils/FastIcon';
 import StatusCounter from 'components/Shared/UI/StatusCounter';
 import PageLoader from 'components/Shared/Utils/PageLoader';
 // import { getInvoices } from 'services 'services/admin/invoices';
@@ -93,7 +93,7 @@ function InvoicesList() {
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
-                  {/* <FastIcon width="17" height="18" iconName="search" /> */}
+                  <FastIcon width="17" height="18" iconName="search" />
                 </InputAdornment>
               ),
             }}
@@ -155,7 +155,7 @@ function InvoicesList() {
                       <TableCellSortArrows
                         sortKey="invoices.invoice_date"
                         currentSortKey={params.sort_key}
-                        currentSortDirection={params.sort_direction}
+                        currentSorxtDirection={params.sort_direction}
                       />
                     </Box>
                   </StyledTableCell>

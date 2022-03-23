@@ -63,11 +63,11 @@ function AdminLayout() {
       to: '/admin/invoices',
       icon: invoicesIcon,
     },
-    {
-      name: 'Timesheets',
-      to: '/admin/timesheets',
-      icon: paymentIcon,
-    },
+    // {
+    //   name: 'Timesheets',
+    //   to: '/admin/timesheets',
+    //   icon: paymentIcon,
+    // },
     {
       name: 'Students',
       to: '/admin/students',

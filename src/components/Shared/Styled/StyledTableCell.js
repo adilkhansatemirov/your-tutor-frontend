@@ -3,21 +3,24 @@ export default withStyles((theme) => ({
   root: {
     border: 'none',
     '&:first-child': {
-      borderTopLeftRadius: '5px',
-      borderBottomLeftRadius: '5px',
+      borderTopLeftRadius: '0px',
+      borderBottomLeftRadius: '0px',
     },
     '&:last-child': {
-      borderTopRightRadius: '5px',
-      borderBottomRightRadius: '5px',
+      borderTopRightRadius: '0px',
+      borderBottomRightRadius: '0px',
     },
   },
   head: {
     backgroundColor: `#2F3D40`,
     color: 'white',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
+    fontSize: 16,
+    fontfamily: 'roboto',
+
   },
   body: {
     color: theme.palette.black,
-    fontSize: 14,
+    fontSize: 16,
   },
 }))(TableCell);

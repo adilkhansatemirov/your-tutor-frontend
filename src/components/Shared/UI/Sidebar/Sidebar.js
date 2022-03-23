@@ -26,13 +26,13 @@ function Sidebar({ sidebarItems }) {
       anchor="left"
       classes={{
         paper: classes.drawerPaper,
-      }}
+      }
+  }
     >
       <Box
-        style={{ width: '100%', background: '#E8EDF7', display: 'flex', alignItems: 'center' }}
+        style={{ width: '0%', background: '#E8EDF7', display: 'flex', alignItems: 'center', }}
       >
-        <img src={logoWhite} className={classes.logo} alt="inhome-logo" />
-        <StyledTypography fontSize={'0'} fontWeight="black"></StyledTypography>
+        <img src={logoWhite} className={classes.logo} alt="inhome-logo" width="400px"  height="1000px"/>
       </Box>
       <List disablePadding className={classes.list}>
         {sidebarItems.map((item, index) => (
@@ -51,7 +51,7 @@ function Sidebar({ sidebarItems }) {
           </Link>
         ))}
 
-        <ListItem
+        {/* <ListItem
           button
           className={classes.listItem}
           onClick={() => {
@@ -64,7 +64,7 @@ function Sidebar({ sidebarItems }) {
             <img src={logoutIcon} className={classes.icon} alt="logout" />
           </Box>
           Logout
-        </ListItem>
+        </ListItem> */}
       </List>
     </Drawer>
   );

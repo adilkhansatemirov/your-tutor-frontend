@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
-const DRAWER_WIDTH = 246;
+const DRAWER_WIDTH = 400;
 
 export default makeStyles((theme) => ({
   drawer: {
@@ -11,57 +11,79 @@ export default makeStyles((theme) => ({
     width: DRAWER_WIDTH,
   },
   logo: {
-    height: '100px',
-    marginTop: '22px',
-    marginLeft: '60px',
-     backgroundColor: '#E8EDF7',
+    height: '135px',
+    marginTop: '-8px',
+    marginLeft: '103px',
+    backgroundColor: '#E8EDF7',
+    marginRight: '157px',
   },
   list: {
-    marginTop: '40px',
+    marginTop: '42px',
+    marginRight: '172px',
+    marginLeft: '66px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    padding: '0px',
   },
   link: {
     textDecoration: 'none',
   },
   iconContainer: {
-    width: '45px',
-    height: '45px',
-    backgroundColor: 'rgba(134, 169, 224, 0.3)',
+    width: '36px',
+    height: '36px',
+    // backgroundColor: 'rgba(134, 169, 224, 0.3)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: '15px',
-    marginRight: '8px',
+    // borderRadius: '15px',
+    marginRight: '64px',
+    marginLeft: '36px',
   },
   icon: {
-    height: '22px',
+    height: '36px',
+    width:'36px',
+    position: 'absolute',
+    left: '0px',
+    top: '0px',
+
   },
   listItem: {
-    position: 'relative',
-    borderRight: '4px solid transparent',
+    borderLeft: '67px', 
     color: '#0F2C4C',
-    font: 'roboto',
-    weight: '400px',
-    size: "24px"
+    display: 'flex',
+    // flexDirection: 'column',
+    // alignItems: 'flex-start',
+    // position: 'absolute',
+    padding: '0',
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontSize: '24px',
+    lineHeight: '28px',
+    margin: `30px 0px`,
   },
   listItemActive: {
     backgroundColor: 'rgba(196, 196, 196, 0.24)',
     fontWeight: 700,
     borderRight: `3.87px solid #0F2C4C`,
+    width: '327.5px',
+    height: '80px',
     '&:hover': {
       backgroundColor: 'rgba(196, 196, 196, 0.24)',
     },
-    '& $iconContainer': {
-      backgroundColor: '#E8EDF7',
-    },
+    // '& $iconContainer': {
+    //   backgroundColor: '#E8EDF7',
+    // },
   },
   badge: {
     position: 'absolute',
     right: '15px',
     top: '50%',
     transform: 'translateY(-50%)',
-    backgroundColor: '#1891DA',
+    // backgroundColor: '#1891DA',
     color: '#fff'   ,
-    fontFamily: 'R',
+    fontFamily: 'Roboto',
     width: '20px',
     height: '20px',
     textAlign: 'center',

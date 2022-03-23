@@ -94,8 +94,8 @@ function ProjectsList() {
           <StyledTypography fontFamily="Roboto" fontWeight="bold" fontSize={20}>
             LESSONS
           </StyledTypography>
-          <StyledButton style={{borderRadius: 20, boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)' }} textTransform="uppercase" variant="yellow" onClick={handleCreateProject}>
-            <StyledTypography fontSize={10} fontWeight="bold">
+          <StyledButton style={{borderRadius: 20, boxShadow: '0px 10px 13px rgba(15, 44, 76, 0.13)' }}  variant="yellow" onClick={handleCreateProject}>
+            <StyledTypography fontSize={18} fontWeight="normal">
               Create a lesson
             </StyledTypography>
           </StyledButton>
@@ -171,23 +171,23 @@ function ProjectsList() {
                 {/* <StyledTableCell onClick={() => handleChangeSortParams('projects.title')}> */}
                 <StyledTableCell>
                   <Box display="flex" alignItems="center">
-                    Project
-                    <TableCellSortArrows
+                    Lesson
+                    {/* <TableCellSortArrows
                       sortKey="projects.title"
                       currentSortKey={params.sort_key}
                       currentSortDirection={params.sort_direction}
-                    />
+                    /> */}
                   </Box>
                 </StyledTableCell>
                 {/* <StyledTableCell onClick={() => handleChangeSortParams('clients.first_name')}> */}
                 <StyledTableCell>
                   <Box display="flex" alignItems="center">
                     Student
-                    <TableCellSortArrows
+                    {/* <TableCellSortArrows
                       sortKey="clients.first_name"
                       currentSortKey={params.sort_key}
                       currentSortDirection={params.sort_direction}
-                    />
+                    /> */}
                   </Box>
                 </StyledTableCell>
                 <StyledTableCell
@@ -195,11 +195,11 @@ function ProjectsList() {
                 >
                   <Box display="flex" alignItems="center">
                     Tutor
-                    <TableCellSortArrows
+                    {/* <TableCellSortArrows
                       sortKey="freelancers.first_name"
                       currentSortKey={params.sort_key}
                       currentSortDirection={params.sort_direction}
-                    />
+                    /> */}
                   </Box>
                 </StyledTableCell>
                 <StyledTableCell>Status</StyledTableCell>
