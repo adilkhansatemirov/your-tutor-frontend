@@ -6,21 +6,21 @@ import StyledTableCell from 'components/Shared/Styled/StyledTableCell';
 import StyledTypography from 'components/Shared/Styled/StyledTypography';
 import StyledButton from 'components/Shared/Styled/StyledButton';
 import ClientListItem from '../ClientListItem/ClientListItem';
-// import NewClientModal from '../NewClientModal/NewClientModal';
-// import { SnackbarContext } from 'context/snackbarContext';
+import NewClientModal from '../NewClientModal/NewClientModal';
+import { SnackbarContext } from 'context/snackbarContext';
 import PageHeader from 'components/Shared/UI/PageHeader';
 import StatusCounter from 'components/Shared/UI/StatusCounter';
 import StyledTextField from 'components/Shared/Styled/StyledTextField';
-// import FastIcon from 'components/Shared/Utils/FastIcon';
-// // import { getClients } from 'services 'services/admin/clients';
+import FastIcon from 'components/Shared/Utils/FastIcon';
+import { getClients } from 'services/admin/clients';
 import PageLoader from 'components/Shared/Utils/PageLoader';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import StyledSelect from 'components/Shared/Styled/StyledSelect';
-// import { useFilter, usePagination, useSearch, useSort } from 'hooks';
+import { useFilter, usePagination, useSearch, useSort } from 'hooks';
 import axios from 'axios';
 
 function ClientList() {
-  // const { // showSnackbar } = useContext(SnackbarContext);
+  const { showSnackbar } = useContext(SnackbarContext);
 
   const [loading, setLoading] = useState(true);
   const [counters, setCounters] = useState(null);
@@ -45,50 +45,50 @@ function ClientList() {
   }, []);
 
   const fetchClients = (params, cancelToken) => {
-    // getClients(params, cancelToken)
-    //   .then((response) => {
-    //     setCounters(response.data.meta.counters);
-    //     setPagination(response.data.meta.pagination);
-    //     setClients(response.data.list);
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     if (axios.isCancel(error)) {
-    //       console.log('Operation canceled due to new request');
-    //     } else {
-    //       // showSnackbar('Something went wrong', 'error');
-    //     }
-    //     setLoading(false);
-    //   });
+    getClients(params, cancelToken)
+      .then((response) => {
+        setCounters(response.data.meta.counters);
+        setPagination(response.data.meta.pagination);
+        setClients(response.data.list);
+        setLoading(false);
+      })
+      .catch((error) => {
+        if (axios.isCancel(error)) {
+          console.log('Operation canceled due to new request');
+        } else {
+          // showSnackbar('Something went wrong', 'error');
+        }
+        setLoading(false);
+      });
   };
 
-  // const fetchMore = usePagination({
-  //   pagination,
-  //   setPagination,
-  //   params,
-  //   setParams,
-  //   data: clients,
-  //   getData: getClients,
-  //   setData: setClients,
-  //   setLoading,
-  //   setCounters,
-  // });
+  const fetchMore = usePagination({
+    pagination,
+    setPagination,
+    params,
+    setParams,
+    data: clients,
+    getData: getClients,
+    setData: setClients,
+    setLoading,
+    setCounters,
+  });
 
-  // const handleSearch = useSearch({
-  //   params,
-  //   setParams,
-  //   setLoading,
-  //   fetchData: fetchClients,
-  // });
+  const handleSearch = useSearch({
+    params,
+    setParams,
+    setLoading,
+    fetchData: fetchClients,
+  });
 
-  // const { filterValue, handleFilterChange } = useFilter({
-  //   params,
-  //   setParams,
-  //   fetchData: fetchClients,
-  //   filterBy: 'profile_status',
-  // });
+  const { filterValue, handleFilterChange } = useFilter({
+    params,
+    setParams,
+    fetchData: fetchClients,
+    filterBy: 'profile_status',
+  });
 
-  // const handleChangeSortParams = useSort({ params, setParams, fetchData: fetchClients });
+  const handleChangeSortParams = useSort({ params, setParams, fetchData: fetchClients });
 
   return (
     <>
@@ -103,7 +103,7 @@ function ClientList() {
         </Box>
       </PageHeader>
 
-      {/* <Box display="flex" justifyContent="space-between" alignItems="center" style={{ marginBottom: '27px' }}>
+      <Box display="flex" justifyContent="space-between" alignItems="center" style={{ marginBottom: '27px' }}>
         <Box display="flex">
           <StatusCounter label="Complete" count={counters?.complete_count} color="green" />
           <StatusCounter label="Incomplete" count={counters?.incomplete_count} color="tomatoRed" />
@@ -198,7 +198,7 @@ function ClientList() {
           </Table>
         </InfiniteScroll>
       )}
-      <NewClientModal open={newClientModalIsOpen} onClose={handleCloseNewClientModal} fetchClients={fetchClients} /> */}
+      <NewClientModal open={newClientModalIsOpen} onClose={handleCloseNewClientModal} fetchClients={fetchClients} />
     </>
   );
 }
