@@ -9,19 +9,19 @@ import TimesheetsList from 'components/Admin/Timesheets/TimesheetsList/Timesheet
 import ClientList from 'components/Admin/Clients/ClientList/ClientList';
 import FreelancerList from 'components/Admin/Freelancers/FreelancerList/FreelancerList';
 import Settings from 'components/Admin/Settings/Settings';
-// import ProjectPage from 'components/Admin/Projects/ProjectPage/ProjectPage';
-// import NewProject from './Projects/NewProject/NewProject';
+import ProjectPage from 'components/Admin/Projects/ProjectPage/ProjectPage';
+import NewProject from './Projects/NewProject/NewProject';
 // import TimesheetPage from './Timesheets/TimesheetPage/TimesheetPage';
 // import FreelancerPage from './Freelancers/FreelancerPage/FreelancerPage';
 // import InvoicePageWrapper from 'components/Admin/Invoices/InvoicePage/InvoicePageWrapper';
-// // import EditProjectWrapper from 'components/Admin/Projects/EditProject/EditProjectWrapper';
+import EditProjectWrapper from 'components/Admin/Projects/EditProject/EditProjectWrapper';
 // import NewInvoiceWrapper from 'components/Admin/Invoices/NewInvoice/NewInvoiceWrapper';
 // import EditFreelancer from 'components/Admin/Freelancers/EditFreelancer/EditFreelancer';
-// // // // import { signInWithToken } from 'services 'services 'services 'services 'services/auth';
-// // import { setSession } from 'services 'services 'services/api';
+import { signInWithToken } from 'services/auth';
+import { setSession } from 'services/api';
 import AuthLoader from 'components/Shared/Utils/AuthLoader';
-// // import { SnackbarContext } from 'context/snackbarContext';
-// import { AuthContext } from 'context/authContext';
+import { SnackbarContext } from 'context/snackbarContext';
+import { AuthContext } from 'context/authContext';
 import PaymentsList from './Payments/PaymentsList';
 
 import projectsIcon from 'assets/icons/Lessons.png';
@@ -48,8 +48,8 @@ function AdminLayout() {
   const classes = useStyles();
   const history = useHistory();
   const [authenticating, setAuthenticating] = useState(true);
-  // // const { // showSnackbar } = useContext(SnackbarContext);
-  // const { setUser, setRefererPage } = useContext(AuthContext);
+  const { showSnackbar } = useContext(SnackbarContext);
+  const { setUser, setRefererPage } = useContext(AuthContext);
   const { pathname } = useLocation();
 
   const sidebarItems = [
@@ -91,45 +91,45 @@ function AdminLayout() {
   ];
 
   useEffect(() => {
-    // const token = сookies.get('token');
-    // if (!token) {
-    //   // // showSnackbar('Please log in to continue', 'error');
-    //   // setRefererPage(pathname);
-    //   history.push('/sign-in');
-    //   return;
-    // }
+    const token = сookies.get('token');
+    if (!token) {
+      showSnackbar('Please log in to continue', 'error');
+      setRefererPage(pathname);
+      history.push('/sign-in');
+      return;
+    }
 
-    // signInWithToken(token)
-    //   .then((response) => {
-    //     if (response.data.data.user.role !== 'admin') {
-    //       history.replace('/403');
-    //       return;
-    //     }
-    //     // setUser(response.data.data);
-    //     // setSession(token);
-    //     setAuthenticating(false);
-    //   })
-    //   .catch(() => {
-    //     // // showSnackbar('Please log in to continue', 'error');
-    //     // setRefererPage(pathname);
-    //     history.push('/sign-in');
-    //   });
+    signInWithToken(token)
+      .then((response) => {
+        if (response.data.data.user.role !== 'admin') {
+          history.replace('/403');
+          return;
+        }
+        setUser(response.data.data);
+        setSession(token);
+        setAuthenticating(false);
+      })
+      .catch(() => {
+        showSnackbar('Please log in to continue', 'error');
+        setRefererPage(pathname);
+        history.push('/sign-in');
+      });
     // eslint-disable-next-line
   }, []);
 
   return (
     <div className={classes.root}>
-      {/* {authenticating ? (
+      {authenticating ? (
         <AuthLoader />
-      ) : ( */}
+      ) : (
         <>
           <Sidebar sidebarItems={sidebarItems} />
           <main className={classes.content}>
             <Switch>
-              <Route exact path="/admin/lessons" component={ProjectsList} />
-              {/* <Route exact path="/admin/projects/new" component={NewProject} /> */}
-              {/* <Route exact path="/admin/projects/:projectId" component={ProjectPage} /> */}
-              {/* <Route exact path="/admin/projects/:projectId/edit" component={EditProjectWrapper} /> */}
+              <Route exact path="/admin/projects" component={ProjectsList} />
+              <Route exact path="/admin/projects/new" component={NewProject} />
+              <Route exact path="/admin/projects/:projectId" component={ProjectPage} />
+              <Route exact path="/admin/projects/:projectId/edit" component={EditProjectWrapper} />
               {/* <Route exact path="/admin/projects/:projectId/invoices/new" component={NewInvoiceWrapper} /> */}
 
               <Route exact path="/admin/invoices" component={InvoicesList} />
@@ -152,7 +152,7 @@ function AdminLayout() {
             </Switch>
           </main>
         </>
-      {/* )} */}
+      )}
     </div>
   );
 }

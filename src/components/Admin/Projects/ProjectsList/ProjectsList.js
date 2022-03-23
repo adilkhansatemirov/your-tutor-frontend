@@ -6,23 +6,23 @@ import StyledSelect from 'components/Shared/Styled/StyledSelect';
 import StyledButton from 'components/Shared/Styled/StyledButton';
 import StyledTableRow from 'components/Shared/Styled/StyledTableRow';
 import ProjectsListItem from '../ProjectsListItem/ProjectsListItem';
-// import { SnackbarContext } from 'context/snackbarContext';
-// import { getProjects } from 'services 'services/admin/projects';
+import { SnackbarContext } from 'context/snackbarContext';
+import { getProjects } from 'services/admin/projects';
 import PageLoader from 'components/Shared/Utils/PageLoader';
 import PageHeader from 'components/Shared/UI/PageHeader';
 import StyledTypography from 'components/Shared/Styled/StyledTypography';
-// import StatusCounter from '../../../Shared/UI/StatusCounter';
+import StatusCounter from '../../../Shared/UI/StatusCounter';
 import StyledTextField from 'components/Shared/Styled/StyledTextField';
 import FastIcon from 'components/Shared/Utils/FastIcon';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import TableCellSortArrows from 'components/Shared/Utils/TableCellSortArrows';
-// import { useFilter, usePagination, useSearch, useSort } from 'hooks';
+import { useFilter, usePagination, useSearch, useSort } from 'hooks';
 import axios from 'axios';
 
 function ProjectsList() {
   const history = useHistory();
 
-  // const { // showSnackbar } = useContext(SnackbarContext);
+  const { showSnackbar } = useContext(SnackbarContext);
 
   const [loading, setLoading] = useState(true);
   const [counters, setCounters] = useState(null);
@@ -38,54 +38,54 @@ function ProjectsList() {
   }, []);
 
   const fetchProjects = (params, cancelToken) => {
-    // getProjects(params, cancelToken)
-    //   .then((response) => {
-    //     setCounters(response.data.meta.counters);
-    //     setPagination(response.data.meta.pagination);
-    //     setProjects(response.data.list);
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     if (axios.isCancel(error)) {
-    //       console.log('Operation canceled due to new request');
-    //     } else {
-    //       // showSnackbar('Something went wrong', 'error');
-    //     }
-    //     setLoading(false);
-    //   });
+    getProjects(params, cancelToken)
+      .then((response) => {
+        setCounters(response.data.meta.counters);
+        setPagination(response.data.meta.pagination);
+        setProjects(response.data.list);
+        setLoading(false);
+      })
+      .catch((error) => {
+        if (axios.isCancel(error)) {
+          console.log('Operation canceled due to new request');
+        } else {
+          showSnackbar('Something went wrong', 'error');
+        }
+        setLoading(false);
+      });
   };
 
   const handleCreateProject = () => {
     history.push('/admin/projects/new');
   };
 
-  // const fetchMore = usePagination({
-  //   pagination,
-  //   setPagination,
-  //   params,
-  //   setParams,
-  //   data: projects,
-  //   getData: getProjects,
-  //   setData: setProjects,
-  //   setLoading,
-  //   setCounters,
-  // });
+  const fetchMore = usePagination({
+    pagination,
+    setPagination,
+    params,
+    setParams,
+    data: projects,
+    getData: getProjects,
+    setData: setProjects,
+    setLoading,
+    setCounters,
+  });
 
-  // const handleSearch = useSearch({
-  //   params,
-  //   setParams,
-  //   setLoading,
-  //   fetchData: fetchProjects,
-  // });
+  const handleSearch = useSearch({
+    params,
+    setParams,
+    setLoading,
+    fetchData: fetchProjects,
+  });
 
-  // const { filterValue, handleFilterChange } = useFilter({
-  //   params,
-  //   setParams,
-  //   fetchData: fetchProjects,
-  //   filterBy: 'project_status',
-  // });
+  const { filterValue, handleFilterChange } = useFilter({
+    params,
+    setParams,
+    fetchData: fetchProjects,
+    filterBy: 'project_status',
+  });
 
-  // const handleChangeSortParams = useSort({ params, setParams, fetchData: fetchProjects });
+  const handleChangeSortParams = useSort({ params, setParams, fetchData: fetchProjects });
 
   return (
     <>
@@ -101,7 +101,7 @@ function ProjectsList() {
           </StyledButton>
         </Box>
       </PageHeader>
-      {/* <Box display="flex" justifyContent="space-between" style={{ marginBottom: '27px' }}>
+      <Box display="flex" justifyContent="space-between" style={{ marginBottom: '27px' }}>
         <Box display="flex">
           <StatusCounter label="Accepting Bids" count={counters?.accepting_bids_count} color="orange" />
           <StatusCounter label="Active" count={counters?.active_count} color="green" />
@@ -158,7 +158,6 @@ function ProjectsList() {
             </StyledTypography>
           }
         >
-        */}
           <Table>
             <colgroup>
               <col style={{ width: '25%' }} />
@@ -168,8 +167,8 @@ function ProjectsList() {
             </colgroup>
             <TableHead>
               <StyledTableRow>
-                {/* <StyledTableCell onClick={() => handleChangeSortParams('projects.title')}> */}
-                <StyledTableCell>
+                <StyledTableCell onClick={() => handleChangeSortParams('projects.title')}>
+                {/* <StyledTableCell> */}
                   <Box display="flex" alignItems="center">
                     Lesson
                     {/* <TableCellSortArrows
@@ -179,8 +178,8 @@ function ProjectsList() {
                     /> */}
                   </Box>
                 </StyledTableCell>
-                {/* <StyledTableCell onClick={() => handleChangeSortParams('clients.first_name')}> */}
-                <StyledTableCell>
+                <StyledTableCell onClick={() => handleChangeSortParams('clients.first_name')}>
+                {/* <StyledTableCell> */}
                   <Box display="flex" alignItems="center">
                     Student
                     {/* <TableCellSortArrows
@@ -191,7 +190,7 @@ function ProjectsList() {
                   </Box>
                 </StyledTableCell>
                 <StyledTableCell
-                //  onClick={() => handleChangeSortParams('freelancers.first_name')}
+                 onClick={() => handleChangeSortParams('freelancers.first_name')}
                 >
                   <Box display="flex" alignItems="center">
                     Tutor
@@ -211,8 +210,8 @@ function ProjectsList() {
               ))}
             </TableBody>
           </Table>
-        {/* </InfiniteScroll>
-      )} */}
+        </InfiniteScroll>
+      )}
     </>
   );
 }
