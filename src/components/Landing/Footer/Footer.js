@@ -3,65 +3,66 @@ import StyledTypography from 'components/Shared/Styled/StyledTypography';
 
 import useStyles from './Footer.style';
 
-import logoWhite from 'assets/icons/logo.svg';
-import mailIcon from 'assets/icons/mail.png';
-import phoneIcon from 'assets/icons/phone.png';
-import locationIcon from 'assets/icons/location.png';
+import logo from 'assets/images/logo.png';
+import instagramIcon from 'assets/icons/instagram@3x.png';
+import googleIcon from 'assets/icons/google.png';
+import telegramIcon from 'assets/icons/telegram@3x.png';
+import phoneIcon from 'assets/icons/phoneIcon.png';
 
 function Header() {
   const classes = useStyles();
 
   return (
     <Box className={classes.main}>
-      <Container>
+      <Container className={classes.container}>
         <Box className={classes.contacts}>
-          <img src={logoWhite} className={classes.logo} alt="inhome-logo" />
-          <Box className={classes.grow} />
-          <Box className={classes.contactsItem}>
-            <Box className={classes.iconContainer}>
-              <img className={classes.contactsIcon} src={mailIcon} alt="mail" />
-            </Box>
-            <StyledTypography fontFamily="Poppins" className={classes.text}>
-              <a target="_blank" rel="noreferrer" href="mailto:hello@inhomeaccountants.com">
-                hello@yourtutor.com
-              </a>
+          <img src={logo} className={classes.logo} alt="inhome-logo" />
+          
+          
+          <Box className={classes.contactsMain}>
+          <Box className={classes.contactsText}>
+            <StyledTypography fontSize={36} fontFamily="Roboto" className={classes.text} weight="meduim">
+             Our contacts
             </StyledTypography>
           </Box>
-          <Box className={classes.contactsItem}>
-            <Box className={classes.iconContainer}>
-              <img className={classes.contactsIcon} src={phoneIcon} alt="phone" />
+          <Box className={classes.contactsInfo}>
+            <Box className={classes.contactsItem}>
+              <Box className={classes.iconContainer}>
+                <img className={classes.contactsIcon} src={phoneIcon} alt="phone" />
+                <StyledTypography fontSize={16} fontFamily="Roboto" className={classes.text}>
+                <u><a href="tel:+77074578647">+77074578647</a></u>
+                </StyledTypography>
+              </Box>
+              <Box className={classes.iconContainer}>
+                <img className={classes.contactsIcon} src={phoneIcon} alt="phone" />
+                <StyledTypography fontSize={16} fontFamily="Roboto" className={classes.text}>
+                <u><a href="tel:+77074578647">+77074578647</a></u>
+                </StyledTypography>
+              </Box>
             </Box>
-            <StyledTypography fontFamily="Poppins" className={classes.text}>
-              <a href="tel:(814) 853-3535">(814) 853-3535</a>
-            </StyledTypography>
-          </Box>
-          <Box className={classes.contactsItem}>
-            <Box className={classes.iconContainer}>
-              <img className={classes.contactsIcon} src={locationIcon} alt="location" />
+
+            <Box className={classes.socialMediaContact}>
+              <Box className={classes.socialsIconContainer}>
+                <img className={classes.socialMediaIcon} src={instagramIcon} alt="instagram" />
+              </Box>
+              <Box className={classes.socialsIconContainer}>
+                <img className={classes.socialMediaIcon} src={telegramIcon} alt="telegram" />
+              </Box>
+              <Box className={classes.socialsIconContainer}>
+              <img className={classes.socialMediaIcon} src={googleIcon} alt="google" />
+              </Box>
             </Box>
-            <StyledTypography fontFamily="Poppins" className={classes.text}>
-              Your Tutor 2022
-            </StyledTypography>
           </Box>
+          </Box>
+         
         </Box>
-        <Divider className={classes.divider} />
-        <Box className={classes.bottom}>
-          <Box className={classes.links}>
-            <StyledTypography fontFamily="Poppins" className={classes.linkItem}>
-              Privacy Policy
-            </StyledTypography>
-            <StyledTypography fontFamily="Poppins" className={classes.linkItem}>
-              Terms of Use
-            </StyledTypography>
-            <StyledTypography fontFamily="Poppins" className={classes.linkItem}>
-              Cookie Policy
-            </StyledTypography>
-          </Box>
-          <Box className={classes.grow} />
-          <StyledTypography fontFamily="Poppins" className={classes.rights}>
-            2020, All right reserved
+
+        <Box className={classes.bottom} >
+          <StyledTypography fontSize={14} fontFamily="Roboto" className={classes.rights}>
+           ©2022 All rights reserved
           </StyledTypography>
         </Box>
+
       </Container>
     </Box>
   );

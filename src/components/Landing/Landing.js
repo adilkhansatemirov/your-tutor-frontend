@@ -7,6 +7,9 @@
 import Header from 'components/Landing/Header/Header';
 import HowItWorks from 'components/Landing/HowItWorks/HowItWorks';
 import WhyChoose from 'components/Landing/WhyChoose/WhyChoose';
+import OurTutors from 'components/Landing/OurTutors/OurTutors';
+import AboutUs from 'components/Landing/AboutUs/AboutUs';
+import Platform from 'components/Landing/Platform/Platform';
 import Footer from 'components/Landing/Footer/Footer';
 import { useState } from 'react';
 import { AuthContext } from 'context/authContext';
@@ -97,8 +100,11 @@ function PageLanding() {
         closeModal={closeModal}
         template={template}
       />
+      <AboutUs/>
+      <Platform />
       <HowItWorks />
       <WhyChoose />
+      <OurTutors/>
       <Footer />
     </>
   );

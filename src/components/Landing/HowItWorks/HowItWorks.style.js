@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core';
+import ornament1Img from 'assets/images/ornament1.png';
 
 export default makeStyles((theme) => ({
   grow: {
@@ -10,9 +11,12 @@ export default makeStyles((theme) => ({
   },
   container: {
     overflow: 'hidden',
-    paddingTop: '120px',
-    paddingBottom: '45px',
-    maxWidth: '1200px',
+    paddingTop: '66.82px',
+    paddingBottom: '80px',
+    maxWidth: '1600px',
+    backgroundColor: '#fff',
+    backgroundImage: ` url(${ornament1Img})` ,
+    backgroundSize:'cover',
     [theme.breakpoints.down('xs')]: {
       paddingTop: '48px',
       paddingBottom: 0,
@@ -20,49 +24,31 @@ export default makeStyles((theme) => ({
   },
   title: {
     textAlign: 'center',
-  },
-  stick: {
-    backgroundColor: theme.palette.skyBlue.main,
-    width: '52px',
-    height: '3px',
-    marginTop: '14px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-  project_duration: {
-    marginTop: '17px',
-    textAlign: 'center',
-    marginBottom: '57px',
-  },
-  number: {
-    backgroundColor: theme.palette.spaceBlue,
-    color: theme.palette.silverGray.main,
-    minWidth: '76px',
-    height: '76px',
-    borderRadius: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '40px',
-    fontWeight: 'bold',
-    [theme.breakpoints.down('xs')]: {
-      marginTop: '10px',
-      minWidth: '34px',
-      height: '34px',
-      fontSize: '20px',
-    },
+    color: '#0F2C4C',
   },
   listItem: {
-    marginBottom: '47px',
+    marginBottom: '0px',
     flexDirection: 'column',
     [theme.breakpoints.down('xs')]: {
       alignItems: 'flex-start',
     },
   },
+  iconContainer:{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  itemIcon: {
+    marginTop:'32px',
+    width: '170px',
+    [theme.breakpoints.down('xs')]: {
+      width: '30px',
+    },
+  },
   itemInfo: {
-    marginLeft: '21px',
+    margin: '0',
   },
   itemTitle: {
-    marginBottom: '5px',
+    marginTop:'24px',
   },
 }));
