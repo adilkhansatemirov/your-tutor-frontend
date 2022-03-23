@@ -3,8 +3,8 @@ import { createMuiTheme } from '@material-ui/core/styles';
 // blue
 const skyBlue = '#1891DA';
 const skyBlueDark = '#1478B5';
-const skyBluePale = '#389CD9';
-const spaceBlue = '#0E3665';
+const skyBluePale = '#E8EDF7';
+const spaceBlue = '#2F3D40';
 
 // red
 const tomatoRed = '#FF3838';
