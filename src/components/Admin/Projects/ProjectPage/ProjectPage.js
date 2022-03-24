@@ -61,11 +61,11 @@ function ProjectPage() {
     control,
   } = useForm({
     defaultValues: {
-      freelancer_payment_amount: 0,
+      tutor_payment_amount: 0,
     },
     resolver: yupResolver(
       Yup.object().shape({
-        freelancer_payment_amount: Yup.string().required('Required'),
+        tutor_payment_amount: Yup.string().required('Required'),
       }),
     ),
   });
@@ -81,8 +81,8 @@ function ProjectPage() {
   //   if (freelancersToSendOpportunityTo.length === 1) {
   //     projectData = {
   //       project_status: 'active',
-  //       freelancer_detail_id: freelancersToSendOpportunityTo[0].id,
-  //       freelancer_payment_amount: values.freelancer_payment_amount,
+  //       tutor_detail_id: freelancersToSendOpportunityTo[0].id,
+  //       tutor_payment_amount: values.tutor_payment_amount,
   //     };
   //     assignFreelancerToProject(project.id, projectData)
   //       .then(() => {
@@ -98,7 +98,7 @@ function ProjectPage() {
   //   if (freelancersToSendOpportunityTo.length > 1) {
   //     projectData = {
   //       project_status: 'accepting_bids',
-  //       freelancer_payment_amount: values.freelancer_payment_amount,
+  //       tutor_payment_amount: values.tutor_payment_amount,
   //     };
   //     const projectBids = freelancersToSendOpportunityTo.map((freelancer) => ({ user_id: freelancer.user.id }));
   //     startBids(project.id, { project_data: { project: projectData, project_bids: projectBids } })
@@ -150,7 +150,7 @@ function ProjectPage() {
           <Box display="flex">
             {(project.project_status === 'active' || project.project_status === 'error') && (
               <>
-                {project.client_type_of_billing === 'custom_type' && (
+                {project.student_type_of_billing === 'custom_type' && (
                   <StyledButton
                     onClick={handleOpenPaymentAmountModal}
                     variant="green"

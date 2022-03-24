@@ -12,12 +12,12 @@ import previousIcon from 'assets/icons/arrow-left-gray.svg';
 function ClientTypeOfBilling({ setTemplate, newProject, setNewProject }) {
   const { handleSubmit, control } = useForm({
     defaultValues: {
-      client_type_of_billing: newProject.client_type_of_billing,
+      student_type_of_billing: newProject.student_type_of_billing,
     },
   });
 
   const onSubmit = (values) => {
-    setNewProject({ ...newProject, client_type_of_billing: values.client_type_of_billing });
+    setNewProject({ ...newProject, student_type_of_billing: values.student_type_of_billing });
     setTemplate('client-payment-amount');
   };
 
@@ -42,7 +42,7 @@ function ClientTypeOfBilling({ setTemplate, newProject, setNewProject }) {
               />
             </RadioGroup>
           }
-          name="client_type_of_billing"
+          name="student_type_of_billing"
           control={control}
         />
         <Box display="flex" justifyContent="space-between" alignItems="center">

@@ -10,7 +10,7 @@ import { Autocomplete } from '@material-ui/lab';
 import { filterFreelancerOptions } from 'utils/contracts';
 import dollarIcon from 'assets/icons/dollar-black.svg';
 
-function Freelancer({ control, errors, setValue, trigger, project, client_type_of_billing }) {
+function Freelancer({ control, errors, setValue, trigger, project, student_type_of_billing }) {
   const { showSnackbar } = useContext(SnackbarContext);
   const [freelancers, setFreelancers] = useState([]);
   const [selectedFreelancer, setSelectedFreelancer] = useState(null);
@@ -24,8 +24,8 @@ function Freelancer({ control, errors, setValue, trigger, project, client_type_o
             (freelancer) => freelancer.id === project.freelancer_detail.id,
           );
           setSelectedFreelancer(freelancer);
-          setValue('freelancer_detail_id', freelancer.id);
-          trigger('freelancer_detail_id');
+          setValue('tutor_detail_id', freelancer.id);
+          trigger('tutor_detail_id');
         }
       })
       .catch(() => {
@@ -36,8 +36,8 @@ function Freelancer({ control, errors, setValue, trigger, project, client_type_o
 
   const handleAutoCompleteValueChange = (event, value) => {
     setSelectedFreelancer(value);
-    setValue('freelancer_detail_id', value ? value.id : null);
-    trigger('freelancer_detail_id');
+    setValue('tutor_detail_id', value ? value.id : null);
+    trigger('tutor_detail_id');
   };
 
   return (
@@ -53,14 +53,14 @@ function Freelancer({ control, errors, setValue, trigger, project, client_type_o
           <img style={{ marginTop: '15px' }} src={dollarIcon} alt="dollar" />
           <Controller
             as={<StyledTextField placeholder="Amount" />}
-            name="freelancer_payment_amount"
+            name="tutor_payment_amount"
             control={control}
             type="number"
-            error={Boolean(errors.freelancer_payment_amount)}
-            helperText={errors.freelancer_payment_amount && errors.freelancer_payment_amount.message}
+            error={Boolean(errors.tutor_payment_amount)}
+            helperText={errors.tutor_payment_amount && errors.tutor_payment_amount.message}
             style={{ width: '100px', marginBottom: '20px', marginLeft: '5px' }}
           />
-          {client_type_of_billing === 'hourly_rate' && (
+          {student_type_of_billing === 'hourly_rate' && (
             <StyledTypography style={{ marginTop: '17px', marginLeft: '15px' }} fontSize="16px">
               per hour
             </StyledTypography>
@@ -87,10 +87,10 @@ function Freelancer({ control, errors, setValue, trigger, project, client_type_o
           renderInput={(params) => (
             <Controller
               as={<StyledTextField placeholder="Enter name or email of the freelancer" {...params} />}
-              name="freelancer_detail_id"
+              name="tutor_detail_id"
               control={control}
-              error={Boolean(errors.freelancer_detail_id)}
-              helperText={errors.freelancer_detail_id && errors.freelancer_detail_id.message}
+              error={Boolean(errors.tutor_detail_id)}
+              helperText={errors.tutor_detail_id && errors.tutor_detail_id.message}
             />
           )}
         />

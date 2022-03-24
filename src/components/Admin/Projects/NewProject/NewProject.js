@@ -34,15 +34,15 @@ function NewProject() {
   const classes = useStyles();
   const [template, setTemplate] = useState('welcome');
   const [newProject, setNewProject] = useState({
-    client_detail_id: '',
-    freelancer_detail_id: null,
+    student_detail_id: '',
+    tutor_detail_id: null,
     title: '',
     description: '',
     project_duration: '',
     invoicing_schedule: 'one_time',
-    client_type_of_billing: 'custom_type',
-    client_payment_amount: '',
-    freelancer_payment_amount: '',
+    student_type_of_billing: 'custom_type',
+    student_payment_amount: '',
+    tutor_payment_amount: '',
   });
 
   const [client, setClient] = useState(null);

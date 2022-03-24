@@ -42,10 +42,10 @@ function FreelancerListItem({ project }) {
       </StyledTableCell>
       <StyledTableCell>
         <StyledTypography fontSize={12} fontWeight="bold">
-          {`${project.client_detail.user.first_name} ${project.client_detail.user.last_name}`}
+          {`${project.student_detail.user.first_name} ${project.student_detail.user.last_name}`}
         </StyledTypography>
-        <StyledTypography fontSize={12}>{project.client_detail.user.email}</StyledTypography>
-        <StyledTypography fontSize={12}>{project.client_detail.company_name}</StyledTypography>
+        <StyledTypography fontSize={12}>{project.student_detail.user.email}</StyledTypography>
+        <StyledTypography fontSize={12}>{project.student_detail.company_name}</StyledTypography>
       </StyledTableCell>
       <StyledTableCell>
         {project.freelancer_detail ? (

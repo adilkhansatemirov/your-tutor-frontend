@@ -36,12 +36,12 @@ function Freelancer({ project }) {
       >
         <NumberFormat
           prefix="$"
-          value={Number(project.freelancer_payment_amount)}
+          value={Number(project.tutor_payment_amount)}
           decimalScale={2}
           fixedDecimalScale={true}
           displayType="text"
           thousandSeparator={true}
-          suffix={project.client_type_of_billing === 'hourly_rate' ? '/hr' : ''}
+          suffix={project.student_type_of_billing === 'hourly_rate' ? '/hr' : ''}
         />
       </StyledTypography>
     </InfoBox>

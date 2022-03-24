@@ -17,7 +17,7 @@ export const timeEntriesToInvoiceItems = (timeEntries, project) => {
     time_entry_id: timeEntry.id,
     title: timeEntry.task,
     quantity: timeEntry.hours,
-    price: project.client_payment_amount,
+    price: project.student_payment_amount,
   }));
   return invoiceItems;
 };

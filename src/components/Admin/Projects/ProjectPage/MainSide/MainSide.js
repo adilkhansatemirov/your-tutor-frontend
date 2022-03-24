@@ -55,7 +55,7 @@ function MainSide({
       <Box display="flex" alignItems="center" justifyContent="space-between" style={{ marginBottom: '15px' }}>
         <StyledTabs value={tabNumber} onChange={handleChange}>
           <StyledTab index={0} text="Invoices" count={project.invoices.length} />
-          {project.client_type_of_billing !== 'custom_type' && (
+          {project.student_type_of_billing !== 'custom_type' && (
             <StyledTab index={1} text="Timesheets" count={project.timesheets.length} />
           )}
         </StyledTabs>

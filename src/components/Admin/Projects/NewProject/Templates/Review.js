@@ -40,7 +40,7 @@ function Review({
     let freelancers = [];
 
     if (toOneFreelancer()) {
-      project.freelancer_detail_id = freelancersToSendOpportunityTo[0].id;
+      project.tutor_detail_id = freelancersToSendOpportunityTo[0].id;
       project.project_status = 'active';
     } else {
       freelancers = isToAllFreelancers ? [...allFreelancers] : [...freelancersToSendOpportunityTo];
@@ -79,11 +79,11 @@ function Review({
       <Row itemName="Project description" itemValue={newProject.description} />
 
       <SectionTitle text="Billing" template="invoicing-schedule" setTemplate={setTemplate} />
-      <Row itemName="Type" itemValue={capitalize(removeUnderscores(newProject.client_type_of_billing))} />
+      <Row itemName="Type" itemValue={capitalize(removeUnderscores(newProject.student_type_of_billing))} />
       <Row
         itemName="Amount"
-        itemValue={`$${newProject.client_payment_amount}${
-          newProject.client_type_of_billing === 'hourly_rate' ? ' per hour' : ''
+        itemValue={`$${newProject.student_payment_amount}${
+          newProject.student_type_of_billing === 'hourly_rate' ? ' per hour' : ''
         }`}
       />
       <Row itemName="Invoicing Schedule" itemValue={capitalize(removeUnderscores(newProject.invoicing_schedule))} />
@@ -102,8 +102,8 @@ function Review({
       )}
       <Row
         itemName="Amount"
-        itemValue={`$${newProject.freelancer_payment_amount}${
-          newProject.client_type_of_billing === 'hourly_rate' ? ' per hour' : ''
+        itemValue={`$${newProject.tutor_payment_amount}${
+          newProject.student_type_of_billing === 'hourly_rate' ? ' per hour' : ''
         }`}
       />
       <Box display="flex" justifyContent="space-between" alignItems="center" style={{ marginTop: '30px' }}>

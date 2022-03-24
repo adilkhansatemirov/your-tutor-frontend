@@ -44,7 +44,7 @@ function EnterPaymentAmount({ open, close, project, fetchProject }) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Controller
           as={<StyledTextField fontFamily="Poppins" />}
-          placeholder={`$${project.freelancer_payment_amount}`}
+          placeholder={`$${project.tutor_payment_amount}`}
           small
           fullWidth
           name="amount"

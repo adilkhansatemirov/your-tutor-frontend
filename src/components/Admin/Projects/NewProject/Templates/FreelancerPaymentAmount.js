@@ -15,17 +15,17 @@ import dollarIcon from 'assets/icons/dollar-black.svg';
 function FreelancerPaymentAmount({ setTemplate, newProject, setNewProject }) {
   const { handleSubmit, errors, control } = useForm({
     defaultValues: {
-      freelancer_payment_amount: newProject.freelancer_payment_amount,
+      tutor_payment_amount: newProject.tutor_payment_amount,
     },
     resolver: yupResolver(
       Yup.object().shape({
-        freelancer_payment_amount: Yup.string().required('Required'),
+        tutor_payment_amount: Yup.string().required('Required'),
       }),
     ),
   });
 
   const onSubmit = (values) => {
-    setNewProject({ ...newProject, freelancer_payment_amount: Number(values.freelancer_payment_amount) });
+    setNewProject({ ...newProject, tutor_payment_amount: Number(values.tutor_payment_amount) });
     setTemplate('specific-freelancer');
   };
 
@@ -39,14 +39,14 @@ function FreelancerPaymentAmount({ setTemplate, newProject, setNewProject }) {
           <img style={{ marginTop: '15px' }} src={dollarIcon} alt="dollar" />
           <Controller
             as={<StyledTextField placeholder="Amount" />}
-            name="freelancer_payment_amount"
+            name="tutor_payment_amount"
             control={control}
             type="number"
-            error={Boolean(errors.freelancer_payment_amount)}
-            helperText={errors.freelancer_payment_amount && errors.freelancer_payment_amount.message}
+            error={Boolean(errors.tutor_payment_amount)}
+            helperText={errors.tutor_payment_amount && errors.tutor_payment_amount.message}
             style={{ width: '100px', marginBottom: '20px', marginLeft: '5px' }}
           />
-          {newProject.client_type_of_billing === 'hourly_rate' && (
+          {newProject.student_type_of_billing === 'hourly_rate' && (
             <StyledTypography style={{ marginTop: '17px', marginLeft: '15px' }} fontSize="16px">
               per hour
             </StyledTypography>

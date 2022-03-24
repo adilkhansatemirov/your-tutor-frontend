@@ -12,7 +12,7 @@ import StyledRadioFormControlLabel from 'components/Shared/Styled/Radio/StyledRa
 import StyledRadio from 'components/Shared/Styled/Radio/StyledRadio';
 import dollarIcon from 'assets/icons/dollar-black.svg';
 
-function Client({ control, errors, setValue, trigger, project, client_type_of_billing }) {
+function Client({ control, errors, setValue, trigger, project, student_type_of_billing }) {
   const { showSnackbar } = useContext(SnackbarContext);
   const [selectedClient, setSelectedClient] = useState(null);
   const [clients, setClients] = useState([]);
@@ -24,8 +24,8 @@ function Client({ control, errors, setValue, trigger, project, client_type_of_bi
         const client = response.data.find((clientDetail) => clientDetail.id === project.client_detail.id);
         if (client) {
           setSelectedClient(client);
-          setValue('client_detail_id', project.client_detail.id);
-          trigger('client_detail_id');
+          setValue('student_detail_id', project.client_detail.id);
+          trigger('student_detail_id');
         }
       })
       .catch(() => {
@@ -36,8 +36,8 @@ function Client({ control, errors, setValue, trigger, project, client_type_of_bi
 
   const handleAutoCompleteValueChange = (event, value) => {
     setSelectedClient(value);
-    setValue('client_detail_id', value ? value.id : '');
-    trigger('client_detail_id');
+    setValue('student_detail_id', value ? value.id : '');
+    trigger('student_detail_id');
   };
 
   return (
@@ -64,10 +64,10 @@ function Client({ control, errors, setValue, trigger, project, client_type_of_bi
           renderInput={(params) => (
             <Controller
               as={<StyledTextField placeholder="Enter name or email of the client" {...params} />}
-              name="client_detail_id"
+              name="student_detail_id"
               control={control}
-              error={Boolean(errors.client_detail_id)}
-              helperText={errors.client_detail_id && errors.client_detail_id.message}
+              error={Boolean(errors.student_detail_id)}
+              helperText={errors.student_detail_id && errors.student_detail_id.message}
             />
           )}
         />
@@ -103,7 +103,7 @@ function Client({ control, errors, setValue, trigger, project, client_type_of_bi
               />
             </RadioGroup>
           }
-          name="client_type_of_billing"
+          name="student_type_of_billing"
           control={control}
         />
         <StyledTypography fontSize="16px" style={{ marginTop: '30px' }}>
@@ -113,14 +113,14 @@ function Client({ control, errors, setValue, trigger, project, client_type_of_bi
           <img style={{ marginTop: '15px' }} src={dollarIcon} alt="dollar" />
           <Controller
             as={<StyledTextField placeholder="Amount" />}
-            name="client_payment_amount"
+            name="student_payment_amount"
             control={control}
             type="number"
-            error={Boolean(errors.client_payment_amount)}
-            helperText={errors.client_payment_amount && errors.client_payment_amount.message}
+            error={Boolean(errors.student_payment_amount)}
+            helperText={errors.student_payment_amount && errors.student_payment_amount.message}
             style={{ width: '100px', marginBottom: '20px', marginLeft: '5px' }}
           />
-          {client_type_of_billing === 'hourly_rate' && (
+          {student_type_of_billing === 'hourly_rate' && (
             <StyledTypography style={{ marginTop: '17px', marginLeft: '15px' }} fontSize="16px">
               per hour
             </StyledTypography>

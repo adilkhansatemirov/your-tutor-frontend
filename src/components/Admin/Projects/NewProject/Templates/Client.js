@@ -24,11 +24,11 @@ function Client({ setTemplate, newProject, setNewProject, setClient }) {
 
   const { handleSubmit, setValue, errors, control, trigger } = useForm({
     defaultValues: {
-      client_detail_id: newProject.client_detail_id,
+      student_detail_id: newProject.student_detail_id,
     },
     resolver: yupResolver(
       Yup.object().shape({
-        client_detail_id: Yup.string().required('Name or email is required'),
+        student_detail_id: Yup.string().required('Name or email is required'),
       }),
     ),
   });
@@ -38,11 +38,11 @@ function Client({ setTemplate, newProject, setNewProject, setClient }) {
       .then((response) => {
         setClients(response.data.filter((client) => client.has_payment_info));
 
-        const client = response.data.find((clientDetail) => clientDetail.id === newProject.client_detail_id);
+        const client = response.data.find((clientDetail) => clientDetail.id === newProject.student_detail_id);
         if (client) {
           setSelectedClient(client);
-          setValue('client_detail_id', newProject.client_detail_id);
-          trigger('client_detail_id');
+          setValue('student_detail_id', newProject.student_detail_id);
+          trigger('student_detail_id');
         }
       })
       .catch(() => {
@@ -54,12 +54,12 @@ function Client({ setTemplate, newProject, setNewProject, setClient }) {
   const handleAutoCompleteValueChange = (event, value) => {
     setSelectedClient(value);
     setClient(value);
-    setValue('client_detail_id', value ? value.id : '');
-    trigger('client_detail_id');
+    setValue('student_detail_id', value ? value.id : '');
+    trigger('student_detail_id');
   };
 
   const onSubmit = (values) => {
-    setNewProject({ ...newProject, client_detail_id: Number(values.client_detail_id) });
+    setNewProject({ ...newProject, student_detail_id: Number(values.student_detail_id) });
     setTemplate('project-name');
   };
 
@@ -87,10 +87,10 @@ function Client({ setTemplate, newProject, setNewProject, setClient }) {
           renderInput={(params) => (
             <Controller
               as={<StyledTextField placeholder="Enter name or email of the client" {...params} />}
-              name="client_detail_id"
+              name="student_detail_id"
               control={control}
-              error={Boolean(errors.client_detail_id)}
-              helperText={errors.client_detail_id && errors.client_detail_id.message}
+              error={Boolean(errors.student_detail_id)}
+              helperText={errors.student_detail_id && errors.student_detail_id.message}
             />
           )}
         />

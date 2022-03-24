@@ -16,8 +16,8 @@ function ProjectBidsTable({ project, fetchProject }) {
   const assignFreelancer = (bid) => {
     setSubmitting(true);
     const projectData = {
-      freelancer_detail_id: bid.user.freelancer_detail.id,
-      freelancer_payment_amount: bid.compensation,
+      tutor_detail_id: bid.user.freelancer_detail.id,
+      tutor_payment_amount: bid.compensation,
       project_status: 'active',
     };
     assignFreelancerToProject(project.id, projectData)

@@ -6,6 +6,8 @@ const skyBlueDark = '#1478B5';
 const skyBluePale = '#E8EDF7';
 const spaceBlue = '#2F3D40';
 
+const green = 'green';
+
 // red
 const tomatoRed = '#FF3838';
 const tomatoRedDark = '#D42F2F';
@@ -44,6 +46,9 @@ const theme = createMuiTheme({
     silverGray: {
       main: silverGray,
       dark: silverGrayDark,
+    },
+    green: {
+      main: green,
     },
     smokeWhite,
     black,

@@ -117,12 +117,12 @@ function InfoSide({ timesheet }) {
         >
           <NumberFormat
             prefix="$"
-            value={Number(timesheet.project.freelancer_payment_amount)}
+            value={Number(timesheet.project.tutor_payment_amount)}
             decimalScale={2}
             fixedDecimalScale={true}
             displayType="text"
             thousandSeparator={true}
-            suffix={timesheet.project.client_type_of_billing === 'hourly_rate' ? '/hr' : ''}
+            suffix={timesheet.project.student_type_of_billing === 'hourly_rate' ? '/hr' : ''}
           />
         </StyledTypography>
       </InfoBox>

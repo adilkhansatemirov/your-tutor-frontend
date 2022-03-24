@@ -61,21 +61,21 @@ function Client({ project, loading, setLoading, fetchProject }) {
       >
         <NumberFormat
           prefix="$"
-          value={Number(project.client_payment_amount)}
+          value={Number(project.student_payment_amount)}
           decimalScale={2}
           fixedDecimalScale={true}
           displayType="text"
           thousandSeparator={true}
-          suffix={project.client_type_of_billing === 'hourly_rate' ? '/hr' : ''}
+          suffix={project.student_type_of_billing === 'hourly_rate' ? '/hr' : ''}
         />
       </StyledTypography>
       <StyledTypography style={{ marginBottom: '20px' }} fontFamily="Roboto" fontSize={12}>
-        {capitalize(removeUnderscores(project.client_type_of_billing))}
+        {capitalize(removeUnderscores(project.student_type_of_billing))}
       </StyledTypography>
       <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Roboto" fontSize={12}>
         {capitalize(removeUnderscores(project.invoicing_schedule))} Invoicing
       </StyledTypography>
-      {project.client_type_of_billing !== 'custom_type' &&
+      {project.student_type_of_billing !== 'custom_type' &&
         project.invoicing_schedule !== 'one_time' &&
         (project.automated_invoicing ? (
           <StyledButton

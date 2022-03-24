@@ -21,12 +21,12 @@ function EditProject({ project }) {
     defaultValues: {
       title: project.title,
       description: project.description,
-      client_detail_id: project.client_detail.id,
+      student_detail_id: project.client_detail.id,
       invoicing_schedule: project.invoicing_schedule,
-      client_type_of_billing: project.client_type_of_billing,
-      client_payment_amount: project.client_payment_amount,
-      freelancer_payment_amount: project.freelancer_payment_amount,
-      freelancer_detail_id: project.freelancer_detail ? project.freelancer_detail.id : null,
+      student_type_of_billing: project.student_type_of_billing,
+      student_payment_amount: project.student_payment_amount,
+      tutor_payment_amount: project.tutor_payment_amount,
+      tutor_detail_id: project.freelancer_detail ? project.freelancer_detail.id : null,
     },
     resolver: yupResolver(validationSchema(project)),
   });
@@ -35,7 +35,7 @@ function EditProject({ project }) {
     setSubmitting(true);
     const projectData = { ...values };
 
-    if (project.freelancer_detail === null && values.freelancer_detail_id) {
+    if (project.freelancer_detail === null && values.tutor_detail_id) {
       projectData.project_status = 'active';
     }
 
@@ -81,7 +81,7 @@ function EditProject({ project }) {
         setValue={setValue}
         trigger={trigger}
         project={project}
-        client_type_of_billing={watch('client_type_of_billing')}
+        student_type_of_billing={watch('student_type_of_billing')}
       />
       <Freelancer
         control={control}
@@ -89,7 +89,7 @@ function EditProject({ project }) {
         setValue={setValue}
         trigger={trigger}
         project={project}
-        client_type_of_billing={watch('client_type_of_billing')}
+        student_type_of_billing={watch('student_type_of_billing')}
       />
     </>
   );
