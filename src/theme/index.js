@@ -50,6 +50,9 @@ const theme = createMuiTheme({
     green: {
       main: green,
     },
+    lightYellow: {
+      main: 'yellow',
+    },
     smokeWhite,
     black,
     white,

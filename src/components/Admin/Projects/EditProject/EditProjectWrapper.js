@@ -19,7 +19,7 @@ function EditProjectWrapper() {
         setLoading(false);
       })
       .catch((error) => {
-        if (error.response.status !== 404) {
+        if (error?.response?.status !== 404) {
           showSnackbar('Something went wrong', 'error');
           setLoading(false);
         }

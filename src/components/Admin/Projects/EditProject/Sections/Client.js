@@ -21,10 +21,10 @@ function Client({ control, errors, setValue, trigger, project, student_type_of_b
     getAllClients()
       .then((response) => {
         setClients(response.data.filter((client) => client.has_payment_info));
-        const client = response.data.find((clientDetail) => clientDetail.id === project.client_detail.id);
+        const client = response.data.find((clientDetail) => clientDetail.id === project.student_detail.id);
         if (client) {
           setSelectedClient(client);
-          setValue('student_detail_id', project.client_detail.id);
+          setValue('student_detail_id', project.student_detail.id);
           trigger('student_detail_id');
         }
       })

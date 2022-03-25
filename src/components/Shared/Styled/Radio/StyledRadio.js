@@ -25,9 +25,9 @@ const useStyles = makeStyles((theme) => ({
   checkedIcon: {
     padding: '6px',
     border: 'none',
-    backgroundColor: theme.palette.bluishBlack,
+    backgroundColor: theme.palette.black,
     'input:hover ~ &': {
-      backgroundColor: theme.palette.bluishBlack,
+      backgroundColor: theme.palette.black,
     },
   },
 }));

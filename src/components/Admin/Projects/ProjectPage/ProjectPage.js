@@ -15,13 +15,13 @@ import EnterPaymentAmount from './EnterPaymentAmount/EnterPaymentAmount';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-// import { assignFreelancerToProject, startBids } from 'services/admin/projects';
+import { assignFreelancerToProject, startBids } from 'services/admin/projects';
 
 function ProjectPage() {
   const [project, setProject] = useState(null);
 
   const [loading, setLoading] = useState(true);
-  // const [submitting, setSubmitting] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const { projectId } = useParams();
 
@@ -34,7 +34,7 @@ function ProjectPage() {
         setLoading(false);
       })
       .catch((error) => {
-        if (error.response.status !== 404) {
+        if (error?.response?.status !== 404) {
           showSnackbar('Something went wrong', 'error');
           setLoading(false);
         }
@@ -56,7 +56,7 @@ function ProjectPage() {
   };
 
   const {
-    // handleSubmit,
+    handleSubmit,
     errors,
     control,
   } = useForm({
@@ -70,48 +70,48 @@ function ProjectPage() {
     ),
   });
   const [freelancersToSendOpportunityTo, setFreelancersToSendOpportunityTo] = useState([]);
-  // const onSubmit = (values) => {
-  //   setSubmitting(true);
-  //   if (freelancersToSendOpportunityTo.length === 0) {
-  //     showSnackbar('You need to select at least on freelancer', 'error');
-  //     return;
-  //   }
+  const onSubmit = (values) => {
+    setSubmitting(true);
+    if (freelancersToSendOpportunityTo.length === 0) {
+      showSnackbar('You need to select at least on freelancer', 'error');
+      return;
+    }
 
-  //   let projectData = null;
-  //   if (freelancersToSendOpportunityTo.length === 1) {
-  //     projectData = {
-  //       project_status: 'active',
-  //       tutor_detail_id: freelancersToSendOpportunityTo[0].id,
-  //       tutor_payment_amount: values.tutor_payment_amount,
-  //     };
-  //     assignFreelancerToProject(project.id, projectData)
-  //       .then(() => {
-  //         showSnackbar('Freelancer has been assigned', 'success');
-  //         setSubmitting(false);
-  //         fetchProject();
-  //       })
-  //       .catch(() => {
-  //         showSnackbar('Something went wrong', 'success');
-  //       });
-  //   }
+    let projectData = null;
+    if (freelancersToSendOpportunityTo.length === 1) {
+      projectData = {
+        project_status: 'active',
+        tutor_detail_id: freelancersToSendOpportunityTo[0].id,
+        tutor_payment_amount: values.tutor_payment_amount,
+      };
+      assignFreelancerToProject(project.id, projectData)
+        .then(() => {
+          showSnackbar('Freelancer has been assigned', 'success');
+          setSubmitting(false);
+          fetchProject();
+        })
+        .catch(() => {
+          showSnackbar('Something went wrong', 'success');
+        });
+    }
 
-  //   if (freelancersToSendOpportunityTo.length > 1) {
-  //     projectData = {
-  //       project_status: 'accepting_bids',
-  //       tutor_payment_amount: values.tutor_payment_amount,
-  //     };
-  //     const projectBids = freelancersToSendOpportunityTo.map((freelancer) => ({ user_id: freelancer.user.id }));
-  //     startBids(project.id, { project_data: { project: projectData, project_bids: projectBids } })
-  //       .then(() => {
-  //         showSnackbar('Bids has been started', 'success');
-  //         setSubmitting(false);
-  //         fetchProject();
-  //       })
-  //       .catch(() => {
-  //         showSnackbar('Something went wrong', 'error');
-  //       });
-  //   }
-  // };
+    if (freelancersToSendOpportunityTo.length > 1) {
+      projectData = {
+        project_status: 'accepting_bids',
+        tutor_payment_amount: values.tutor_payment_amount,
+      };
+      const projectBids = freelancersToSendOpportunityTo.map((freelancer) => ({ user_id: freelancer.user.id }));
+      startBids(project.id, { project_data: { project: projectData, project_bids: projectBids } })
+        .then(() => {
+          showSnackbar('Bids has been started', 'success');
+          setSubmitting(false);
+          fetchProject();
+        })
+        .catch(() => {
+          showSnackbar('Something went wrong', 'error');
+        });
+    }
+  };
 
   return loading ? (
     <PageLoader />
@@ -173,7 +173,7 @@ function ProjectPage() {
                 </Link>
               </>
             )}
-            {/* {project.project_status === 'assigning_freelancer' && (
+            {project.project_status === 'assigning_freelancer' && (
               <StyledButton
                 textTransform="uppercase"
                 onClick={() => handleSubmit(onSubmit)()}
@@ -184,10 +184,10 @@ function ProjectPage() {
               >
                 Assign
               </StyledButton>
-            )} */}
+            )}
             <Link to={`/admin/projects/${project.id}/edit`} style={{ textDecoration: 'none' }}>
               <StyledButton
-                // disabled={submitting}
+                disabled={submitting}
                 textTransform="uppercase"
                 variant="light-blue"
                 size="small"

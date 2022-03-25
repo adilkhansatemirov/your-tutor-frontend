@@ -21,12 +21,12 @@ function EditProject({ project }) {
     defaultValues: {
       title: project.title,
       description: project.description,
-      student_detail_id: project.client_detail.id,
+      student_detail_id: project.student_detail.id,
       invoicing_schedule: project.invoicing_schedule,
       student_type_of_billing: project.student_type_of_billing,
       student_payment_amount: project.student_payment_amount,
       tutor_payment_amount: project.tutor_payment_amount,
-      tutor_detail_id: project.freelancer_detail ? project.freelancer_detail.id : null,
+      tutor_detail_id: project.tutor_detail ? project.tutor_detail.id : null,
     },
     resolver: yupResolver(validationSchema(project)),
   });
