@@ -1,22 +1,22 @@
 import { makeStyles } from '@material-ui/core';
 
-const DRAWER_WIDTH = 246;
+const DRAWER_WIDTH = 420;
 
 export default makeStyles((theme) => ({
   drawer: {
     width: DRAWER_WIDTH,
   },
   drawerPaper: {
-    backgroundColor: '#043465',
+    backgroundColor: '#E8EDF7',
     width: DRAWER_WIDTH,
   },
   logo: {
-    height: '70px',
-    marginTop: '22px',
-    marginLeft: '20px',
+    height: 130,
   },
   list: {
-    marginTop: '40px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
   },
   link: {
     textDecoration: 'none',
@@ -24,7 +24,6 @@ export default makeStyles((theme) => ({
   iconContainer: {
     width: '45px',
     height: '45px',
-    backgroundColor: 'rgba(134, 169, 224, 0.3)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -37,18 +36,15 @@ export default makeStyles((theme) => ({
   listItem: {
     position: 'relative',
     borderRight: '4px solid transparent',
-    color: '#fff',
+    color: '#0F2C4C',
+    width: 335,
+    fontSize: 18,
+    height: 80
   },
   listItemActive: {
-    backgroundColor: 'rgba(0,0,0,1)',
+    backgroundColor: 'rgba(196, 196, 196, 0.24);',
     fontWeight: 700,
-    borderRight: `5px solid rgba(24,145,218,1)`,
-    '&:hover': {
-      backgroundColor: 'rgba(0,0,0,1)',
-    },
-    '& $iconContainer': {
-      backgroundColor: 'rgba(1,44,93,1)',
-    },
+    borderRight: '5px solid #2F3D40',
   },
   badge: {
     position: 'absolute',

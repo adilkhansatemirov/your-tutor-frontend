@@ -24,13 +24,13 @@ import { SnackbarContext } from 'context/snackbarContext';
 import { AuthContext } from 'context/authContext';
 import PaymentsList from './Payments/PaymentsList';
 
-import projectsIcon from 'assets/icons/calendar.png';
-import invoicesIcon from 'assets/icons/calendar.png';
-import paymentIcon from 'assets/icons/calendar.png';
-import timesheetsIcon from 'assets/icons/calendar.png';
-import clientsIcon from 'assets/icons/calendar.png';
-import freelancersIcon from 'assets/icons/calendar.png';
-import settingsIcon from 'assets/icons/calendar.png';
+import projectsIcon from 'assets/icons/lessons.svg';
+import invoicesIcon from 'assets/icons/invoices.svg';
+// import paymentIcon from 'assets/icons/calendar.png';
+import timesheetsIcon from 'assets/icons/timesheets.svg';
+import clientsIcon from 'assets/icons/students.svg';
+import freelancersIcon from 'assets/icons/tutors.svg';
+import settingsIcon from 'assets/icons/settings.svg';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -63,11 +63,11 @@ function AdminLayout() {
       to: '/admin/invoices',
       icon: invoicesIcon,
     },
-    {
-      name: 'Payments',
-      to: '/admin/payments',
-      icon: paymentIcon,
-    },
+    // {
+    //   name: 'Payments',
+    //   to: '/admin/payments',
+    //   icon: paymentIcon,
+    // },
     {
       name: 'Timesheets',
       to: '/admin/timesheets',

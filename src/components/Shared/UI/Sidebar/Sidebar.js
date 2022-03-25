@@ -6,8 +6,8 @@ import { logout } from 'services/auth';
 import { useLocation, useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-import logoWhite from 'assets/icons/logo.png';
-import logoutIcon from 'assets/icons/logout.png';
+import logo from 'assets/icons/logo.svg';
+import logoutIcon from 'assets/icons/logout.svg';
 import StyledTypography from 'components/Shared/Styled/StyledTypography';
 import { AuthContext } from 'context/authContext';
 
@@ -29,10 +29,9 @@ function Sidebar({ sidebarItems }) {
       }}
     >
       <Box
-        style={{ width: '100%', background: 'white', display: 'flex', alignItems: 'center' }}
+        style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
       >
-        <img src={logoWhite} className={classes.logo} alt="inhome-logo" />
-        <StyledTypography fontSize={'20px'} fontWeight="black">You Tutor</StyledTypography>
+        <img src={logo} className={classes.logo} alt="inhome-logo" />
       </Box>
       <List disablePadding className={classes.list}>
         {sidebarItems.map((item, index) => (
