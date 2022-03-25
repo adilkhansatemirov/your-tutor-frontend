@@ -3,22 +3,22 @@ import { Box, TableHead, TableBody, Table, InputAdornment, FormControl, MenuItem
 import StyledTableCell from 'components/Shared/Styled/StyledTableCell';
 import StyledTypography from 'components/Shared/Styled/StyledTypography';
 import FreelancerListItem from '../FreelancerListItem/FreelancerListItem';
-// import { getFreelancers } from 'services 'services/admin/freelancers';
+import { getFreelancers } from 'services/admin/freelancers';
 import StyledTableRow from 'components/Shared/Styled/StyledTableRow';
-// import { SnackbarContext } from 'context/snackbarContext';
+import { SnackbarContext } from 'context/snackbarContext';
 import PageHeader from 'components/Shared/UI/PageHeader';
 import StyledTextField from 'components/Shared/Styled/StyledTextField';
-// import FastIcon from 'components/Shared/Utils/FastIcon';
+import FastIcon from 'components/Shared/Utils/FastIcon';
 import StatusCounter from 'components/Shared/UI/StatusCounter';
 import PageLoader from 'components/Shared/Utils/PageLoader';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import StyledSelect from 'components/Shared/Styled/StyledSelect';
 import TableCellSortArrows from 'components/Shared/Utils/TableCellSortArrows';
-// import { useFilter, usePagination, useSearch, useSort } from 'hooks';
+import { useFilter, usePagination, useSearch, useSort } from 'hooks';
 import axios from 'axios';
 
 function FreelancerList() {
-  // const { // showSnackbar } = useContext(SnackbarContext);
+  const { showSnackbar } = useContext(SnackbarContext);
 
   const [loading, setLoading] = useState(true);
   const [counters, setCounters] = useState(null);
@@ -34,61 +34,61 @@ function FreelancerList() {
   }, []);
 
   const fetchFreelancers = (params, cancelToken) => {
-    // getFreelancers(params, cancelToken)
-    //   .then((response) => {
-    //     setCounters(response.data.meta.counters);
-    //     setPagination(response.data.meta.pagination);
-    //     setFreelancers(response.data.list);
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     if (axios.isCancel(error)) {
-    //       console.log('Operation canceled due to new request');
-    //     } else {
-    //       // showSnackbar('Something went wrong', 'error');
-    //     }
-    //     setLoading(false);
-    //   });
+    getFreelancers(params, cancelToken)
+      .then((response) => {
+        setCounters(response.data.meta.counters);
+        setPagination(response.data.meta.pagination);
+        setFreelancers(response.data.list);
+        setLoading(false);
+      })
+      .catch((error) => {
+        if (axios.isCancel(error)) {
+          console.log('Operation canceled due to new request');
+        } else {
+          // showSnackbar('Something went wrong', 'error');
+        }
+        setLoading(false);
+      });
   };
 
-  // const fetchMore = usePagination({
-  //   pagination,
-  //   setPagination,
-  //   params,
-  //   setParams,
-  //   data: freelancers,
-  //   getData: getFreelancers,
-  //   setData: setFreelancers,
-  //   setLoading,
-  //   setCounters,
-  // });
+  const fetchMore = usePagination({
+    pagination,
+    setPagination,
+    params,
+    setParams,
+    data: freelancers,
+    getData: getFreelancers,
+    setData: setFreelancers,
+    setLoading,
+    setCounters,
+  });
 
-  // const handleSearch = useSearch({
-  //   params,
-  //   setParams,
-  //   setLoading,
-  //   fetchData: fetchFreelancers,
-  // });
+  const handleSearch = useSearch({
+    params,
+    setParams,
+    setLoading,
+    fetchData: fetchFreelancers,
+  });
 
-  // const { filterValue, handleFilterChange } = useFilter({
-  //   params,
-  //   setParams,
-  //   fetchData: fetchFreelancers,
-  //   filterBy: 'profile_status',
-  // });
+  const { filterValue, handleFilterChange } = useFilter({
+    params,
+    setParams,
+    fetchData: fetchFreelancers,
+    filterBy: 'profile_status',
+  });
 
-  // const handleChangeSortParams = useSort({ params, setParams, fetchData: fetchFreelancers });
+  const handleChangeSortParams = useSort({ params, setParams, fetchData: fetchFreelancers });
 
   return (
     <>
       <PageHeader>
         <Box display="flex" justifyContent="space-between">
           <StyledTypography fontFamily="Rubik" fontWeight="bold" fontSize={20}>
-            Freelancers
+            Tutors
           </StyledTypography>
         </Box>
       </PageHeader>
-      {/* <Box display="flex" alignItems="center" justifyContent="space-between" style={{ marginBottom: '27px' }}>
+      <Box display="flex" alignItems="center" justifyContent="space-between" style={{ marginBottom: '27px' }}>
         <Box display="flex">
           <StatusCounter label="Billing" count={counters?.billing_count} color="green" />
           <StatusCounter label="Pending Approval" count={counters?.pending_approval_count} color="orange" />
@@ -98,7 +98,7 @@ function FreelancerList() {
         <Box>
           <StyledTextField
             small
-            placeholder="Search freelancers..."
+            placeholder="Search tutors..."
             onChange={handleSearch}
             InputProps={{
               startAdornment: (
@@ -154,11 +154,11 @@ function FreelancerList() {
               </colgroup>
               <TableHead>
                 <StyledTableRow>
-                  <StyledTableCell onClick={() => handleChangeSortParams('users_freelancer_details.first_name')}>
+                  <StyledTableCell onClick={() => handleChangeSortParams('users_tutor_details.first_name')}>
                     <Box display="flex" alignItems="center">
-                      Freelancer
+                      Tutor
                       <TableCellSortArrows
-                        sortKey="users_freelancer_details.first_name"
+                        sortKey="users_tutor_details.first_name"
                         currentSortKey={params.sort_key}
                         currentSortDirection={params.sort_direction}
                       />
@@ -181,7 +181,7 @@ function FreelancerList() {
             </Table>
           </InfiniteScroll>
         </>
-      )} */}
+      )}
     </>
   );
 }

@@ -1,7 +1,7 @@
 import api from '../api';
 
 export const getFreelancers = (params, cancelToken) => {
-  return api.get('/admin/freelancer_details', { params, cancelToken });
+  return api.get('/admin/tutor_details', { params, cancelToken });
 };
 
 export const getFreelancer = (id) => {
@@ -9,11 +9,11 @@ export const getFreelancer = (id) => {
 };
 
 export const getAllFreelancers = () => {
-  return api.get('/admin/freelancer_details/all');
+  return api.get('/admin/tutor_details/all');
 };
 
 export const updateFreelancerDetails = (data) => {
-  return api.put(`/admin/freelancer_details/${data.id}`, data);
+  return api.put(`/admin/tutor_details/${data.id}`, data);
 };
 
 export const uploadResume = (formData) => {

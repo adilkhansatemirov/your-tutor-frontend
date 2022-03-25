@@ -6,6 +6,12 @@ const getColor = (color, theme) => {
       return theme.palette.skyBlue.main;
     case 'white':
       return theme.palette.white;
+    case 'orange':
+      return 'orange';
+    case 'green':
+      return 'green';
+    case 'tomatoRed':
+      return 'red';
     case 'black':
       return theme.palette.black;
     default:

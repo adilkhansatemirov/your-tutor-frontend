@@ -95,10 +95,10 @@ function ClientList() {
       <PageHeader>
         <Box display="flex" justifyContent="space-between">
           <StyledTypography fontFamily="Rubik" fontWeight="bold" fontSize={20}>
-            Clients
+            Students
           </StyledTypography>
           <StyledButton size="small" textTransform="uppercase" variant="light-blue" onClick={handleOpenNewClientModal}>
-            Add client
+            Add student
           </StyledButton>
         </Box>
       </PageHeader>
@@ -112,7 +112,7 @@ function ClientList() {
         <Box>
           <StyledTextField
             small
-            placeholder="Search clients..."
+            placeholder="Search students..."
             onChange={handleSearch}
             InputProps={{
               startAdornment: (
@@ -168,7 +168,7 @@ function ClientList() {
               <StyledTableRow>
                 <StyledTableCell sortDirection="asc" onClick={() => handleChangeSortParams('users.first_name')}>
                   <Box display="flex" alignItems="center">
-                    Client
+                    Student
                     <TableCellSortArrows
                       sortKey="users.first_name"
                       currentSortKey={params.sort_key}
@@ -176,11 +176,11 @@ function ClientList() {
                     />
                   </Box>
                 </StyledTableCell>
-                <StyledTableCell onClick={() => handleChangeSortParams('client_details.company_name')}>
+                <StyledTableCell onClick={() => handleChangeSortParams('student_details.company_name')}>
                   <Box display="flex" alignItems="center">
                     Company
                     <TableCellSortArrows
-                      sortKey="client_details.company_name"
+                      sortKey="student_details.company_name"
                       currentSortKey={params.sort_key}
                       currentSortDirection={params.sort_direction}
                     />
