@@ -2,7 +2,7 @@ import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { Link } from 'react-router-dom';
 
-import logoWhite from 'assets/icons/logo.png';
+import logoWhite from 'assets/images/logo.png';
 // import semiTransparentBackground from 'assets/images/background-semi-transparent.png';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,18 +15,19 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     display: 'flex',
-    backgroundColor: '#fff',
+    backgroundColor: '#0F2C4C',
     position: 'relative',
     borderRadius: 10,
     boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.15)',
     [theme.breakpoints.down('xs')]: {
       marginBottom: 30,
     },
-    minHeight: 450,
+    minHeight: 600,
   },
   logoSide: {
-    width: 305,
-    background: `linear-gradient(#004BA1, #004BA1)`,
+    width: 300,
+    //background: `linear-gradient(#004BA1, #004BA1)`,
+    background:'#E8EDF7',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     borderTopLeftRadius: 8,
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     padding: '30px 60px 40px 60px',
-    width: '500px',
+    width: '465px',
   },
 }));
 

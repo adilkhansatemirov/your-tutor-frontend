@@ -91,14 +91,14 @@ function SignInPass({ email, setEmail, setTemplate }) {
 
   return (
     <>
-      <StyledTypography fontFamily="Poppins" fontSize={33} className={classes.title} type="h1" fontWeight="bold">
-        Sign In
+      <StyledTypography fontFamily="Roboto" fontSize={36} className={classes.title} type="h1" fontWeight="medium">
+        Sign-in
       </StyledTypography>
       {loading ? (
         <CircularProgress style={{ margin: '0 auto 20px' }} />
       ) : (
         <>
-          <StyledTypography fontSize={18} fontFamily="Poppins" className={classes.email} type="h6">
+          <StyledTypography fontSize={14} fontFamily="roboto" className={classes.email} type="h6">
             {email}
           </StyledTypography>
           <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
@@ -109,17 +109,10 @@ function SignInPass({ email, setEmail, setTemplate }) {
               as={
                 <StyledTextField
                   className={classes.input}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="start">
-                        <FastIcon width="13" height="18" iconName="lock" />
-                      </InputAdornment>
-                    ),
-                  }}
-                  fontFamily="Poppins"
+                  fontFamily="Roboto"
                 />
               }
-              placeholder="Password"
+              //placeholder="Password"
               name="password"
               type="password"
               autoComplete="current-password"
@@ -129,15 +122,13 @@ function SignInPass({ email, setEmail, setTemplate }) {
             />
             <Box className={classes.acitonsWrapper}>
               <Box onClick={handleForgotPassword} className={classes.actionsItem}>
-                <FastIcon className={classes.actionIcon} width="14" height="18" iconName="lockQuestion" />
                 <StyledTypography>Forgot password</StyledTypography>
               </Box>
               <Box onClick={handleChangeEmail} className={classes.actionsItem}>
-                <FastIcon className={classes.actionIcon} width="15" height="13" iconName="mail" />
                 <StyledTypography>Use different email</StyledTypography>
               </Box>
             </Box>
-            <StyledButton className={classes.button} fontFamily="Poppins" type="submit" size="normal" variant="blue">
+            <StyledButton className={classes.button} fontFamily="Roboto" type="submit" size="normal" variant="blue">
               Next
             </StyledButton>
           </form>

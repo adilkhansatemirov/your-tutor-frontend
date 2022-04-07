@@ -54,35 +54,28 @@ function SignInMail({ setEmail, setTemplate }) {
 
   return (
     <>
-      <StyledTypography fontFamily="Poppins" fontSize={33} type="h1" fontWeight="bold" style={{ marginTop: '15px' }}>
-        Sign In
+      <StyledTypography fontFamily="Roboto" fontSize={36} className={classes.title} type="h1" fontWeight="medium" style={{ marginTop: '15px' }}>
+        Sign-in
       </StyledTypography>
       <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
         {loading ? (
           <CircularProgress style={{ margin: '0 auto 20px' }} />
         ) : (
           <>
-            <StyledTypography fontFamily="Poppins" className={classes.text}>
-              Login to your account
+            <StyledTypography fontFamily="Roboto" fontSize={14} className={classes.text}>
+             Enter your login
             </StyledTypography>
             <Controller
               as={<StyledTextField />}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="start">
-                    <FastIcon width="18" height="17" iconName="person" />
-                  </InputAdornment>
-                ),
-              }}
               className={classes.input}
-              placeholder="Your email"
+              //placeholder="Your email"
               error={Boolean(errors.email)}
               name="email"
               control={control}
               autoComplete="email"
               helperText={errors.email && errors.email.message}
             />
-            <StyledButton className={classes.button} fontFamily="Poppins" type="submit" size="normal" variant="blue">
+            <StyledButton className={classes.button} fontFamily="Roboto" type="submit" size="normal" variant="yellow">
               Next
             </StyledButton>
           </>

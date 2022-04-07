@@ -17,19 +17,24 @@ const useStyles = makeStyles((theme) => ({
   formText: {
     textAlign: 'center',
     margin: '0 0 20px 0',
-    fontSize: 20,
+    fontSize: 14,
   },
   input: {
-    maxWidth: 350,
+    maxWidth: 300,
     marginBottom: 7,
+    backgroundColor:'#E8EDF7',
   },
   email: {
-    color: '#004BA1',
+    color: '#E8EDF7',
     marginTop: '16px',
+  },
+  title: {
+    color:'#E8EDF7',
   },
   text: {
     fontSize: 18,
     marginBottom: 15,
+    color:'#E8EDF7',
   },
   acitonsWrapper: {
     display: 'flex',
@@ -40,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     marginRight: 30,
     alignItems: 'center',
+    color:'#E8EDF7',
   },
   actionIcon: {
     marginRight: 3,
@@ -48,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 'auto',
     width: 100,
     marginTop: 30,
+    backgroundColor:'#FFC739',
+    color:'#2F3D40',
+    borderRadius:'20px',
   },
 }));
 

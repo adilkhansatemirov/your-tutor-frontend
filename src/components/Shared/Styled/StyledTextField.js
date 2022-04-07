@@ -40,7 +40,7 @@ const StyledTextField = React.forwardRef(({ fontFamily, small, ...rest }, ref) =
           padding: small ? '10px' : '18.5px 14px',
         },
       }}
-      variant="outlined"
+      //variant="outlined"
       {...rest}
     />
   );

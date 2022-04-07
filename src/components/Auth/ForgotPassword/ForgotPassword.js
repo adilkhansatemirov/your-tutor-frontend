@@ -47,10 +47,10 @@ function ForgotPassword() {
 
   return (
     <AuthLayout>
-      <StyledTypography fontFamily="Poppins" className={classes.title} type="h1" weight="bold">
+      <StyledTypography fontFamily="Roboto" className={classes.title} type="h1" weight="medium">
         Forgot password?
       </StyledTypography>
-      <StyledTypography fontFamily="Poppins" type="h6" weight="regular" className={classes.text}>
+      <StyledTypography fontFamily="Roboto" type="h6" weight="regular" className={classes.text}>
         Enter your email address and we'll send you a link to reset your password
       </StyledTypography>
       <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
@@ -59,7 +59,7 @@ function ForgotPassword() {
         ) : (
           <>
             <Controller
-              as={<StyledTextField className={classes.input} fontFamily="Poppins" />}
+              as={<StyledTextField className={classes.input} fontFamily="Roboto" />}
               placeholder="Your email"
               error={Boolean(errors.email)}
               name="email"
@@ -69,10 +69,10 @@ function ForgotPassword() {
               helperText={errors.email && errors.email.message}
             />
             <Box>
-              <StyledButton fontFamily="Poppins" type="submit" variant="blue">
+              <StyledButton className={classes.button} fontFamily="Roboto" type="submit" variant="blue">
                 Next
               </StyledButton>
-              <StyledButton onClick={handleCancel} style={{ marginLeft: '15px' }} fontFamily="Poppins" variant="outlined-dark-blue">
+              <StyledButton className={classes.button} onClick={handleCancel} style={{ marginLeft: '15px' }} fontFamily="Roboto" variant="outlined-dark-blue">
                 Cancel
               </StyledButton>
             </Box>
