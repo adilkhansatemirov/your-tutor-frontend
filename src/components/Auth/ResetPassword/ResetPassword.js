@@ -65,13 +65,13 @@ function ResetPassword() {
             let path = '/';
             if (role === 'admin') {
               path = '/admin/projects';
-            } else if (role === 'freelancer') {
+            } else if (role === 'tutor') {
               if (freelancerDetail.qualified) {
-                path = '/freelancer/dashboard';
+                path = '/tutor/dashboard';
               } else if (freelancerDetail.interview_scheduled) {
-                path = '/freelancer-application/done';
+                path = '/tutor-application/done';
               } else {
-                path = '/freelancer-application/resume';
+                path = '/tutor-application/resume';
               }
             } else if (role === 'client') {
               if (data.has_payment_info) {

@@ -31,8 +31,8 @@ function InvoicingSchedule({ setTemplate, newProject, setNewProject }) {
           as={
             <RadioGroup style={{ flexDirection: 'row', marginBottom: '10px' }}>
               <StyledRadioFormControlLabel value="one_time" control={<StyledRadio />} label="One Time" />
-              <StyledRadioFormControlLabel value="weekly" control={<StyledRadio />} label="Weekly" />
-              <StyledRadioFormControlLabel value="bi_weekly" control={<StyledRadio />} label="Bi-weekly" />
+              <StyledRadioFormControlLabel disabled value="weekly" control={<StyledRadio />} label="Weekly" />
+              <StyledRadioFormControlLabel disabled value="bi_weekly" control={<StyledRadio />} label="Bi-weekly" />
             </RadioGroup>
           }
           name="invoicing_schedule"

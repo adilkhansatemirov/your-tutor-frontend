@@ -42,13 +42,13 @@ function EnterCode() {
             setLoading(false);
             if (user.role === 'admin') {
               history.push('/admin/projects');
-            } else if (user.role === 'freelancer') {
+            } else if (user.role === 'tutor') {
               if (freelancerDetail.qualified) {
-                history.push('/freelancer/dashboard');
+                history.push('/tutor/dashboard');
               } else if (freelancerDetail.interview_scheduled) {
-                history.push('/freelancer-application/done');
+                history.push('/tutor-application/done');
               } else {
-                history.push('/freelancer-application/resume');
+                history.push('/tutor-application/resume');
               }
             }
             showSnackbar('You have successfully logged in', 'success');

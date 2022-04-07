@@ -8,19 +8,22 @@ import { StylesProvider } from '@material-ui/core/styles';
 import theme from 'theme';
 import { SnackbarProvider } from 'context/snackbarContext';
 import { AuthProvider } from 'context/authContext';
+import { FreelancerProvider } from 'context/freelancerContext';
 import Snackbar from 'components/Shared/Utils/Snackbar';
 
 ReactDOM.render(
   <SnackbarProvider>
     <AuthProvider>
-      <StylesProvider injectFirst>
-        <MuiThemeProvider theme={theme}>
-          <StyledThemeProvider theme={theme}>
-            <App />
-            <Snackbar />
-          </StyledThemeProvider>
-        </MuiThemeProvider>
-      </StylesProvider>
+      <FreelancerProvider>
+        <StylesProvider injectFirst>
+          <MuiThemeProvider theme={theme}>
+            <StyledThemeProvider theme={theme}>
+              <App />
+              <Snackbar />
+            </StyledThemeProvider>
+          </MuiThemeProvider>
+        </StylesProvider>
+      </FreelancerProvider>
     </AuthProvider>
   </SnackbarProvider>,
   document.getElementById('root'),

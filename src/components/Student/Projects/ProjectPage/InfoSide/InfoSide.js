@@ -22,13 +22,13 @@ function InfoSide({ project }) {
           Client
         </StyledTypography>
         <StyledTypography style={{ marginBottom: '5px' }} fontFamily="Rubik" fontSize={14} fontWeight="bold">
-          {project.client_detail.user.first_name} {project.client_detail.user.last_name}
+          {project.student_detail.user.first_name} {project.client_detail.user.last_name}
         </StyledTypography>
         <StyledTypography style={{ marginBottom: '5px' }} fontFamily="Rubik" fontSize={12}>
-          {project.client_detail.user.email}
+          {project.student_detail.user.email}
         </StyledTypography>
         <StyledTypography style={{ marginBottom: '5px' }} fontFamily="Rubik" fontSize={12}>
-          {project.client_detail.company_name}
+          {project.student_detail.company_name}
         </StyledTypography>
         <StyledTypography
           style={{ marginTop: '20px', marginBottom: '5px' }}
@@ -43,7 +43,7 @@ function InfoSide({ project }) {
             fixedDecimalScale={true}
             displayType="text"
             thousandSeparator={true}
-            suffix={project.client_type_of_billing === 'hourly_rate' ? '/hr' : ''}
+            suffix={project.student_type_of_billing === 'hourly_rate' ? '/hr' : ''}
           />
         </StyledTypography>
       </InfoBox>

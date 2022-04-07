@@ -55,10 +55,10 @@ function InvoiceListItem({ invoice }) {
       </StyledTableCell>
       <StyledTableCell>
         <StyledTypography fontSize={12} fontWeight="bold">
-          {`${invoice.project.client_detail.user.first_name} ${invoice.project.client_detail.user.last_name}`}
+          {`${invoice.project.student_detail.user.first_name} ${invoice.project.student_detail.user.last_name}`}
         </StyledTypography>
-        <StyledTypography fontSize={12}>{invoice.project.client_detail.user.email}</StyledTypography>
-        <StyledTypography fontSize={12}>{invoice.project.client_detail.company_name}</StyledTypography>
+        <StyledTypography fontSize={12}>{invoice.project.student_detail.user.email}</StyledTypography>
+        <StyledTypography fontSize={12}>{invoice.project.student_detail.company_name}</StyledTypography>
       </StyledTableCell>
       <StyledTableCell>
         {invoice.project.freelancer_detail ? (

@@ -67,11 +67,11 @@ function InfoSide({ invoice }) {
             fixedDecimalScale={true}
             displayType="text"
             thousandSeparator={true}
-            suffix={invoice.project.client_type_of_billing === 'hourly_rate' ? '/hr' : ''}
+            suffix={invoice.project.student_type_of_billing === 'hourly_rate' ? '/hr' : ''}
           />
         </StyledTypography>
         <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Roboto" fontSize={12}>
-          {capitalize(removeUnderscores(invoice.project.client_type_of_billing))}
+          {capitalize(removeUnderscores(invoice.project.student_type_of_billing))}
         </StyledTypography>
         <StyledTypography fontFamily="Roboto" fontSize={12}>
           {capitalize(removeUnderscores(invoice.project.invoicing_schedule))}

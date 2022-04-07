@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/core';
 const getColor = (color, theme) => {
   switch (color) {
     case 'red':
-      return theme.palette.tomatoRed.main;
+      return 'red';
     case 'orange':
-      return theme.palette.orange;
+      return 'orange';
     case 'green':
       return theme.palette.green.main;
     default:
