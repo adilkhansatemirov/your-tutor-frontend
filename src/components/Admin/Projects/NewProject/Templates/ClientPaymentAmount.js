@@ -10,7 +10,7 @@ import StepDescription from '../StepDescription';
 import StepNumber from '../StepNumber';
 import StepTitle from '../StepTitle';
 import previousIcon from 'assets/icons/arrow-left-gray.svg';
-import dollarIcon from 'assets/icons/dollar-black.svg';
+import tengeIcon from 'assets/icons/tenge.svg';
 
 function ClientPaymentAmount({ setTemplate, newProject, setNewProject }) {
   const { handleSubmit, errors, control } = useForm({
@@ -36,7 +36,6 @@ function ClientPaymentAmount({ setTemplate, newProject, setNewProject }) {
       <StepDescription text="How much do we charge:" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Box display="flex" alignItems="flex-start">
-          <img style={{ marginTop: '15px' }} src={dollarIcon} alt="dollar" />
           <Controller
             as={<StyledTextField placeholder="Amount" />}
             name="student_payment_amount"
@@ -46,6 +45,7 @@ function ClientPaymentAmount({ setTemplate, newProject, setNewProject }) {
             helperText={errors.student_payment_amount && errors.student_payment_amount.message}
             style={{ width: '100px', marginBottom: '20px', marginLeft: '5px' }}
           />
+          <img style={{ marginTop: '15px' }} src={tengeIcon} alt="tenge" />
           {newProject.student_type_of_billing === 'hourly_rate' && (
             <StyledTypography style={{ marginTop: '17px', marginLeft: '15px' }} fontSize="16px">
               per hour
@@ -53,7 +53,7 @@ function ClientPaymentAmount({ setTemplate, newProject, setNewProject }) {
           )}
         </Box>
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <StyledButton textTransform="uppercase" variant="light-blue" type="submit">
+          <StyledButton variant="light-blue" type="submit">
             Next
           </StyledButton>
           <StyledButton
@@ -64,7 +64,7 @@ function ClientPaymentAmount({ setTemplate, newProject, setNewProject }) {
             onClick={() => setTemplate('client-type-of-billing')}
             color={theme.palette.textGray}
           >
-            <img src={previousIcon} alt="arrow left" style={{ marginRight: '8px' }} /> Previous step
+            Previous step
           </StyledButton>
         </Box>
       </form>

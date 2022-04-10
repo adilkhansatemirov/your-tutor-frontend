@@ -16,8 +16,8 @@ function SelectFreelancers({
   return (
     <>
       <StepNumber stepNumber={4} />
-      <StepTitle text="Freelancers" />
-      <StepDescription text="Please use the form below to select all freelancers who will be invited to bid on this project:" />
+      <StepTitle text="Tutors" />
+      <StepDescription text="Please, use the form below to select all tutors who suit the position:" />
       <FreelancersToSendOpportuniyTo
         freelancers={allFreelancers}
         freelancersToSendOpportunityTo={freelancersToSendOpportunityTo}
@@ -27,7 +27,6 @@ function SelectFreelancers({
         <StyledButton
           disabled={freelancersToSendOpportunityTo.length === 0}
           onClick={() => setTemplate('review')}
-          textTransform="uppercase"
           variant="light-blue"
           type="button"
         >
@@ -41,7 +40,7 @@ function SelectFreelancers({
           onClick={() => setTemplate('specific-freelancer')}
           color={theme.palette.textGray}
         >
-          <img src={previousIcon} alt="arrow left" style={{ marginRight: '8px' }} /> Previous step
+           Previous step
         </StyledButton>
       </Box>
     </>
