@@ -53,7 +53,7 @@ function ConfirmationModal({ isOpen, handleClose, loading, promtText, handleConf
             </StyledTypography>
             <Box className={classes.buttonGroup}>
               <StyledButton
-                variant="light-blue"
+                variant="dark-blue"
                 size="small"
                 textTransform="uppercase"
                 onClick={handleConfirmAction}

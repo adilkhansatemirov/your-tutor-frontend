@@ -43,7 +43,7 @@ function FreelancersToSendOpportuniyTo({
         options={freelancers}
         style={{ marginTop: '10px' }}
         getOptionLabel={(option) => option.user.email}
-        label="Enter name or email"
+        label="Enter name or email of the tutor"
         filterOptions={filterFreelancerOptions}
         value={null}
         onChange={handleChangeFreelancerAutocomplete}
@@ -61,7 +61,7 @@ function FreelancersToSendOpportuniyTo({
         <Table aria-label="customized table">
           <TableHead>
             <StyledTableRow>
-              <StyledTableCell>Freelancer</StyledTableCell>
+              <StyledTableCell>Tutors</StyledTableCell>
               <StyledTableCell></StyledTableCell>
             </StyledTableRow>
           </TableHead>

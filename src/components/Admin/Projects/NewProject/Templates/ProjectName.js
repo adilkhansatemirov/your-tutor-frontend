@@ -30,11 +30,11 @@ function ProjectName({ setTemplate, newProject, setNewProject }) {
   return (
     <>
       <StepNumber stepNumber={2} />
-      <StepTitle text="Tell us a little bit about the Project." />
+      <StepTitle text="Tell us a little bit about the lesson" />
       <StepDescription text="What's the name of this project. Please try to give it a unique name so it would be easier to find this project later on." />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Controller
-          as={<StyledTextField placeholder="Project name" />}
+          as={<StyledTextField placeholder="Lesson name" />}
           name="projectName"
           control={control}
           error={Boolean(errors.projectName)}
@@ -43,18 +43,18 @@ function ProjectName({ setTemplate, newProject, setNewProject }) {
           fullWidth
         />
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <StyledButton textTransform="uppercase" variant="light-blue" type="submit">
+          <StyledButton variant="dark-blue" type="submit">
             Next
           </StyledButton>
           <StyledButton
             fontWeight="normal"
-            variant="text"
+            variant="transparent"
             size="small"
             type="button"
             onClick={() => setTemplate('client')}
             color={theme.palette.textGray}
           >
-            <img src={previousIcon} alt="arrow left" style={{ marginRight: '8px' }} /> Previous step
+             Previous step
           </StyledButton>
         </Box>
       </form>

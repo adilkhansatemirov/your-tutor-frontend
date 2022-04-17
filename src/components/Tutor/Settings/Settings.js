@@ -83,7 +83,7 @@ function Settings() {
         </StyledTypography>
         <Box style={{ marginTop: '20px' }}>
           <Link to={`/tutor/settings/edit-profile-info`} style={{ textDecoration: 'none' }}>
-            <StyledButton style={{ marginLeft: '10px' }} textTransform="uppercase" variant="light-blue" size="small">
+            <StyledButton style={{ marginLeft: '10px' }} textTransform="uppercase" variant="dark-blue" size="small">
               Edit
             </StyledButton>
           </Link>
@@ -97,7 +97,7 @@ function Settings() {
           {user.freelancer_detail.connected_account_id ? (
             <StyledButton
               textTransform="uppercase"
-              variant="light-blue"
+              variant="dark-blue"
               size="small"
               onClick={handleRedirectToExpressDashboard}
             >
@@ -108,7 +108,7 @@ function Settings() {
               style={{ textDecoration: 'none' }}
               href={`https://connect.stripe.com/express/oauth/authorize?redirect_uri=${process.env.REACT_APP_APP_URL}/freelancer/contracts&client_id=${process.env.REACT_APP_STRIPE_CLIENT_ID}&stripe_user[email]=${user.user.email}`}
             >
-              <StyledButton textTransform="uppercase" variant="light-blue" size="small">
+              <StyledButton textTransform="uppercase" variant="dark-blue" size="small">
                 Enter Payout Information
               </StyledButton>
             </a>
@@ -122,7 +122,7 @@ function Settings() {
         <Box style={{ marginTop: '20px' }}>
           <StyledButton
             textTransform="uppercase"
-            variant="light-blue"
+            variant="dark-blue"
             size="small"
             onClick={handleOpenResetPasswordModal}
           >
@@ -195,7 +195,7 @@ function Settings() {
             </ListItem>
           </List>
 
-          <StyledButton type="submit" size="small" variant="light-blue" textTransform="uppercase">
+          <StyledButton type="submit" size="small" variant="dark-blue" textTransform="uppercase">
             Save
           </StyledButton>
         </form>

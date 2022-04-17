@@ -66,29 +66,29 @@ function Review({
 
   return (
     <>
-      <StyledTypography fontWeight="bold" fontFamily="Rubik" fontSize="30px">
+      <StyledTypography fontWeight="meduim" fontFamily="Roboto" fontSize="36px">
         Review
       </StyledTypography>
       <SectionTitle text="Client" template="client" setTemplate={setTemplate} />
       <Row itemName="Client name" itemValue={`${client.user.first_name} ${client.user.last_name}`} />
       <Row itemName="Email" itemValue={client.user.email} />
-      <Row itemName="Company" itemValue={client.company_name} />
+       {/*<Row itemName="Company" itemValue={client.company_name} />*/}
 
-      <SectionTitle text="Project Information" template="project-name" setTemplate={setTemplate} />
-      <Row itemName="Project title" itemValue={newProject.title} />
-      <Row itemName="Project description" itemValue={newProject.description} />
+      <SectionTitle text="Lesson Information" template="project-name" setTemplate={setTemplate} />
+      <Row itemName="Lesson name" itemValue={newProject.title} />
+      <Row itemName="Lesson description" itemValue={newProject.description} />
 
       <SectionTitle text="Billing" template="invoicing-schedule" setTemplate={setTemplate} />
       <Row itemName="Type" itemValue={capitalize(removeUnderscores(newProject.student_type_of_billing))} />
       <Row
-        itemName="Amount"
+        itemName="Lesson description"
         itemValue={`$${newProject.student_payment_amount}${
           newProject.student_type_of_billing === 'hourly_rate' ? ' per hour' : ''
         }`}
       />
       <Row itemName="Invoicing Schedule" itemValue={capitalize(removeUnderscores(newProject.invoicing_schedule))} />
 
-      <SectionTitle text="Freelancer" template="freelancer-payment-amount" setTemplate={setTemplate} />
+      {/*<SectionTitle text="Freelancer" template="freelancer-payment-amount" setTemplate={setTemplate} />
       {toOneFreelancer() ? (
         <>
           <Row
@@ -105,26 +105,25 @@ function Review({
         itemValue={`$${newProject.tutor_payment_amount}${
           newProject.student_type_of_billing === 'hourly_rate' ? ' per hour' : ''
         }`}
-      />
+      />*/}
       <Box display="flex" justifyContent="space-between" alignItems="center" style={{ marginTop: '30px' }}>
         <StyledButton
           onClick={postProject}
           disabled={submitting}
-          size="small"
-          textTransform="uppercase"
-          variant="light-blue"
+          fontSize="18px"
+          variant="dark-blue"
         >
-          Post project
+          Post a Lesson
         </StyledButton>
         <StyledButton
           fontWeight="normal"
-          variant="text"
-          size="small"
+          variant="transparent"
+          fontSize="18px"
           type="button"
           onClick={() => setTemplate('specific-freelancer')}
           color={theme.palette.textGray}
         >
-          <img src={previousIcon} alt="arrow left" style={{ marginRight: '8px' }} /> Previous step
+           Previous step
         </StyledButton>
       </Box>
     </>
@@ -138,17 +137,17 @@ function SectionTitle({ text, template, setTemplate }) {
         display="flex"
         justifyContent="space-between"
         alignItems="center"
-        style={{ marginTop: '20px', marginBottom: '5px' }}
+        style={{borderTop: `1px dashed #0F2C4C`, marginTop: '20px', marginBottom: '5px' }}
       >
-        <StyledTypography fontFamily="Rubik" fontSize="20px" fontWeight="bold">
+        <StyledTypography fontFamily="Roboto" fontSize="36px" fontWeight="normal">
           {text}
         </StyledTypography>
         <StyledButton
           onClick={() => setTemplate(template)}
           fontWeight="normal"
-          color={theme.palette.skyBlue.main}
-          variant="text"
-          size="small"
+          color="#0F2C4C"
+          variant="transparent"
+          fontSize="18px"
         >
           Edit
         </StyledButton>
@@ -161,12 +160,12 @@ function Row({ itemName, itemValue }) {
   return (
     <Box
       display="flex"
-      style={{ borderBottom: `1px solid ${theme.palette.silverGray.main}`, marginBottom: '7px', paddingBottom: '4px' }}
+      style={{ marginBottom: '7px', paddingBottom: '4px' }}
     >
-      <StyledTypography fontFamily="Rubik" style={{ width: '60%' }}>
+      <StyledTypography fontFamily="Roboto" style={{ width: '60%' }}>
         {itemName}
       </StyledTypography>
-      <StyledTypography fontFamily="Rubik" style={{ width: '40%' }}>
+      <StyledTypography fontFamily="Roboto" style={{ width: '40%' }}>
         {itemValue}
       </StyledTypography>
     </Box>

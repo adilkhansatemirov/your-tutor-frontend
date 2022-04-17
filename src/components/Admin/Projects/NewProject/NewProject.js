@@ -21,12 +21,12 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
   },
   container: {
-    border: `1px solid ${theme.palette.silverGray.pale}`,
-    width: '750px',
-    borderRadius: '5px',
+    backgroundColor:'#E8EDF7',
+    width: '765px',
+    borderRadius: '10px',
     marginTop: '100px',
     marginBottom: '100px',
-    padding: '40px 60px',
+    padding: '32px 75px 55px 60px',
   },
 }));
 

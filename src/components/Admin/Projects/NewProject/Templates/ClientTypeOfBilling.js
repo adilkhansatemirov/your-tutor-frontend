@@ -24,7 +24,7 @@ function ClientTypeOfBilling({ setTemplate, newProject, setNewProject }) {
   return (
     <>
       <StepNumber stepNumber={3} />
-      <StepTitle text="Billing." />
+      <StepTitle text="Billing" />
       <StepDescription text="How are we billing the client:" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Controller
@@ -33,7 +33,7 @@ function ClientTypeOfBilling({ setTemplate, newProject, setNewProject }) {
               <StyledRadioFormControlLabel
                 value="custom_type"
                 control={<StyledRadio />}
-                label="Custom - Manually create Invoices and pay freelancers"
+                label="Custom - Manually create Invoices and pay tutors"
               />
               <StyledRadioFormControlLabel
                 value="hourly_rate"
@@ -46,18 +46,18 @@ function ClientTypeOfBilling({ setTemplate, newProject, setNewProject }) {
           control={control}
         />
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <StyledButton textTransform="uppercase" variant="light-blue" type="submit">
+          <StyledButton variant="dark-blue" type="submit">
             Next
           </StyledButton>
           <StyledButton
             fontWeight="normal"
-            variant="text"
+            variant="transparent"
             size="small"
             type="button"
             onClick={() => setTemplate('invoicing-schedule')}
             color={theme.palette.textGray}
           >
-            <img src={previousIcon} alt="arrow left" style={{ marginRight: '8px' }} /> Previous step
+             Previous step
           </StyledButton>
         </Box>
       </form>

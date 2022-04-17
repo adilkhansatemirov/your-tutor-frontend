@@ -33,12 +33,12 @@ function Duration({ setTemplate, newProject, setNewProject }) {
   return (
     <>
       <StepNumber stepNumber={2} />
-      <StepTitle text="Tell us a little bit about the Project." />
-      <StepDescription text="How long do you think would the project last? Freelancers would be able to see the approximate length of the project." />
+      <StepTitle text="Tell us a little bit about the lesson" />
+      <StepDescription text="How long do you think would the project last? Tutors would be able to see the approximate length of the course." />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Box display="flex" marginBottom="20px">
           <Controller
-            as={<StyledTextField fontFamily="Poppins" />}
+            as={<StyledTextField fontFamily="Roboto" />}
             placeholder="Duration"
             name="durationAmount"
             type="number"
@@ -66,18 +66,18 @@ function Duration({ setTemplate, newProject, setNewProject }) {
           </FormControl>
         </Box>
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <StyledButton textTransform="uppercase" variant="light-blue" type="submit">
+          <StyledButton  variant="dark-blue" type="submit">
             Next
           </StyledButton>
           <StyledButton
             fontWeight="normal"
-            variant="text"
+            variant="transparent"
             size="small"
             type="button"
             onClick={() => setTemplate('description')}
             color={theme.palette.textGray}
           >
-            <img src={previousIcon} alt="arrow left" style={{ marginRight: '8px' }} /> Previous step
+             Previous step
           </StyledButton>
         </Box>
       </form>

@@ -18,6 +18,27 @@ const getVariant = (variant) => {
         hoverBackground: theme.palette.dark.dark,
         color: theme.palette.white,
       };
+    case 'yellow':
+      return {
+        backgroundColor: theme.palette.dark.main,
+        border: 'none',
+        hoverBackground: theme.palette.dark.dark,
+        color: theme.palette.white,
+      };
+    case 'dark-blue':
+      return {
+        backgroundColor: theme.palette.blue.main,
+        border: 'none',
+        hoverBackground: theme.palette.blue.dark,
+        color: theme.palette.white,
+      };
+    case 'transparent':
+      return {
+        backgroundColor: 'transparent',
+        border: 'none',
+        hoverBackground: 'transparent',
+        color: theme.palette.dark.dark,
+      };
     default:
       return {
         backgroundColor: theme.palette.light.main,
@@ -84,7 +105,7 @@ const useStyles = makeStyles(() => ({
       backgroundColor: ({ variant }) => getVariant(variant).hoverBackground,
     },
     '&:disabled': {
-      backgroundColor: theme.palette.inactive,
+      backgroundColor: theme.palette.silverGray.main,
       color: theme.palette.black,
       border: 'none',
     },
@@ -94,6 +115,7 @@ const useStyles = makeStyles(() => ({
     fontSize: ({ size }) => getSize(size).fontSize,
     fontFamily: ({ fontFamily }) => getFontFamily(fontFamily),
     fontWeight: ({ fontWeight }) => getFontWeight(fontWeight),
+    textDecoration: ({ variant }) => variant === 'transparent' ? 'underline' : 'none',
   },
 }));
 

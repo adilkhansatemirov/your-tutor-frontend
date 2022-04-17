@@ -108,7 +108,7 @@ function TimesheetPage() {
               style={{ marginRight: '10px' }}
               onClick={handleApprove}
               size="small"
-              variant="light-blue"
+              variant="dark-blue"
               textTransform="uppercase"
             >
               approve
@@ -127,7 +127,7 @@ function TimesheetPage() {
           )}
           {timesheet.timesheet_status === 'approved' && (
             <StyledButton
-              variant="light-blue"
+              variant="dark-blue"
               size="small"
               textTransform="uppercase"
               onClick={handlePayFreelancerTimesheets}

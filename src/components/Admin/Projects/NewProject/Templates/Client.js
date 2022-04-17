@@ -67,7 +67,7 @@ function Client({ setTemplate, newProject, setNewProject, setClient }) {
     <>
       <StepNumber stepNumber={1} />
       <StepTitle text="Client" />
-      <StepDescription text="Firstly we need to know who is this project for. Use the form below to find the Client who will be accepting our services" />
+      <StepDescription text="Firstly we need to know who is this project for. Use the form below to find the Client who will be accepting our services." />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Autocomplete
           options={clients}
@@ -78,10 +78,10 @@ function Client({ setTemplate, newProject, setNewProject, setClient }) {
           onChange={handleAutoCompleteValueChange}
           renderOption={(option) => (
             <Box>
-              <StyledTypography fontWeight="bold" fontSize="14px">
+              <StyledTypography fontWeight="regular" fontSize="18px">
                 {option.user.first_name} {option.user.last_name}
               </StyledTypography>
-              <StyledTypography style={{ fontSize: '14px', opacity: 0.8 }}>{option.user.email}</StyledTypography>
+              <StyledTypography style={{ fontSize: '16px', opacity: 0.8 }}>{option.user.email}</StyledTypography>
             </Box>
           )}
           renderInput={(params) => (
@@ -95,18 +95,20 @@ function Client({ setTemplate, newProject, setNewProject, setClient }) {
           )}
         />
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <StyledButton textTransform="uppercase" variant="light-blue" type="submit">
+          <StyledButton variant="dark-blue" type="submit">
             Next
           </StyledButton>
           <StyledButton
             fontWeight="normal"
-            variant="text"
+            variant="transparent"
             size="small"
+            //textUnderlineOffset='4px'
             type="button"
             onClick={() => setTemplate('welcome')}
             color={theme.palette.textGray}
+            // textDecorationLine="underline"
           >
-            <img src={previousIcon} alt="arrow left" style={{ marginRight: '8px' }} /> Previous step
+             Previous step
           </StyledButton>
         </Box>
       </form>

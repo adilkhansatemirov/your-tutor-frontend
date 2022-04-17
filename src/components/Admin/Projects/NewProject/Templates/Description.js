@@ -30,8 +30,8 @@ function Description({ setTemplate, newProject, setNewProject }) {
   return (
     <>
       <StepNumber stepNumber={2} />
-      <StepTitle text="Tell us a little bit about the Project." />
-      <StepDescription text="Give a short description of the project. Freelancers would be able to see the description of the project." />
+      <StepTitle text="Tell us a little bit about the lesson" />
+      <StepDescription text="What’s the description of this lesson. Tutors would be able to see the description of the project." />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Controller
           as={<StyledTextField placeholder="Project description" />}
@@ -45,18 +45,18 @@ function Description({ setTemplate, newProject, setNewProject }) {
           fullWidth
         />
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <StyledButton textTransform="uppercase" variant="light-blue" type="submit">
+          <StyledButton variant="dark-blue" type="submit">
             Next
           </StyledButton>
           <StyledButton
             fontWeight="normal"
-            variant="text"
+            variant="transparent"
             size="small"
             type="button"
             onClick={() => setTemplate('project-name')}
             color={theme.palette.textGray}
           >
-            <img src={previousIcon} alt="arrow left" style={{ marginRight: '8px' }} /> Previous step
+             Previous step
           </StyledButton>
         </Box>
       </form>

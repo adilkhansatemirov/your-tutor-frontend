@@ -140,7 +140,7 @@ function ApplyOpportunityModal({ open, onClose, opportunity, fetchOpportunities 
                 )}
               </Box>
             )}
-            <StyledButton type="submit" size="normal" variant="light-blue" textTransform="uppercase" fullWidth>
+            <StyledButton type="submit" size="normal" variant="dark-blue" textTransform="uppercase" fullWidth>
               <StyledTypography fontFamily="Rubik" fontWeight="bold" fontSize={10} color="white">
                 Confirm
               </StyledTypography>

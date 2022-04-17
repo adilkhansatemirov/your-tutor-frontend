@@ -61,7 +61,7 @@ function EditProject({ project }) {
             disabled={submitting}
             onClick={() => handleSubmit(onSubmit)()}
             textTransform="uppercase"
-            variant="light-blue"
+            variant="dark-blue"
             size="small"
             style={{ marginRight: '10px' }}
           >

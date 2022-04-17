@@ -46,7 +46,7 @@ function SpecificFreelancer({ setTemplate, isToAllFreelancers, setIsToAllFreelan
   return (
     <>
       <StepNumber stepNumber={4} />
-      <StepTitle text="Freelancers." />
+      <StepTitle text="Tutors" />
       <StepDescription text="Do you have someone specific in mind who should work on the project?" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Controller
@@ -60,18 +60,18 @@ function SpecificFreelancer({ setTemplate, isToAllFreelancers, setIsToAllFreelan
           control={control}
         />
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <StyledButton disabled={loading} textTransform="uppercase" variant="light-blue" type="submit">
+          <StyledButton disabled={loading} variant="dark-blue" type="submit">
             Next
           </StyledButton>
           <StyledButton
             fontWeight="normal"
-            variant="text"
+            variant="transparent"
             size="small"
             type="button"
             onClick={() => setTemplate('freelancer-payment-amount')}
             color={theme.palette.textGray}
           >
-            <img src={previousIcon} alt="arrow left" style={{ marginRight: '8px' }} /> Previous step
+            Previous step
           </StyledButton>
         </Box>
       </form>

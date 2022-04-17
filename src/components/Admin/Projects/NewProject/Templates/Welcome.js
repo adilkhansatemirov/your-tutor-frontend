@@ -5,11 +5,10 @@ import StepTitle from '../StepTitle';
 function Welcome({ setTemplate }) {
   return (
     <>
-      <StepTitle text="Welcome to Project Creation." />
-      <StepDescription text="This wizard will guide you through the steps of creating a new project and assigning them to freelancers." />
+      <StepTitle text="Welcome to Lesson Creation." />
+      <StepDescription text="This wizard will guide you through the steps of creating a new project and assigning them to tutors." />
       <StyledButton
-        textTransform="uppercase"
-        variant="light-blue"
+        variant="dark-blue"
         onClick={() => setTemplate('client')}
       >
         Begin

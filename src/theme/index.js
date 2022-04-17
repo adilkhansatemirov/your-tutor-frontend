@@ -50,6 +50,13 @@ const theme = createMuiTheme({
     green: {
       main: green,
     },
+    blue: {
+      main: '#0F2C4C',
+      dark: '#09192b',
+    },
+    yellow: {
+      main: '#FFC739',
+    },
     lightYellow: {
       main: 'yellow',
     },
