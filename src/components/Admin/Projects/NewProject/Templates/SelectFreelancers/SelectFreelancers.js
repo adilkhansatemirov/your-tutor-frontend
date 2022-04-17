@@ -27,14 +27,14 @@ function SelectFreelancers({
         <StyledButton
           disabled={freelancersToSendOpportunityTo.length === 0}
           onClick={() => setTemplate('review')}
-          variant="light-blue"
+          variant="dark-blue"
           type="button"
         >
           Next
         </StyledButton>
         <StyledButton
           fontWeight="normal"
-          variant="text"
+          variant="transparent"
           size="small"
           type="button"
           onClick={() => setTemplate('specific-freelancer')}

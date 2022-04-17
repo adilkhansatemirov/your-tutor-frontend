@@ -42,7 +42,7 @@ function ProjectsList() {
             Projects
           </StyledTypography>
           <Link to={`/client/projects/new`} style={{ textDecoration: 'none' }}>
-            <StyledButton textTransform="uppercase" variant="light-blue" size="small">
+            <StyledButton textTransform="uppercase" variant="dark-blue" size="small">
               New Project
             </StyledButton>
           </Link>

@@ -59,7 +59,7 @@ function EnterPaymentAmount({ open, close, project, fetchProject }) {
           type="submit"
           fullWidth
           size="normal"
-          variant="light-blue"
+          variant="dark-blue"
           fontFamily="Rubik"
         >
           Confirm

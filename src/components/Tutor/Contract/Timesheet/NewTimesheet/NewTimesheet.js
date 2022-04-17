@@ -144,7 +144,7 @@ function NewTimesheet() {
           <Box>
             <StyledButton
               disabled={loading || timeEntries.length === 0}
-              variant="light-blue"
+              variant="dark-blue"
               size="small"
               textTransform="uppercase"
               onClick={() => handleAction('save')}

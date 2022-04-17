@@ -94,7 +94,7 @@ function ProjectsList() {
           <StyledTypography fontFamily="Rubik" fontWeight="bold" fontSize={20}>
             Projects
           </StyledTypography>
-          <StyledButton size="small" textTransform="uppercase" variant="light-blue" onClick={handleCreateProject}>
+          <StyledButton size="small" textTransform="uppercase" variant="dark-blue" onClick={handleCreateProject}>
             <StyledTypography fontSize={10} fontWeight="bold">
               New Project
             </StyledTypography>

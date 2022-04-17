@@ -70,7 +70,7 @@ function ResetPasswordModal({ open, onClose, handleCloseResetPasswordModal, free
         <StyledButton
           style={{ marginTop: '15px' }}
           textTransform="uppercase"
-          variant="light-blue"
+          variant="dark-blue"
           type="submit"
           fullWidth
         >

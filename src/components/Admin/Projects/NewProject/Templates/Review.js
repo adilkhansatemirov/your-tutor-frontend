@@ -111,13 +111,13 @@ function Review({
           onClick={postProject}
           disabled={submitting}
           fontSize="18px"
-          variant="light-blue"
+          variant="dark-blue"
         >
           Post a Lesson
         </StyledButton>
         <StyledButton
           fontWeight="normal"
-          variant="text"
+          variant="transparent"
           fontSize="18px"
           type="button"
           onClick={() => setTemplate('specific-freelancer')}
@@ -146,7 +146,7 @@ function SectionTitle({ text, template, setTemplate }) {
           onClick={() => setTemplate(template)}
           fontWeight="normal"
           color="#0F2C4C"
-          variant="text"
+          variant="transparent"
           fontSize="18px"
         >
           Edit

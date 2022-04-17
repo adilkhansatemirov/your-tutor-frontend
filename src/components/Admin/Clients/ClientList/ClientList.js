@@ -97,7 +97,7 @@ function ClientList() {
           <StyledTypography fontFamily="Rubik" fontWeight="bold" fontSize={20}>
             Students
           </StyledTypography>
-          <StyledButton size="small" textTransform="uppercase" variant="light-blue" onClick={handleOpenNewClientModal}>
+          <StyledButton size="small" textTransform="uppercase" variant="dark-blue" onClick={handleOpenNewClientModal}>
             Add student
           </StyledButton>
         </Box>

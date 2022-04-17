@@ -100,7 +100,7 @@ function NewClientModal({ open, onClose, fetchClients }) {
           textTransform="uppercase"
           type="submit"
           size="normal"
-          variant="light-blue"
+          variant="dark-blue"
           fontFamily="Poppins"
         >
           <StyledTypography fontFamily="Rubik" color="white" fontWeight="bold" fontSize={12}>

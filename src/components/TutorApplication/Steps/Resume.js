@@ -177,7 +177,7 @@ function Resume() {
               size="small"
               disabled={!uploaded || uploading}
               textTransform="uppercase"
-              variant="light-blue"
+              variant="dark-blue"
             >
               Next
             </StyledButton>

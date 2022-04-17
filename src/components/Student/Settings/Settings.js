@@ -106,7 +106,7 @@ function Settings() {
           <StyledButton
             onClick={handleSubmit(onSubmit)}
             type="submit"
-            variant="light-blue"
+            variant="dark-blue"
             size="small"
             textTransform="uppercase"
           >

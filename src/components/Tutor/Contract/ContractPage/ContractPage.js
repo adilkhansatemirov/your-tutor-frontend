@@ -46,7 +46,7 @@ function ProjectPage() {
             Project: {project.title}
           </StyledTypography>
           <Link to={`/tutor/contracts/${project.id}/timesheets/new`} style={{ textDecoration: 'none' }}>
-            <StyledButton variant="light-blue" size="small" textTransform="uppercase">
+            <StyledButton variant="dark-blue" size="small" textTransform="uppercase">
               New timesheet
             </StyledButton>
           </Link>

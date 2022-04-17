@@ -148,7 +148,7 @@ function AuditSkills() {
         </Box>
 
         <Box display="flex" justifyContent="space-between">
-          <StyledButton disabled={submitting} size="small" variant="light-blue" textTransform="uppercase" type="submit">
+          <StyledButton disabled={submitting} size="small" variant="dark-blue" textTransform="uppercase" type="submit">
             Next
           </StyledButton>
           <StyledButton

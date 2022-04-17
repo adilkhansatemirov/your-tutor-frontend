@@ -60,12 +60,12 @@ function SpecificFreelancer({ setTemplate, isToAllFreelancers, setIsToAllFreelan
           control={control}
         />
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <StyledButton disabled={loading} variant="light-blue" type="submit">
+          <StyledButton disabled={loading} variant="dark-blue" type="submit">
             Next
           </StyledButton>
           <StyledButton
             fontWeight="normal"
-            variant="text"
+            variant="transparent"
             size="small"
             type="button"
             onClick={() => setTemplate('freelancer-payment-amount')}

@@ -163,7 +163,7 @@ function ProjectPage() {
                 )}
                 <Link to={`/admin/projects/${project.id}/invoices/new`} style={{ textDecoration: 'none' }}>
                   <StyledButton
-                    variant="light-blue"
+                    variant="dark-blue"
                     textTransform="uppercase"
                     size="small"
                     style={{ marginRight: '10px' }}
@@ -177,7 +177,7 @@ function ProjectPage() {
               <StyledButton
                 textTransform="uppercase"
                 onClick={() => handleSubmit(onSubmit)()}
-                variant="light-blue"
+                variant="dark-blue"
                 style={{ marginRight: '10px' }}
                 size="small"
                 disabled={submitting}
@@ -189,7 +189,7 @@ function ProjectPage() {
               <StyledButton
                 disabled={submitting}
                 textTransform="uppercase"
-                variant="light-blue"
+                variant="dark-blue"
                 size="small"
               >
                 Edit project

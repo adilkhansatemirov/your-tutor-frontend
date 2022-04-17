@@ -45,12 +45,12 @@ function Description({ setTemplate, newProject, setNewProject }) {
           fullWidth
         />
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <StyledButton variant="light-blue" type="submit">
+          <StyledButton variant="dark-blue" type="submit">
             Next
           </StyledButton>
           <StyledButton
             fontWeight="normal"
-            variant="text"
+            variant="transparent"
             size="small"
             type="button"
             onClick={() => setTemplate('project-name')}

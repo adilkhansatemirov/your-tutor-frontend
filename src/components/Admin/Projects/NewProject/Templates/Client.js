@@ -95,18 +95,18 @@ function Client({ setTemplate, newProject, setNewProject, setClient }) {
           )}
         />
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <StyledButton variant="light-blue" type="submit">
+          <StyledButton variant="dark-blue" type="submit">
             Next
           </StyledButton>
           <StyledButton
             fontWeight="normal"
-            variant="text"
+            variant="transparent"
             size="small"
             //textUnderlineOffset='4px'
             type="button"
             onClick={() => setTemplate('welcome')}
             color={theme.palette.textGray}
-            //textDecorationLine="underline"
+            // textDecorationLine="underline"
           >
              Previous step
           </StyledButton>
