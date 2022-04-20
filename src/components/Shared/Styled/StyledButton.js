@@ -20,10 +20,10 @@ const getVariant = (variant) => {
       };
     case 'yellow':
       return {
-        backgroundColor: theme.palette.dark.main,
+        backgroundColor: theme.palette.yellow.main,
         border: 'none',
-        hoverBackground: theme.palette.dark.dark,
-        color: theme.palette.white,
+        hoverBackground: theme.palette.yellow.dark,
+        color: theme.palette.spaceBlue,
       };
     case 'dark-blue':
       return {

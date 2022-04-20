@@ -102,29 +102,29 @@ function NewTimesheet() {
 
   const handleAction = (action) => {
     setLoading(true);
-    if (user.freelancer_detail.connected_account_id) {
-      createTimesheet({
-        timesheet: {
-          project_id: project.id,
-          freelancer_id: user.user.id,
-          timesheet_status: action === 'save' ? 'edited' : 'submitted',
-          timesheet_date: date.toISOString(),
-          time_entries: timeEntries,
-        },
+    // if (user.freelancer_detail.connected_account_id) {
+    createTimesheet({
+      timesheet: {
+        project_id: project.id,
+        tutor_id: user.user.id,
+        timesheet_status: action === 'save' ? 'edited' : 'submitted',
+        timesheet_date: date.toISOString(),
+        time_entries: timeEntries,
+      },
+    })
+      .then(() => {
+        setLoading(false);
+        showSnackbar(`Timesheet ${action === 'save' ? 'created' : 'submitted'}`, 'success');
+        handleNavigateBack();
       })
-        .then(() => {
-          setLoading(false);
-          showSnackbar(`Timesheet ${action === 'save' ? 'created' : 'submitted'}`, 'success');
-          handleNavigateBack();
-        })
-        .catch(() => {
-          setLoading(false);
-          showSnackbar('Something went wrong', 'error');
-        });
-    } else {
-      handleOpenEnterPayoutModal();
-    }
-  }
+      .catch(() => {
+        setLoading(false);
+        showSnackbar('Something went wrong', 'error');
+      });
+    // } else {
+    //   handleOpenEnterPayoutModal();
+    // }
+  };
 
   const handleOpenEnterPayoutModal = () => {
     setIsEnterPayoutModalOpen(true);

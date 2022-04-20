@@ -7,15 +7,15 @@ function Freelancer({ project }) {
   return (
     <InfoBox>
       <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={15} fontWeight="medium">
-        Freelancer
+        Tutor
       </StyledTypography>
-      {project.freelancer_detail ? (
+      {project.tutor_detail ? (
         <>
           <StyledTypography style={{ marginBottom: '5px' }} fontFamily="Rubik" fontSize={14} fontWeight="bold">
-            {`${project.freelancer_detail.user.first_name} ${project.freelancer_detail.user.last_name}`}
+            {`${project.tutor_detail.user.first_name} ${project.tutor_detail.user.last_name}`}
           </StyledTypography>
           <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={12}>
-            {project.freelancer_detail.user.email}
+            {project.tutor_detail.user.email}
           </StyledTypography>
         </>
       ) : project.project_status === 'accepting_bids' || project.project_status === 'assigning_freelancer' ? (

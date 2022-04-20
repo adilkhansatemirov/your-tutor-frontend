@@ -89,10 +89,7 @@ function TimesheetPage() {
         }}
       >
         <StyledTypography fontWeight="medium" fontSize="22px" fontFamily="Rubik">
-          Timesheet:{' '}
-          {timesheet.freelancer
-            ? `${timesheet.freelancer.first_name} ${timesheet.freelancer.last_name}`
-            : 'Deleted user'}
+          Timesheet: {timesheet.tutor ? `${timesheet.tutor.first_name} ${timesheet.tutor.last_name}` : 'Deleted user'}
         </StyledTypography>
 
         {(timesheet.timesheet_status === 'edited' || timesheet.timesheet_status === 'rejected') && (

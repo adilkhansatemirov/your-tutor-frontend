@@ -55,7 +55,7 @@ function TimesheetsTable({ project }) {
       <TableHead>
         <StyledTableRow>
           <StyledTableCell>Timesheet Week</StyledTableCell>
-          <StyledTableCell>Freelancer</StyledTableCell>
+          <StyledTableCell>Tutor</StyledTableCell>
           <StyledTableCell>Hours</StyledTableCell>
           <StyledTableCell>Status</StyledTableCell>
         </StyledTableRow>
@@ -71,12 +71,12 @@ function TimesheetsTable({ project }) {
               </Link>
             </StyledTableCell>
             <StyledTableCell>
-              {timesheet.freelancer ? (
+              {timesheet.tutor ? (
                 <>
                   <StyledTypography fontWeight="bold">
-                    {timesheet.freelancer.first_name} {timesheet.freelancer.last_name}
+                    {timesheet.tutor.first_name} {timesheet.tutor.last_name}
                   </StyledTypography>
-                  <StyledTypography fontSize="12px">{timesheet.freelancer.email}</StyledTypography>
+                  <StyledTypography fontSize="12px">{timesheet.tutor.email}</StyledTypography>
                 </>
               ) : (
                 <StyledTypography fontWeight="bold">Deleted user</StyledTypography>

@@ -48,12 +48,12 @@ function FreelancerListItem({ project }) {
         <StyledTypography fontSize={12}>{project.student_detail.company_name}</StyledTypography>
       </StyledTableCell>
       <StyledTableCell>
-        {project.freelancer_detail ? (
+        {project.tutor_detail ? (
           <>
             <StyledTypography fontSize={12} fontWeight="bold">
-              {`${project.freelancer_detail.user.first_name} ${project.freelancer_detail.user.last_name}`}
+              {`${project.tutor_detail.user.first_name} ${project.tutor_detail.user.last_name}`}
             </StyledTypography>
-            <StyledTypography fontSize={12}>{project.freelancer_detail.user.email}</StyledTypography>
+            <StyledTypography fontSize={12}>{project.tutor_detail.user.email}</StyledTypography>
           </>
         ) : project.project_status === 'accepting_bids' || project.project_status === 'assigning_freelancer' ? (
           <StyledTypography fontSize={12} fontWeight="bold">
