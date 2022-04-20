@@ -1,77 +1,73 @@
 import { Box } from '@material-ui/core';
 import StyledTypography from 'components/Shared/Styled/StyledTypography';
 import InfoBox from 'components/Shared/UI/InfoBox';
+import { capitalize, removeUnderscores } from 'utils/common';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import NumberFormat from 'react-number-format';
 
-function InfoSide({ timesheet }) {
-  const getStatusText = () => {
-    switch (timesheet.timesheet_status) {
-      case 'submitted':
-        return 'Pending';
-      case 'approved':
-        return 'Approved';
-      case 'paid':
-        return 'Paid';
-      case 'rejected':
-        return 'Rejected';
-      default:
-        return '';
-    }
-  };
-
-  const getStatusColor = () => {
-    switch (timesheet.timesheet_status) {
-      case 'submitted':
+function InfoSide({ invoice }) {
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'draft':
         return 'orange';
-      case 'approved':
-        return 'green';
+      case 'sent':
+        return 'orange';
       case 'paid':
         return 'green';
-      case 'rejected':
+      case 'error':
         return 'tomatoRed';
       default:
         return 'tomatoRed';
     }
   };
 
-  const timesheetDetails = {
-    date: timesheet.timesheet_date,
-    status: getStatusText(),
-    statusColor: getStatusColor(),
+  const invoiceDetails = {
+    date: invoice.invoice_date,
+    status: capitalize(invoice.invoice_status),
+    statusColor: getStatusColor(invoice.invoice_status),
+    errorMessage: invoice.error_message,
+  };
+
+  const freelancer = {
+    fullname: invoice.project.freelancer_detail
+      ? `${invoice.project.freelancer_detail.user.first_name} ${invoice.project.freelancer_detail.user.last_name}`
+      : 'Deleted user',
+    email: invoice.project.freelancer_detail ? invoice.project.freelancer_detail.user.email : '',
   };
 
   const project = {
-    title: timesheet.project.title,
-    clientFullname: `${timesheet.project.student_detail.user.first_name} ${timesheet.project.student_detail.user.last_name}`,
-    clientEmail: timesheet.project.student_detail.user.email,
-    companyName: timesheet.project.student_detail.company_name,
+    title: invoice.project.title,
+    clientFullname: `${invoice.project.client_detail.user.first_name} ${invoice.project.client_detail.user.last_name}`,
+    clientEmail: invoice.project.client_detail.user.email,
+    companyName: invoice.project.client_detail.company_name,
+    typeOfBilling: capitalize(removeUnderscores(invoice.project.client_type_of_billing)),
+    invoicingSchedule: capitalize(removeUnderscores(invoice.project.invoicing_schedule)),
   };
 
   return (
     <Box style={{ width: '30%' }}>
-      {timesheet.timesheet_status === 'rejected' && (
+      {invoice.invoice_status === 'error' && (
         <InfoBox red>
           <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={15} fontWeight="medium">
-            Rejected
+            Error
           </StyledTypography>
-          <StyledTypography fontFamily="Roboto" fontSize={12}>
-            {timesheet.notes}
+          <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={12}>
+            {invoiceDetails.errorMessage}
           </StyledTypography>
         </InfoBox>
       )}
       <InfoBox>
         <StyledTypography style={{ marginBottom: '5px' }} fontFamily="Rubik" fontSize={15} fontWeight="medium">
-          Timesheet
+          Invoice
         </StyledTypography>
         <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={12}>
-          Week of {moment(timesheetDetails.date).format('MMMM DD, YYYY')}
+          {moment(invoiceDetails.date).format('MMMM DD, YYYY')}
         </StyledTypography>
         <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={20} fontWeight="medium">
           <NumberFormat
             prefix="$"
-            value={Number(timesheet.amount)}
+            value={Number(invoice.amount)}
             decimalScale={2}
             fixedDecimalScale={true}
             displayType="text"
@@ -83,29 +79,29 @@ function InfoSide({ timesheet }) {
           style={{ marginBottom: '5px' }}
           fontFamily="Rubik"
           fontSize={20}
-          color={timesheetDetails.statusColor}
+          color={invoiceDetails.statusColor}
           fontWeight="bold"
         >
-          {timesheetDetails.status}
+          {invoiceDetails.status}
         </StyledTypography>
       </InfoBox>
 
       <InfoBox>
         <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={15} fontWeight="medium">
-          Tutor
+          Freelancer
         </StyledTypography>
-        {timesheet.tutor ? (
+        {invoice.project.freelancer_detail ? (
           <>
             <StyledTypography style={{ marginBottom: '5px' }} fontFamily="Rubik" fontSize={14} fontWeight="bold">
-              {timesheet.tutor.first_name} {timesheet.tutor.last_name}
+              {freelancer.fullname}
             </StyledTypography>
             <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={12}>
-              {timesheet.tutor.email}
+              {freelancer.email}
             </StyledTypography>
           </>
         ) : (
           <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={12}>
-            Deleted User
+            {freelancer.fullname}
           </StyledTypography>
         )}
 
@@ -117,12 +113,12 @@ function InfoSide({ timesheet }) {
         >
           <NumberFormat
             prefix="$"
-            value={Number(timesheet.project.tutor_payment_amount)}
+            value={Number(invoice.project.freelancer_payment_amount)}
             decimalScale={2}
             fixedDecimalScale={true}
             displayType="text"
             thousandSeparator={true}
-            suffix={timesheet.project.student_type_of_billing === 'hourly_rate' ? '/hr' : ''}
+            suffix={invoice.project.client_type_of_billing === 'hourly_rate' ? '/hr' : ''}
           />
         </StyledTypography>
       </InfoBox>
@@ -131,7 +127,7 @@ function InfoSide({ timesheet }) {
         <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={15} fontWeight="medium">
           Project
         </StyledTypography>
-        <Link to={`/admin/projects/${timesheet.project.id}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/admin/projects/${invoice.project.id}`} style={{ textDecoration: 'none' }}>
           <StyledTypography
             style={{ marginBottom: '10px' }}
             fontFamily="Roboto"
@@ -150,6 +146,23 @@ function InfoSide({ timesheet }) {
         </StyledTypography>
         <StyledTypography style={{ marginBottom: '10px' }} fontFamily="Roboto" fontSize={14}>
           {project.companyName}
+        </StyledTypography>
+        <StyledTypography style={{ marginBottom: '5px' }} fontFamily="Rubik" fontSize={20} fontWeight="medium">
+          <NumberFormat
+            prefix="$"
+            value={Number(invoice.project.client_payment_amount)}
+            decimalScale={2}
+            fixedDecimalScale={true}
+            displayType="text"
+            thousandSeparator={true}
+            suffix={invoice.project.client_type_of_billing === 'hourly_rate' ? '/hr' : ''}
+          />
+        </StyledTypography>
+        <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Roboto" fontSize={12}>
+          {project.typeOfBilling}
+        </StyledTypography>
+        <StyledTypography fontFamily="Roboto" fontSize={12}>
+          {project.invoicingSchedule}
         </StyledTypography>
       </InfoBox>
     </Box>

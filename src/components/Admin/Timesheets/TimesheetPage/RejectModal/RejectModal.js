@@ -1,16 +1,16 @@
 import { useContext, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-// import { SnackbarContext } from 'context/snackbarContext';
+import { SnackbarContext } from 'context/snackbarContext';
 import StyledButton from 'components/Shared/Styled/StyledButton';
 import StyledTextField from 'components/Shared/Styled/StyledTextField';
-// import { updateTimesheet } from 'services 'services/admin/timesheets';
+import { updateTimesheet } from 'services/admin/timesheets';
 import newClientValidationSchema from './RejectModal.validate';
 import StyledModal from 'components/Shared/UI/StyledModal';
 
 function RejectModal({ open, onClose, timesheet, fetchTimesheet }) {
   const [loading, setLoading] = useState(false);
-  // const { // showSnackbar } = useContext(SnackbarContext);
+  const { showSnackbar } = useContext(SnackbarContext);
   const { handleSubmit, errors, control } = useForm({
     defaultValues: {
       note: '',
@@ -20,22 +20,22 @@ function RejectModal({ open, onClose, timesheet, fetchTimesheet }) {
 
   const onSubmit = (values) => {
     setLoading(true);
-    // updateTimesheet({
-    //   id: timesheet.id,
-    //   notes: values.note,
-    //   timesheet_status: 'rejected',
-    // })
-    //   .then(() => {
-    //     setLoading(false);
-    //     // showSnackbar('You have rejected this timesheet', 'success');
-    //     fetchTimesheet();
-    //     handleCloseModal();
-    //   })
-    //   .catch(() => {
-    //     setLoading(false);
-    //     handleCloseModal();
-    //     // showSnackbar('Something went wrong', 'error');
-    //   });
+    updateTimesheet({
+      id: timesheet.id,
+      notes: values.note,
+      timesheet_status: 'rejected',
+    })
+      .then(() => {
+        setLoading(false);
+        showSnackbar('You have rejected this timesheet', 'success');
+        fetchTimesheet();
+        handleCloseModal();
+      })
+      .catch(() => {
+        setLoading(false);
+        handleCloseModal();
+        showSnackbar('Something went wrong', 'error');
+      });
   };
 
   const handleCloseModal = () => {

@@ -8,14 +8,14 @@ import { capitalize } from 'utils/common';
 import theme from 'theme';
 import PageBar from 'components/Shared/UI/PageBar';
 import RejectModal from './RejectModal/RejectModal';
-// import { getTimesheetById, updateTimesheet } from 'services 'services/admin/timesheets';
-// import { SnackbarContext } from 'context/snackbarContext';
-// import { payFreelancer } from 'services 'services/admin/timesheets';
+import { getTimesheetById, updateTimesheet } from 'services/admin/timesheets';
+import { SnackbarContext } from 'context/snackbarContext';
+import { payFreelancer } from 'services/admin/timesheets';
 import { useParams } from 'react-router-dom';
 import PageLoader from 'components/Shared/Utils/PageLoader';
 
 function TimesheetPage() {
-  // const { // showSnackbar } = useContext(SnackbarContext);
+  const { showSnackbar } = useContext(SnackbarContext);
   const { timesheetId } = useParams();
 
   const [loading, setLoading] = useState(true);
@@ -23,16 +23,16 @@ function TimesheetPage() {
 
   const [submitting, setSubmitting] = useState(false);
   const fetchTimesheet = () => {
-    // getTimesheetById(timesheetId)
-    //   .then((response) => {
-    //     setTimesheet(response.data);
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     if (error.response.status !== 404) {
-    //       // showSnackbar('Something went wrong', 'error');
-    //     }
-    //   });
+    getTimesheetById(timesheetId)
+      .then((response) => {
+        setTimesheet(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        if (error.response.status !== 404) {
+          showSnackbar('Something went wrong', 'error');
+        }
+      });
   };
 
   useEffect(() => {
@@ -51,27 +51,27 @@ function TimesheetPage() {
 
   function handleApprove() {
     setSubmitting(true);
-    // updateTimesheet({ id: timesheet.id, timesheet_status: 'approved' })
-    //   .then(() => {
-    //     fetchTimesheet();
-    //     setSubmitting(false);
-    //   })
-    //   .catch(() => {
-    //     // showSnackbar('Something went wrong', 'error');
-    //     setSubmitting(false);
-    //   });
+    updateTimesheet({ id: timesheet.id, timesheet_status: 'approved' })
+      .then(() => {
+        fetchTimesheet();
+        setSubmitting(false);
+      })
+      .catch(() => {
+        // showSnackbar('Something went wrong', 'error');
+        setSubmitting(false);
+      });
   }
 
   function handlePayFreelancerTimesheets() {
     setSubmitting(true);
-    // payFreelancer(timesheet.id)
-    //   .then(() => {
-    //     fetchTimesheet();
-    //     setSubmitting(false);
-    //   })
-    //   .catch((error) => {
-    //     // showSnackbar(error.response.data.errors.toString(), 'error');
-    //   });
+    payFreelancer(timesheet.id)
+      .then(() => {
+        fetchTimesheet();
+        setSubmitting(false);
+      })
+      .catch((error) => {
+        // showSnackbar(error.response.data.errors.toString(), 'error');
+      });
   }
 
   return loading ? (
@@ -97,8 +97,8 @@ function TimesheetPage() {
       >
         <StyledTypography fontWeight="medium" fontSize="22px" fontFamily="Rubik">
           Timesheet:{' '}
-          {timesheet.freelancer
-            ? `${timesheet.freelancer.first_name} ${timesheet.freelancer.last_name}`
+          {timesheet.tutor
+            ? `${timesheet.tutor.first_name} ${timesheet.tutor.last_name}`
             : 'Deleted user'}
         </StyledTypography>
         <Box>

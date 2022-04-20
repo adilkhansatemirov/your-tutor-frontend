@@ -67,12 +67,12 @@ function TimesheetsListItem({ timesheet }) {
         </Link>
       </StyledTableCell>
       <StyledTableCell>
-        {timesheet.freelancer ? (
+        {timesheet.tutor ? (
           <>
             <StyledTypography fontSize={12} fontWeight="bold">
-              {`${timesheet.freelancer.first_name} ${timesheet.freelancer.last_name}`}
+              {`${timesheet.tutor.first_name} ${timesheet.tutor.last_name}`}
             </StyledTypography>
-            <StyledTypography fontSize={12}>{timesheet.freelancer.email}</StyledTypography>
+            <StyledTypography fontSize={12}>{timesheet.tutor.email}</StyledTypography>
           </>
         ) : (
           <StyledTypography fontSize={12}>Deleted user</StyledTypography>
@@ -81,10 +81,10 @@ function TimesheetsListItem({ timesheet }) {
 
       <StyledTableCell>
         <StyledTypography fontSize={12} fontWeight="bold">
-          {`${timesheet.project.client_detail.user.first_name} ${timesheet.project.client_detail.user.last_name}`}
+          {`${timesheet.project.student_detail.user.first_name} ${timesheet.project.student_detail.user.last_name}`}
         </StyledTypography>
-        <StyledTypography fontSize={12}>{timesheet.project.client_detail.user.email}</StyledTypography>
-        <StyledTypography fontSize={12}>{timesheet.project.client_detail.company_name}</StyledTypography>
+        <StyledTypography fontSize={12}>{timesheet.project.student_detail.user.email}</StyledTypography>
+        <StyledTypography fontSize={12}>{timesheet.project.student_detail.company_name}</StyledTypography>
       </StyledTableCell>
       <StyledTableCell>
         <StyledTypography fontSize={12} fontWeight="bold">

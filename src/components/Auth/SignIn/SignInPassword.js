@@ -37,8 +37,9 @@ function SignInPass({ email, setEmail, setTemplate }) {
     signInWithEmailAndPassword({ email, password: values.password })
       .then(({ data }) => {
         setUser(data);
+        console.log('data', data);
         const role = data.user.role;
-        const freelancerDetail = data.freelancer_detail;
+        const freelancerDetail = data.tutor_detail;
         if (data.user.is_blocked) {
           showSnackbar('Your accaunt has been blocked, so you cannot access the app', 'error');
           history.push('/');
@@ -48,7 +49,7 @@ function SignInPass({ email, setEmail, setTemplate }) {
         let path = '/';
         if (role === 'admin') {
           path = '/admin/projects';
-        } else if (role === 'freelancer') {
+        } else if (role === 'tutor') {
           if (freelancerDetail.qualified) {
             path = '/tutor/dashboard';
           } else if (freelancerDetail.interview_scheduled) {
@@ -56,11 +57,11 @@ function SignInPass({ email, setEmail, setTemplate }) {
           } else {
             path = '/tutor-application/resume';
           }
-        } else if (role === 'client') {
+        } else if (role === 'student') {
           if (data.has_payment_info) {
-            path = '/client/invoices';
+            path = '/student/invoices';
           } else {
-            path = '/client-application/payment-info';
+            path = '/student-application/payment-info';
           }
         }
         showSnackbar('You have successfully logged in', 'success');

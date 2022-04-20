@@ -11,12 +11,12 @@ import FreelancerList from 'components/Admin/Freelancers/FreelancerList/Freelanc
 import Settings from 'components/Admin/Settings/Settings';
 import ProjectPage from 'components/Admin/Projects/ProjectPage/ProjectPage';
 import NewProject from './Projects/NewProject/NewProject';
-// import TimesheetPage from './Timesheets/TimesheetPage/TimesheetPage';
-// import FreelancerPage from './Freelancers/FreelancerPage/FreelancerPage';
-// import InvoicePageWrapper from 'components/Admin/Invoices/InvoicePage/InvoicePageWrapper';
+import TimesheetPage from './Timesheets/TimesheetPage/TimesheetPage';
+import FreelancerPage from './Freelancers/FreelancerPage/FreelancerPage';
+import InvoicePageWrapper from 'components/Admin/Invoices/InvoicePage/InvoicePageWrapper';
 import EditProjectWrapper from 'components/Admin/Projects/EditProject/EditProjectWrapper';
-// import NewInvoiceWrapper from 'components/Admin/Invoices/NewInvoice/NewInvoiceWrapper';
-// import EditFreelancer from 'components/Admin/Freelancers/EditFreelancer/EditFreelancer';
+import NewInvoiceWrapper from 'components/Admin/Invoices/NewInvoice/NewInvoiceWrapper';
+import EditFreelancer from 'components/Admin/Freelancers/EditFreelancer/EditFreelancer';
 import { signInWithToken } from 'services/auth';
 import { setSession } from 'services/api';
 import AuthLoader from 'components/Shared/Utils/AuthLoader';
@@ -130,21 +130,21 @@ function AdminLayout() {
               <Route exact path="/admin/projects/new" component={NewProject} />
               <Route exact path="/admin/projects/:projectId" component={ProjectPage} />
               <Route exact path="/admin/projects/:projectId/edit" component={EditProjectWrapper} />
-              {/* <Route exact path="/admin/projects/:projectId/invoices/new" component={NewInvoiceWrapper} /> */}
+              <Route exact path="/admin/projects/:projectId/invoices/new" component={NewInvoiceWrapper} />
 
               <Route exact path="/admin/invoices" component={InvoicesList} />
-              {/* <Route exact path="/admin/invoices/:invoiceId" component={InvoicePageWrapper} /> */}
+              <Route exact path="/admin/invoices/:invoiceId" component={InvoicePageWrapper} />
 
               <Route exact path="/admin/payments" component={PaymentsList} />
 
               <Route exact path="/admin/timesheets" component={TimesheetsList} />
-              {/* <Route exact path="/admin/timesheets/:timesheetId" component={TimesheetPage} /> */}
+              <Route exact path="/admin/timesheets/:timesheetId" component={TimesheetPage} />
 
               <Route exact path="/admin/students" component={ClientList} />
 
               <Route exact path="/admin/tutors" component={FreelancerList} />
-              {/* <Route exact path="/admin/freelancers/:freelancerId" component={FreelancerPage} />
-              <Route exact path="/admin/freelancers/:freelancerId/edit" component={EditFreelancer} /> */}
+              <Route exact path="/admin/freelancers/:freelancerId" component={FreelancerPage} />
+              {/* <Route exact path="/admin/freelancers/:freelancerId/edit" component={EditFreelancer} /> */}
 
               <Route exact path="/admin/settings" component={Settings} />
 

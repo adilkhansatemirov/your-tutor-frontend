@@ -4,21 +4,21 @@ import StyledTableCell from 'components/Shared/Styled/StyledTableCell';
 import StyledTypography from 'components/Shared/Styled/StyledTypography';
 import InvoicesListItem from '../TimesheetsListItem/TimesheetsListItem';
 import StyledTableRow from 'components/Shared/Styled/StyledTableRow';
-// import { SnackbarContext } from 'context/snackbarContext';
+import { SnackbarContext } from 'context/snackbarContext';
 import PageHeader from 'components/Shared/UI/PageHeader';
 import StyledTextField from 'components/Shared/Styled/StyledTextField';
 import FastIcon from 'components/Shared/Utils/FastIcon';
 import StatusCounter from 'components/Shared/UI/StatusCounter';
 import PageLoader from 'components/Shared/Utils/PageLoader';
-// import { getTimesheets } from 'services 'services/admin/timesheets';
+import { getTimesheets } from 'services/admin/timesheets';
 import StyledSelect from 'components/Shared/Styled/StyledSelect';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import TableCellSortArrows from 'components/Shared/Utils/TableCellSortArrows';
-// import { useFilter, usePagination, useSearch, useSort } from 'hooks';
+import { useFilter, usePagination, useSearch, useSort } from 'hooks';
 import axios from 'axios';
 
 function TimesheetsList() {
-  // const { // showSnackbar } = useContext(SnackbarContext);
+  const { showSnackbar } = useContext(SnackbarContext);
 
   const [loading, setLoading] = useState(true);
   const [counters, setCounters] = useState(null);
@@ -34,50 +34,50 @@ function TimesheetsList() {
   }, []);
 
   const fetchTimesheets = (params, cancelToken) => {
-    // getTimesheets(params, cancelToken)
-    //   .then((response) => {
-    //     setCounters(response.data.meta.counters);
-    //     setPagination(response.data.meta.pagination);
-    //     setTimesheets(response.data.list);
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     if (axios.isCancel(error)) {
-    //       console.log('Operation canceled due to new request');
-    //     } else {
-    //       // showSnackbar('Something went wrong', 'error');
-    //     }
-    //     setLoading(false);
-    //   });
+    getTimesheets(params, cancelToken)
+      .then((response) => {
+        setCounters(response.data.meta.counters);
+        setPagination(response.data.meta.pagination);
+        setTimesheets(response.data.list);
+        setLoading(false);
+      })
+      .catch((error) => {
+        if (axios.isCancel(error)) {
+          console.log('Operation canceled due to new request');
+        } else {
+          showSnackbar('Something went wrong', 'error');
+        }
+        setLoading(false);
+      });
   };
 
-  // const fetchMore = usePagination({
-  //   pagination,
-  //   setPagination,
-  //   params,
-  //   setParams,
-  //   data: timesheets,
-  //   getData: getTimesheets,
-  //   setData: setTimesheets,
-  //   setLoading,
-  //   setCounters,
-  // });
+  const fetchMore = usePagination({
+    pagination,
+    setPagination,
+    params,
+    setParams,
+    data: timesheets,
+    getData: getTimesheets,
+    setData: setTimesheets,
+    setLoading,
+    setCounters,
+  });
 
-  // const handleSearch = useSearch({
-  //   params,
-  //   setParams,
-  //   setLoading,
-  //   fetchData: fetchTimesheets,
-  // });
+  const handleSearch = useSearch({
+    params,
+    setParams,
+    setLoading,
+    fetchData: fetchTimesheets,
+  });
 
-  // const { filterValue, handleFilterChange } = useFilter({
-  //   params,
-  //   setParams,
-  //   fetchData: fetchTimesheets,
-  //   filterBy: 'timesheet_status',
-  // });
+  const { filterValue, handleFilterChange } = useFilter({
+    params,
+    setParams,
+    fetchData: fetchTimesheets,
+    filterBy: 'timesheet_status',
+  });
 
-  // const handleChangeSortParams = useSort({ params, setParams, fetchData: fetchTimesheets });
+  const handleChangeSortParams = useSort({ params, setParams, fetchData: fetchTimesheets });
 
   return (
     <>
@@ -101,7 +101,7 @@ function TimesheetsList() {
           />
         </Box>
       </PageHeader>
-      {/* {loading ? (
+      {loading ? (
         <PageLoader />
       ) : (
         <>
@@ -159,21 +159,21 @@ function TimesheetsList() {
                       />
                     </Box>
                   </StyledTableCell>
-                  <StyledTableCell onClick={() => handleChangeSortParams('freelancers.first_name')}>
+                  <StyledTableCell onClick={() => handleChangeSortParams('tutors.first_name')}>
                     <Box display="flex" alignItems="center">
-                      Freelancer
+                      Tutors
                       <TableCellSortArrows
-                        sortKey="freelancers.first_name"
+                        sortKey="tutors.first_name"
                         currentSortKey={params.sort_key}
                         currentSortDirection={params.sort_direction}
                       />
                     </Box>
                   </StyledTableCell>
-                  <StyledTableCell onClick={() => handleChangeSortParams('clients.first_name')}>
+                  <StyledTableCell onClick={() => handleChangeSortParams('students.first_name')}>
                     <Box display="flex" alignItems="center">
-                      Client
+                      Student
                       <TableCellSortArrows
-                        sortKey="clients.first_name"
+                        sortKey="students.first_name"
                         currentSortKey={params.sort_key}
                         currentSortDirection={params.sort_direction}
                       />
@@ -201,7 +201,7 @@ function TimesheetsList() {
             </Table>
           </InfiniteScroll>
         </>
-      )} */}
+      )}
     </>
   );
 }
