@@ -79,7 +79,7 @@ function MainSide({ project }) {
             {project.invoices.map((invoice) => (
               <StyledTableRow key={invoice.id}>
                 <StyledTableCell>
-                  <Link to={`/client/invoices/${invoice.id}`} style={{ textDecoration: 'none' }}>
+                  <Link to={`/student/invoices/${invoice.id}`} style={{ textDecoration: 'none' }}>
                     <StyledTypography fontWeight="bold" color="skyBlue">
                       {moment(invoice.invoice_date).format('MMMM DD, YYYY')}
                     </StyledTypography>

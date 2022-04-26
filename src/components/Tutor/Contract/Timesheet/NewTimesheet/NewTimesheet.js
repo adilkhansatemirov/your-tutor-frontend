@@ -151,17 +151,17 @@ function NewTimesheet() {
             >
               Save
             </StyledButton>
-            {project.student_type_of_billing !== 'custom_type' && (
-              <StyledButton
-                disabled={loading || timeEntries.length === 0}
-                style={{ marginLeft: '10px' }}
-                size="small"
-                textTransform="uppercase"
-                onClick={() => handleAction('submit')}
-              >
-                Submit
-              </StyledButton>
-            )}
+            {/* {project.student_type_of_billing !== 'custom_type' && ( */}
+            <StyledButton
+              disabled={loading || timeEntries.length === 0}
+              style={{ marginLeft: '10px' }}
+              size="small"
+              textTransform="uppercase"
+              onClick={() => handleAction('submit')}
+            >
+              Submit
+            </StyledButton>
+            {/* )} */}
           </Box>
         </Box>
       </PageHeader>

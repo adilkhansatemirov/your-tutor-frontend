@@ -4,21 +4,21 @@ import StyledTableCell from 'components/Shared/Styled/StyledTableCell';
 import StyledTypography from 'components/Shared/Styled/StyledTypography';
 import InvoicesListItem from '../InvoicesListItem/InvoicesListItem';
 import StyledTableRow from 'components/Shared/Styled/StyledTableRow';
-// import { SnackbarContext } from 'context/snackbarContext';
+import { SnackbarContext } from 'context/snackbarContext';
 import PageHeader from 'components/Shared/UI/PageHeader';
 import StyledTextField from 'components/Shared/Styled/StyledTextField';
-// import FastIcon from 'components/Shared/Utils/FastIcon';
+import FastIcon from 'components/Shared/Utils/FastIcon';
 import StatusCounter from 'components/Shared/UI/StatusCounter';
 import PageLoader from 'components/Shared/Utils/PageLoader';
-// import { getInvoices } from 'services 'services/admin/invoices';
+import { getInvoices } from 'services/admin/invoices';
 import StyledSelect from 'components/Shared/Styled/StyledSelect';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import TableCellSortArrows from 'components/Shared/Utils/TableCellSortArrows';
-// import { useFilter, useSearch, useSort, usePagination } from 'hooks';
+import { useFilter, useSearch, useSort, usePagination } from 'hooks';
 import axios from 'axios';
 
 function InvoicesList() {
-  // const { // showSnackbar } = useContext(SnackbarContext);
+  const { showSnackbar } = useContext(SnackbarContext);
 
   const [loading, setLoading] = useState(true);
   const [counters, setCounters] = useState(null);
@@ -34,50 +34,50 @@ function InvoicesList() {
   }, []);
 
   const fetchInvoices = (params, cancelToken) => {
-    // getInvoices(params, cancelToken)
-    //   .then((response) => {
-    //     setCounters(response.data.meta.counters);
-    //     setPagination(response.data.meta.pagination);
-    //     setInvoices(response.data.list);
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     if (axios.isCancel(error)) {
-    //       console.log('Operation canceled due to new request');
-    //     } else {
-    //       // showSnackbar('Something went wrong', 'error');
-    //     }
-    //     setLoading(false);
-    //   });
+    getInvoices(params, cancelToken)
+      .then((response) => {
+        setCounters(response.data.meta.counters);
+        setPagination(response.data.meta.pagination);
+        setInvoices(response.data.list);
+        setLoading(false);
+      })
+      .catch((error) => {
+        if (axios.isCancel(error)) {
+          console.log('Operation canceled due to new request');
+        } else {
+          // showSnackbar('Something went wrong', 'error');
+        }
+        setLoading(false);
+      });
   };
 
-  // const fetchMore = usePagination({
-  //   pagination,
-  //   setPagination,
-  //   params,
-  //   setParams,
-  //   data: invoices,
-  //   getData: getInvoices,
-  //   setData: setInvoices,
-  //   setLoading,
-  //   setCounters,
-  // });
+  const fetchMore = usePagination({
+    pagination,
+    setPagination,
+    params,
+    setParams,
+    data: invoices,
+    getData: getInvoices,
+    setData: setInvoices,
+    setLoading,
+    setCounters,
+  });
 
-  // const handleSearch = useSearch({
-  //   params,
-  //   setParams,
-  //   setLoading,
-  //   fetchData: fetchInvoices,
-  // });
+  const handleSearch = useSearch({
+    params,
+    setParams,
+    setLoading,
+    fetchData: fetchInvoices,
+  });
 
-  // const { filterValue, handleFilterChange } = useFilter({
-  //   params,
-  //   setParams,
-  //   fetchData: fetchInvoices,
-  //   filterBy: 'invoice_status',
-  // });
+  const { filterValue, handleFilterChange } = useFilter({
+    params,
+    setParams,
+    fetchData: fetchInvoices,
+    filterBy: 'invoice_status',
+  });
 
-  // const handleChangeSortParams = useSort({ params, setParams, fetchData: fetchInvoices });
+  const handleChangeSortParams = useSort({ params, setParams, fetchData: fetchInvoices });
 
   return (
     <>
@@ -89,11 +89,11 @@ function InvoicesList() {
           <StyledTextField
             small
             placeholder="Search invoices..."
-            // onChange={handleSearch}
+            onChange={handleSearch}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
-                  {/* <FastIcon width="17" height="18" iconName="search" /> */}
+                  <FastIcon width="17" height="18" iconName="search" />
                 </InputAdornment>
               ),
             }}
@@ -101,7 +101,7 @@ function InvoicesList() {
           />
         </Box>
       </PageHeader>
-      {/* {loading ? (
+      {loading ? (
         <PageLoader />
       ) : (
         <>
@@ -201,7 +201,7 @@ function InvoicesList() {
             </Table>
           </InfiniteScroll>
         </>
-      )} */}
+      )}
     </>
   );
 }

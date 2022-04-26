@@ -94,17 +94,17 @@ function TimesheetPage() {
 
         {(timesheet.timesheet_status === 'edited' || timesheet.timesheet_status === 'rejected') && (
           <Box>
-            {timesheet.project.student_type_of_billing !== 'custom_type' && (
-              <StyledButton
-                variant="green"
-                disabled={loading || submitting}
-                size="small"
-                textTransform="uppercase"
-                onClick={handleSubmitTimesheet}
-              >
-                Submit
-              </StyledButton>
-            )}
+            {/* {timesheet.project.student_type_of_billing !== 'custom_type' && ( */}
+            <StyledButton
+              variant="green"
+              disabled={loading || submitting}
+              size="small"
+              textTransform="uppercase"
+              onClick={handleSubmitTimesheet}
+            >
+              Submit
+            </StyledButton>
+            {/* )} */}
             <StyledButton
               disabled={loading || submitting}
               variant="red"

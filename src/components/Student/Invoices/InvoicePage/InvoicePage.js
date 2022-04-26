@@ -30,10 +30,10 @@ function InvoicePage() {
         setLoading(false);
       })
       .catch((error) => {
-        if (error.response.status !== 404) {
-          showSnackbar('Something went wrong', 'error');
-          setLoading(false);
-        }
+        // if (error.response.status !== 404) {
+        //   showSnackbar('Something went wrong', 'error');
+        //   setLoading(false);
+        // }
       });
   };
 

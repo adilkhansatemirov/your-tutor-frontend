@@ -30,18 +30,18 @@ function InfoSide({ invoice }) {
   };
 
   const freelancer = {
-    fullname: invoice.project.freelancer_detail
-      ? `${invoice.project.freelancer_detail.user.first_name} ${invoice.project.freelancer_detail.user.last_name}`
+    fullname: invoice.project.tutor_detail
+      ? `${invoice.project.tutor_detail.user.first_name} ${invoice.project.tutor_detail.user.last_name}`
       : 'Deleted user',
-    email: invoice.project.freelancer_detail ? invoice.project.freelancer_detail.user.email : '',
+    email: invoice.project.tutor_detail ? invoice.project.tutor_detail.user.email : '',
   };
 
   const project = {
     title: invoice.project.title,
-    clientFullname: `${invoice.project.client_detail.user.first_name} ${invoice.project.client_detail.user.last_name}`,
-    clientEmail: invoice.project.client_detail.user.email,
-    companyName: invoice.project.client_detail.company_name,
-    typeOfBilling: capitalize(removeUnderscores(invoice.project.client_type_of_billing)),
+    clientFullname: `${invoice.project.student_detail.user.first_name} ${invoice.project.student_detail.user.last_name}`,
+    clientEmail: invoice.project.student_detail.user.email,
+    companyName: invoice.project.student_detail.company_name,
+    typeOfBilling: capitalize(removeUnderscores(invoice.project.student_type_of_billing)),
     invoicingSchedule: capitalize(removeUnderscores(invoice.project.invoicing_schedule)),
   };
 
@@ -90,7 +90,7 @@ function InfoSide({ invoice }) {
         <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={15} fontWeight="medium">
           Freelancer
         </StyledTypography>
-        {invoice.project.freelancer_detail ? (
+        {invoice.project.tutor_detail ? (
           <>
             <StyledTypography style={{ marginBottom: '5px' }} fontFamily="Rubik" fontSize={14} fontWeight="bold">
               {freelancer.fullname}
@@ -113,12 +113,12 @@ function InfoSide({ invoice }) {
         >
           <NumberFormat
             prefix="$"
-            value={Number(invoice.project.freelancer_payment_amount)}
+            value={Number(invoice.project.tutor_payment_amount)}
             decimalScale={2}
             fixedDecimalScale={true}
             displayType="text"
             thousandSeparator={true}
-            suffix={invoice.project.client_type_of_billing === 'hourly_rate' ? '/hr' : ''}
+            suffix={invoice.project.student_type_of_billing === 'hourly_rate' ? '/hr' : ''}
           />
         </StyledTypography>
       </InfoBox>
@@ -150,12 +150,12 @@ function InfoSide({ invoice }) {
         <StyledTypography style={{ marginBottom: '5px' }} fontFamily="Rubik" fontSize={20} fontWeight="medium">
           <NumberFormat
             prefix="$"
-            value={Number(invoice.project.client_payment_amount)}
+            value={Number(invoice.project.student_payment_amount)}
             decimalScale={2}
             fixedDecimalScale={true}
             displayType="text"
             thousandSeparator={true}
-            suffix={invoice.project.client_type_of_billing === 'hourly_rate' ? '/hr' : ''}
+            suffix={invoice.project.student_type_of_billing === 'hourly_rate' ? '/hr' : ''}
           />
         </StyledTypography>
         <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Roboto" fontSize={12}>

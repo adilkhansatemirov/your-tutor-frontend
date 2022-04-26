@@ -43,10 +43,10 @@ function InfoSide({ invoice }) {
           Freelancer
         </StyledTypography>
         <StyledTypography style={{ marginBottom: '5px' }} fontFamily="Rubik" fontSize={14} fontWeight="bold">
-          {invoice.project.freelancer_detail.user.first_name} {invoice.project.freelancer_detail.user.last_name}
+          {invoice.project.tutor_detail.user.first_name} {invoice.project.tutor_detail.user.last_name}
         </StyledTypography>
         <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={12}>
-          {invoice.project.freelancer_detail.user.email}
+          {invoice.project.tutor_detail.user.email}
         </StyledTypography>
       </InfoBox>
 
@@ -62,7 +62,7 @@ function InfoSide({ invoice }) {
         <StyledTypography style={{ marginBottom: '5px' }} fontFamily="Rubik" fontSize={20} fontWeight="medium">
           <NumberFormat
             prefix="$"
-            value={Number(invoice.project.client_payment_amount)}
+            value={Number(invoice.project.student_payment_amount)}
             decimalScale={2}
             fixedDecimalScale={true}
             displayType="text"

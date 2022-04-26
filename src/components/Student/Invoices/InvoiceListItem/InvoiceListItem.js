@@ -15,7 +15,7 @@ function InvoiceListItem({ invoice }) {
   return (
     <StyledTableRow>
       <StyledTableCell>
-        <Link to={`/client/invoices/${invoice.id}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/student/invoices/${invoice.id}`} style={{ textDecoration: 'none' }}>
           <StyledTypography color="skyBlue" fontSize={12} fontWeight="bold">
             {invoice.project.title}
           </StyledTypography>
