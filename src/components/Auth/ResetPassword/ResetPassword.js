@@ -73,11 +73,11 @@ function ResetPassword() {
               } else {
                 path = '/tutor-application/resume';
               }
-            } else if (role === 'client') {
+            } else if (role === 'student') {
               if (data.has_payment_info) {
-                path = '/client/invoices';
+                path = '/student/invoices';
               } else {
-                path = '/client-application/payment-info';
+                path = '/student-application/payment-info';
               }
             }
             showSnackbar('You have successfully logged in', 'success');
