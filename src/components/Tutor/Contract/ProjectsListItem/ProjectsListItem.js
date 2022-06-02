@@ -27,7 +27,7 @@ function ProjectsListItem({ project }) {
         <NumberFormat
           displayType="text"
           value={project.tutor_payment_amount}
-          prefix={'$'}
+          prefix="₸"
           suffix={project.student_type_of_billing === 'hourly_rate' && '/hr'}
         />
       </StyledTableCell>

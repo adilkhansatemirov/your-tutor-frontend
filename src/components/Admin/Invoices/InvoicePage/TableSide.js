@@ -136,7 +136,7 @@ function TableSide({ invoice, control, errors, register, watch, array }) {
                     <StyledTableCell>
                       <StyledTypography fontWeight="bold" fontSize={12} type="h6">
                         <NumberFormat
-                          prefix="$"
+                          prefix="₸"
                           value={itemTotal(index)}
                           displayType="text"
                           thousandSeparator={true}
@@ -187,7 +187,7 @@ function TableSide({ invoice, control, errors, register, watch, array }) {
                       <input ref={register()} type="hidden" name={`items[${index}].price`} />
                       <StyledTypography fontSize={14} type="h6">
                         <NumberFormat
-                          prefix="$"
+                          prefix="₸"
                           value={Number(item.price)}
                           displayType="text"
                           decimalScale={2}
@@ -199,7 +199,7 @@ function TableSide({ invoice, control, errors, register, watch, array }) {
                     <StyledTableCell>
                       <StyledTypography fontWeight="bold" fontSize={14} type="h6">
                         <NumberFormat
-                          prefix="$"
+                          prefix="₸"
                           value={Number(round(item.price * item.quantity))}
                           displayType="text"
                           decimalScale={2}

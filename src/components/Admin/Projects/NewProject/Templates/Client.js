@@ -66,8 +66,8 @@ function Client({ setTemplate, newProject, setNewProject, setClient }) {
   return (
     <>
       <StepNumber stepNumber={1} />
-      <StepTitle text="Client" />
-      <StepDescription text="Firstly we need to know who is this project for. Use the form below to find the Client who will be accepting our services." />
+      <StepTitle text="Student" />
+      <StepDescription text="Firstly we need to know who is this project for. Use the form below to find the student who will be accepting our services." />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Autocomplete
           options={clients}

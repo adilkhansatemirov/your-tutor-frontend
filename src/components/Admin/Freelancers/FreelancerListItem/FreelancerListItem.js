@@ -62,7 +62,7 @@ function FreelancerListItem({ freelancer }) {
     <StyledTableRow>
       <StyledTableCell>
         <Box style={{ width: 'fit-content' }}>
-          <Link to={`/admin/freelancers/${freelancer.user.id}`} style={{ textDecoration: 'none' }}>
+          <Link to={`/admin/tutors/${freelancer.user.id}`} style={{ textDecoration: 'none' }}>
             <StyledTypography color="skyBlue" fontSize={12} fontWeight="bold">
               {`${freelancer.user.first_name} ${freelancer.user.last_name}`}
             </StyledTypography>

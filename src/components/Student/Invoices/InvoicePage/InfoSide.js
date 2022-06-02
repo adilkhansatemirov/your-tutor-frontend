@@ -18,7 +18,7 @@ function InfoSide({ invoice }) {
         </StyledTypography>
         <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={20} fontWeight="medium">
           <NumberFormat
-            prefix="$"
+            prefix="₸"
             value={Number(invoice.amount)}
             decimalScale={2}
             fixedDecimalScale={true}
@@ -61,7 +61,7 @@ function InfoSide({ invoice }) {
 
         <StyledTypography style={{ marginBottom: '5px' }} fontFamily="Rubik" fontSize={20} fontWeight="medium">
           <NumberFormat
-            prefix="$"
+            prefix="₸"
             value={Number(invoice.project.student_payment_amount)}
             decimalScale={2}
             fixedDecimalScale={true}

@@ -35,7 +35,7 @@ function Freelancer({ project }) {
         fontWeight="medium"
       >
         <NumberFormat
-          prefix="$"
+          prefix="₸"
           value={Number(project.tutor_payment_amount)}
           decimalScale={2}
           fixedDecimalScale={true}

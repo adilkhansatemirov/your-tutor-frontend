@@ -31,10 +31,10 @@ function FreelancerPage() {
         setLoading(false);
       })
       .catch((error) => {
-        if (error.response.status !== 404) {
-          showSnackbar('Something went wrong', 'error');
+        // if (error.response.status !== 404) {
+        //   showSnackbar('Something went wrong', 'error');
           setLoading(false);
-        }
+        // }
       });
   };
   const [submitting, setSubmitting] = useState(false);

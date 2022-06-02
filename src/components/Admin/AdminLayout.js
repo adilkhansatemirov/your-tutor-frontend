@@ -143,7 +143,7 @@ function AdminLayout() {
               <Route exact path="/admin/students" component={ClientList} />
 
               <Route exact path="/admin/tutors" component={FreelancerList} />
-              <Route exact path="/admin/freelancers/:freelancerId" component={FreelancerPage} />
+              <Route exact path="/admin/tutors/:freelancerId" component={FreelancerPage} />
               {/* <Route exact path="/admin/freelancers/:freelancerId/edit" component={EditFreelancer} /> */}
 
               <Route exact path="/admin/settings" component={Settings} />

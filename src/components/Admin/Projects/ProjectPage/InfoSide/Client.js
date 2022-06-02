@@ -60,7 +60,7 @@ function Client({ project, loading, setLoading, fetchProject }) {
         fontWeight="medium"
       >
         <NumberFormat
-          prefix="$"
+          prefix="₸"
           value={Number(project.student_payment_amount)}
           decimalScale={2}
           fixedDecimalScale={true}

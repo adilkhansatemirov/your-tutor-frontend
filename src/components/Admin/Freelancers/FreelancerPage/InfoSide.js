@@ -53,9 +53,9 @@ function InfoSide({ freelancer }) {
   };
 
   const freelancerPreferences = {
-    show: freelancer.freelancer_detail.work_hours_per_week && freelancer.freelancer_detail.desired_hourly_rate,
-    hourlyRate: freelancer.freelancer_detail.desired_hourly_rate,
-    workHours: freelancer.freelancer_detail.work_hours_per_week,
+    show: freelancer.tutor_detail.work_hours_per_week && freelancer.tutor_detail.desired_hourly_rate,
+    hourlyRate: freelancer.tutor_detail.desired_hourly_rate,
+    workHours: freelancer.tutor_detail.work_hours_per_week,
   };
 
   return (

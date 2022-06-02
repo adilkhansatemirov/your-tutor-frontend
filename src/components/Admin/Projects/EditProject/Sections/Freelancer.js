@@ -8,7 +8,7 @@ import { Controller } from 'react-hook-form';
 import { getAllFreelancers } from 'services/admin/freelancers';
 import { Autocomplete } from '@material-ui/lab';
 import { filterFreelancerOptions } from 'utils/contracts';
-import dollarIcon from 'assets/icons/dollar-black.svg';
+import tengeIcon from 'assets/icons/tenge.svg';
 
 function Freelancer({ control, errors, setValue, trigger, project, student_type_of_billing }) {
   const { showSnackbar } = useContext(SnackbarContext);
@@ -50,7 +50,7 @@ function Freelancer({ control, errors, setValue, trigger, project, student_type_
           How much are we paying the freelancer?
         </StyledTypography>
         <Box display="flex" alignItems="flex-start" style={{ marginTop: '15px' }}>
-          <img style={{ marginTop: '15px' }} src={dollarIcon} alt="dollar" />
+          <img style={{ marginTop: '15px' }} src={tengeIcon} alt="tenge" />
           <Controller
             as={<StyledTextField placeholder="Amount" />}
             name="tutor_payment_amount"

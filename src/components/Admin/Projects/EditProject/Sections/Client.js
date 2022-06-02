@@ -10,7 +10,7 @@ import { Controller } from 'react-hook-form';
 import { getAllClients } from 'services/admin/clients';
 import StyledRadioFormControlLabel from 'components/Shared/Styled/Radio/StyledRadioFormControlLabel';
 import StyledRadio from 'components/Shared/Styled/Radio/StyledRadio';
-import dollarIcon from 'assets/icons/dollar-black.svg';
+import tengeIcon from 'assets/icons/tenge.svg';
 
 function Client({ control, errors, setValue, trigger, project, student_type_of_billing }) {
   const { showSnackbar } = useContext(SnackbarContext);
@@ -86,7 +86,7 @@ function Client({ control, errors, setValue, trigger, project, student_type_of_b
           control={control}
         />
         <StyledTypography fontSize="16px" style={{ marginTop: '30px' }}>
-          How are we billing the client:
+          How are we billing the student:
         </StyledTypography>
         <Controller
           as={
@@ -94,12 +94,12 @@ function Client({ control, errors, setValue, trigger, project, student_type_of_b
               <StyledRadioFormControlLabel
                 value="custom_type"
                 control={<StyledRadio />}
-                label="Custom - Manually create Invoices and pay freelancers"
+                label="Custom - Manually create Invoices and pay tutors"
               />
               <StyledRadioFormControlLabel
                 value="hourly_rate"
                 control={<StyledRadio />}
-                label="Hourly Rate - Invoice the hours billed by the freelancer on each billing cycle"
+                label="Hourly Rate - Invoice the hours billed by the tutor on each billing cycle"
               />
             </RadioGroup>
           }
@@ -110,7 +110,7 @@ function Client({ control, errors, setValue, trigger, project, student_type_of_b
           How much do we charge:
         </StyledTypography>
         <Box display="flex" alignItems="flex-start" style={{ marginTop: '15px' }}>
-          <img style={{ marginTop: '15px' }} src={dollarIcon} alt="dollar" />
+          <img style={{ marginTop: '15px' }} src={tengeIcon} alt="tenge" />
           <Controller
             as={<StyledTextField placeholder="Amount" />}
             name="student_payment_amount"

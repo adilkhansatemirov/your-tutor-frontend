@@ -44,7 +44,7 @@ function ProjectsListItem({ project }) {
       </StyledTableCell>
       <StyledTableCell>
         <NumberFormat
-          prefix="$"
+          prefix="₸"
           value={Number(project.client_payment_amount)}
           decimalScale={2}
           fixedDecimalScale={true}

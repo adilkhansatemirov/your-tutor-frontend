@@ -60,7 +60,7 @@ function ApplicationLayout() {
 
     signInWithToken(token)
       .then((response) => {
-        if (response.data.data.user.role !== 'freelancer') {
+        if (response.data.data.user.role !== 'tutor') {
           history.push('/403');
           return;
         }
@@ -85,14 +85,14 @@ function ApplicationLayout() {
             <FreelancerApplicationSteps />
             <Box className={classes.content}>
               <Switch>
-                <Route path="/freelancer-application/resume" component={Resume} />
-                <Route path="/freelancer-application/tax-skills" component={TaxSkills} />
-                <Route path="/freelancer-application/bookkeeping-skills" component={BookkeepingSkills} />
-                <Route path="/freelancer-application/accounting-skills" component={AccountingSkills} />
-                <Route path="/freelancer-application/audit-skills" component={AuditSkills} />
-                <Route path="/freelancer-application/software-skills" component={SoftwareSkills} />
-                <Route path="/freelancer-application/interview" component={Interview} />
-                <Route path="/freelancer-application/done" component={Done} />
+                <Route path="/tutor-application/resume" component={Resume} />
+                <Route path="/tutor-application/tax-skills" component={TaxSkills} />
+                <Route path="/tutor-application/bookkeeping-skills" component={BookkeepingSkills} />
+                <Route path="/tutor-application/accounting-skills" component={AccountingSkills} />
+                <Route path="/tutor-application/audit-skills" component={AuditSkills} />
+                <Route path="/tutor-application/software-skills" component={SoftwareSkills} />
+                <Route path="/tutor-application/interview" component={Interview} />
+                <Route path="/tutor-application/done" component={Done} />
               </Switch>
             </Box>
           </>

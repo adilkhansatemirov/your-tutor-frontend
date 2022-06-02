@@ -44,7 +44,7 @@ function InfoSide({ timesheet }) {
         </StyledTypography>
         <StyledTypography style={{ marginBottom: '15px' }} fontFamily="Rubik" fontSize={20} fontWeight="medium">
           <NumberFormat
-            prefix="$"
+            prefix="₸"
             value={Number(timesheet.amount)}
             decimalScale={2}
             fixedDecimalScale={true}

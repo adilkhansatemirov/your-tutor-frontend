@@ -36,7 +36,7 @@ function TableSide({ invoice }) {
                   <StyledTableCell>
                     <StyledTypography fontSize={14} type="h6">
                       <NumberFormat
-                        prefix="$"
+                        prefix="₸"
                         value={Number(item.price)}
                         decimalScale={2}
                         fixedDecimalScale={true}
@@ -48,7 +48,7 @@ function TableSide({ invoice }) {
                   <StyledTableCell>
                     <StyledTypography fontWeight="bold" fontSize={14} type="h6">
                       <NumberFormat
-                        prefix="$"
+                        prefix="₸"
                         value={round(item.price * item.qty)}
                         displayType="text"
                         decimalScale={2}

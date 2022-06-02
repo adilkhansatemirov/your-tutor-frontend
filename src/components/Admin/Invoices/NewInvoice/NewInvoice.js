@@ -220,7 +220,7 @@ function NewInvoice({ project, initialInvoiceItems }) {
                 <StyledTableCell>
                   <StyledTypography fontWeight="bold" fontSize={12} type="h6">
                     <NumberFormat
-                      prefix="$"
+                      prefix="₸"
                       decimalScale={2}
                       fixedDecimalScale={true}
                       value={itemTotal(index)}
@@ -258,7 +258,7 @@ function NewInvoice({ project, initialInvoiceItems }) {
         <Box display="flex" justifyContent="flex-end" style={{ marginTop: '20px' }}>
           <StyledTypography fontWeight="medium" fontSize={20} fontFamily="Rubik" type="h3">
             <NumberFormat
-              prefix="Total: $"
+              prefix="Total: ₸"
               decimalScale={2}
               fixedDecimalScale={true}
               value={invoiceTotal()}

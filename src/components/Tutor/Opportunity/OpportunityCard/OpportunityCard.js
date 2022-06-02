@@ -58,7 +58,7 @@ function OpportunityCard({ opportunity, fetchOpportunities }) {
         </StyledTypography>
         <StyledTypography color="white" style={{ lineHeight: 1.3 }} fontWeight="bold" fontSize={48}>
           <NumberFormat
-            prefix="$"
+            prefix="₸"
             value={Number(opportunity.project.tutor_payment_amount)}
             displayType="text"
             decimalScale={2}

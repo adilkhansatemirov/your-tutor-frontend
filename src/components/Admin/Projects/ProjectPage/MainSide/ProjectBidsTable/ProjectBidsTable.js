@@ -61,7 +61,7 @@ function ProjectBidsTable({ project, fetchProject }) {
             </StyledTableCell>
             <StyledTableCell>
               <NumberFormat
-                prefix="$"
+                prefix="₸"
                 value={Number(bid.compensation)}
                 displayType="text"
                 decimalScale={2}

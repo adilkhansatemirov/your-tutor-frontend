@@ -35,7 +35,7 @@ function InvoiceListItem({ invoice }) {
       </StyledTableCell>
       <StyledTableCell>
         <NumberFormat
-          prefix="$"
+          prefix="₸"
           value={Number(invoice.amount)}
           decimalScale={2}
           fixedDecimalScale={true}

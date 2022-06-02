@@ -20,7 +20,7 @@ function PaymentsListItem({ payment }) {
       <StyledTableCell>
         <StyledTypography fontSize={12}>
           <NumberFormat
-            prefix="$"
+            prefix="₸"
             value={Number(payment.net_amount)}
             decimalScale={2}
             fixedDecimalScale={true}
@@ -32,7 +32,7 @@ function PaymentsListItem({ payment }) {
       <StyledTableCell>
         <StyledTypography fontSize={12}>
           <NumberFormat
-            prefix="$"
+            prefix="₸"
             value={Number(payment.full_amount)}
             decimalScale={2}
             fixedDecimalScale={true}
@@ -44,7 +44,7 @@ function PaymentsListItem({ payment }) {
       <StyledTableCell>
         <StyledTypography fontSize={12}>
           <NumberFormat
-            prefix="$"
+            prefix="₸"
             value={Number(payment.stripe_fee)}
             decimalScale={2}
             fixedDecimalScale={true}

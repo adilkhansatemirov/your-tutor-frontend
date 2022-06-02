@@ -77,9 +77,9 @@ function MainSide({ freelancer }) {
                 </StyledTableCell>
                 <StyledTableCell>
                   <StyledTypography fontSize={14} fontWeight="bold">
-                    {`${project.client_detail.first_name} ${project.client_detail.last_name}`}
+                    {`${project.student_detail.first_name} ${project.student_detail.last_name}`}
                   </StyledTypography>
-                  <StyledTypography fontSize={12}>{project.client_detail.email}</StyledTypography>
+                  <StyledTypography fontSize={12}>{project.student_detail.email}</StyledTypography>
                   <StyledTypography fontSize={12}>{project.company_name}</StyledTypography>
                 </StyledTableCell>
                 <StyledTableCell>
@@ -90,7 +90,7 @@ function MainSide({ freelancer }) {
                 <StyledTableCell>
                   <StyledTypography fontSize={12} type="h6">
                     <NumberFormat
-                      prefix="$"
+                      prefix="₸"
                       value={Number(project.amount)}
                       decimalScale={2}
                       fixedDecimalScale={true}

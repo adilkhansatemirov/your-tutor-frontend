@@ -93,7 +93,7 @@ function OpportunityListItem({ opportunity, fetchOpportunities }) {
             <NumberFormat
               displayType="text"
               value={opportunity.project.tutor_payment_amount}
-              prefix={'$'}
+              prefix="₸"
               suffix={opportunity.project.student_type_of_billing === 'hourly_rate' && '/hr'}
             />
           </StyledTypography>

@@ -95,7 +95,7 @@ function ApplyOpportunityModal({ open, onClose, opportunity, fetchOpportunities 
           </StyledTypography>
           <StyledTypography fontSize={20} fontWeight="medium">
             <NumberFormat
-              prefix="$"
+              prefix="₸"
               value={Number(opportunity.project.tutor_payment_amount)}
               displayType="text"
               suffix={opportunity.project.student_type_of_billing === 'hourly_rate' ? '/hr' : ''}

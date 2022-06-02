@@ -82,7 +82,7 @@ function Review({
       <Row itemName="Type" itemValue={capitalize(removeUnderscores(newProject.student_type_of_billing))} />
       <Row
         itemName="Lesson description"
-        itemValue={`$${newProject.student_payment_amount}${
+        itemValue={`₸${newProject.student_payment_amount}${
           newProject.student_type_of_billing === 'hourly_rate' ? ' per hour' : ''
         }`}
       />
@@ -102,7 +102,7 @@ function Review({
       )}
       <Row
         itemName="Amount"
-        itemValue={`$${newProject.tutor_payment_amount}${
+        itemValue={`₸${newProject.tutor_payment_amount}${
           newProject.student_type_of_billing === 'hourly_rate' ? ' per hour' : ''
         }`}
       />*/}

@@ -50,7 +50,7 @@ function InvoicePage({ invoice, fetchInvoice, setInvoice }) {
         <>
           Are you sure you want to charge the client for{' '}
           <NumberFormat
-            prefix="$"
+            prefix="₸"
             value={Number(invoice.amount)}
             decimalScale={2}
             fixedDecimalScale={true}

@@ -88,7 +88,7 @@ function MainSide({ project }) {
                 <StyledTableCell>
                   <StyledTypography fontSize="12px">
                     <NumberFormat
-                      prefix="$"
+                      prefix="₸"
                       value={Number(invoice.invoice_amount)}
                       decimalScale={2}
                       fixedDecimalScale={true}

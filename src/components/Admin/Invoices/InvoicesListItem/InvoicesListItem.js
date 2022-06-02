@@ -80,7 +80,7 @@ function InvoiceListItem({ invoice }) {
       <StyledTableCell>
         <StyledTypography fontSize={12}>
           <NumberFormat
-            prefix="$"
+            prefix="₸"
             value={Number(invoice.amount)}
             decimalScale={2}
             fixedDecimalScale={true}

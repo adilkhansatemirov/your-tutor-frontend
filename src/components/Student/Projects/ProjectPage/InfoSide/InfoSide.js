@@ -37,7 +37,7 @@ function InfoSide({ project }) {
           fontWeight="medium"
         >
           <NumberFormat
-            prefix="$"
+            prefix="₸"
             value={Number(project.client_payment_amount)}
             decimalScale={2}
             fixedDecimalScale={true}

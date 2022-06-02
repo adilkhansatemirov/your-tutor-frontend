@@ -108,7 +108,7 @@ function PaymentsList() {
                 label="InHomeAccountants Balance"
                 count={
                   <NumberFormat
-                    prefix="$"
+                    prefix="₸"
                     value={Number(balance)}
                     decimalScale={2}
                     fixedDecimalScale={true}

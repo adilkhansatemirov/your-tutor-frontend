@@ -25,7 +25,7 @@ function ClientTypeOfBilling({ setTemplate, newProject, setNewProject }) {
     <>
       <StepNumber stepNumber={3} />
       <StepTitle text="Billing" />
-      <StepDescription text="How are we billing the client:" />
+      <StepDescription text="How are we billing the student:" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Controller
           as={
@@ -38,7 +38,7 @@ function ClientTypeOfBilling({ setTemplate, newProject, setNewProject }) {
               <StyledRadioFormControlLabel
                 value="hourly_rate"
                 control={<StyledRadio />}
-                label="Hourly Rate - Invoice the hours billed by the freelancer on each billing cycle"
+                label="Hourly Rate - Invoice the hours billed by the tutor on each billing cycle"
               />
             </RadioGroup>
           }

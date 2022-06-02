@@ -74,28 +74,28 @@ function ApplicationSteps() {
 
   const findActiveStep = (currectPathname) => {
     switch (currectPathname) {
-      case '/freelancer-application/resume':
+      case '/tutor-application/resume':
         setActiveStep(1);
         break;
-      case '/freelancer-application/tax-skills':
+      case '/tutor-application/tax-skills':
         setActiveStep(2);
         break;
-      case '/freelancer-application/bookkeeping-skills':
+      case '/tutor-application/bookkeeping-skills':
         setActiveStep(3);
         break;
-      case '/freelancer-application/accounting-skills':
+      case '/tutor-application/accounting-skills':
         setActiveStep(4);
         break;
-      case '/freelancer-application/audit-skills':
+      case '/tutor-application/audit-skills':
         setActiveStep(5);
         break;
-      case '/freelancer-application/software-skills':
+      case '/tutor-application/software-skills':
         setActiveStep(6);
         break;
-      case '/freelancer-application/interview':
+      case '/tutor-application/interview':
         setActiveStep(7);
         break;
-      case '/freelancer-application/done':
+      case '/tutor-application/done':
         setActiveStep(8);
         break;
       default:
