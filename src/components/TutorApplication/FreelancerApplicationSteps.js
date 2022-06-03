@@ -9,12 +9,12 @@ import checkIcon from 'assets/icons/check.svg';
 
 const list = [
   { step: 1, text: 'Upload resume' },
-  { step: 2, text: 'Tax skills' },
-  { step: 3, text: 'Bookkeeping skills' },
-  { step: 4, text: 'Accounting skills' },
-  { step: 5, text: 'Audit skills' },
-  { step: 6, text: 'Software skills' },
-  { step: 7, text: 'Schedule interview' },
+  // { step: 2, text: 'Tax skills' },
+  // { step: 3, text: 'Bookkeeping skills' },
+  // { step: 4, text: 'Accounting skills' },
+  // { step: 5, text: 'Audit skills' },
+  // { step: 6, text: 'Software skills' },
+  { step: 2, text: 'Schedule interview' },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -77,26 +77,26 @@ function ApplicationSteps() {
       case '/tutor-application/resume':
         setActiveStep(1);
         break;
-      case '/tutor-application/tax-skills':
+      // case '/tutor-application/tax-skills':
+      //   setActiveStep(2);
+      //   break;
+      // case '/tutor-application/bookkeeping-skills':
+      //   setActiveStep(3);
+      //   break;
+      // case '/tutor-application/accounting-skills':
+      //   setActiveStep(4);
+      //   break;
+      // case '/tutor-application/audit-skills':
+      //   setActiveStep(5);
+      //   break;
+      // case '/tutor-application/software-skills':
+      //   setActiveStep(6);
+      //   break;
+      case '/tutor-application/interview':
         setActiveStep(2);
         break;
-      case '/tutor-application/bookkeeping-skills':
-        setActiveStep(3);
-        break;
-      case '/tutor-application/accounting-skills':
-        setActiveStep(4);
-        break;
-      case '/tutor-application/audit-skills':
-        setActiveStep(5);
-        break;
-      case '/tutor-application/software-skills':
-        setActiveStep(6);
-        break;
-      case '/tutor-application/interview':
-        setActiveStep(7);
-        break;
       case '/tutor-application/done':
-        setActiveStep(8);
+        setActiveStep(3);
         break;
       default:
         setActiveStep(1);

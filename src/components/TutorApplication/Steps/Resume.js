@@ -173,7 +173,7 @@ function Resume() {
         <Box className={classes.actions}>
           <Box className={classes.buttonGroup}>
             <StyledButton
-              onClick={() => history.push('/freelancer-application/tax-skills')}
+              onClick={() => history.push('/tutor-application/interview')}
               size="small"
               disabled={!uploaded || uploading}
               textTransform="uppercase"

@@ -40,24 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const calendly = `<div
-  class="calendly-inline-widget"
-  data-url="https://calendly.com${process.env.REACT_APP_CALENDLY_SCHEDULE_INTERVIEW}?hide_event_type_details=1"
-  style="position: relative;min-width:320px;height:450px;"
-  data-processed="true">
-  <div class="calendly-spinner">
-    <div class="calendly-bounce1"></div>
-    <div class="calendly-bounce2"></div>
-    <div class="calendly-bounce3"></div>
-  </div>
-  <iframe
-    src="https://calendly.com${process.env.REACT_APP_CALENDLY_SCHEDULE_INTERVIEW}?embed_domain=${process.env.REACT_APP_APP_URL}&amp;embed_type=Inline&amp;hide_event_type_details=1"
-    width="100%"
-    height="100%"
-    frameborder="0"
-  ></iframe>
-  </div>
-  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>`;
+const calendly = `<div class="calendly-inline-widget" data-url="https://calendly.com/adilkhansatemirov" style="min-width:320px;height:480px;"></div>`;
 
 function Interview() {
   const classes = useStyles();
@@ -72,7 +55,7 @@ function Interview() {
         if (e.data.event === calendlyEvents.event_scheduled) {
           finishAllSteps()
             .then(() => {
-              history.push('/freelancer-application/done');
+              history.push('/tutor-application/done');
             })
             .catch(() => {
               showSnackbar('Something went wrong', 'error');
@@ -80,18 +63,26 @@ function Interview() {
         }
       }
     });
+
+    const script = document.createElement('script');
+
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+
+    document.body.appendChild(script);
+
     // eslint-disable-next-line
   }, []);
 
   return (
     <div className={classes.container}>
-      <StepHeader title="Schedule Interview" step={7} />
+      <StepHeader title="Schedule Interview" step={2} />
       <Box className={classes.callendarContainer}>
         <div dangerouslySetInnerHTML={{ __html: calendly }}></div>
       </Box>
       <Box display="flex" justifyContent="flex-end">
         <StyledButton
-          onClick={() => history.push('/freelancer-application/software-skills')}
+          onClick={() => history.push('/tutor-application/resume')}
           className={classes.previousStepButton}
         >
           <img className={classes.arrowRight} src={arrowLeftIcon} alt="arrow-left" />{' '}

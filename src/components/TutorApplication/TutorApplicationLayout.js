@@ -86,11 +86,11 @@ function ApplicationLayout() {
             <Box className={classes.content}>
               <Switch>
                 <Route path="/tutor-application/resume" component={Resume} />
-                <Route path="/tutor-application/tax-skills" component={TaxSkills} />
+                {/* <Route path="/tutor-application/tax-skills" component={TaxSkills} />
                 <Route path="/tutor-application/bookkeeping-skills" component={BookkeepingSkills} />
                 <Route path="/tutor-application/accounting-skills" component={AccountingSkills} />
                 <Route path="/tutor-application/audit-skills" component={AuditSkills} />
-                <Route path="/tutor-application/software-skills" component={SoftwareSkills} />
+                <Route path="/tutor-application/software-skills" component={SoftwareSkills} /> */}
                 <Route path="/tutor-application/interview" component={Interview} />
                 <Route path="/tutor-application/done" component={Done} />
               </Switch>
